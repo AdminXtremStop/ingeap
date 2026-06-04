@@ -1,0 +1,456 @@
+<div class="min-h-screen flex flex-column" style="background-color: #fafbfc; color: #1a1f2e;">
+    <!-- HEADER GLOBAL DE LA APP (Fondo claro para combinar) -->
+    <div style="position: fixed; z-index: 1000; background-color: #f5f5f5; width: 100%; border-bottom: 1px solid rgba(0,0,0,0.05);">
+        <app-header></app-header>
+    </div>
+
+    <div class="flex justify-content-center w-full" style="margin-top: 5.625rem;" #parentDiv>
+        <div class="landing-wrapper overflow-hidden w-full">
+
+            <!-- ==========================================
+                 HERO SECTION
+                 ========================================== -->
+            <section class="hero">
+            <section class="hero" data-screen-label="01 Hero">
+                <!-- Orbes difuminados de fondo -->
+                <div class="hero-orb tq"></div>
+                <div class="hero-orb gr"></div>
+                <div class="hero-orb bl"></div>
+                <div class="hero-orb yl"></div>
+                <div class="hero-orb tq2"></div>
+
+                <div class="container hero-grid">
+                    <div class="hero-text">
+                        <span class="eyebrow reveal">
+                            PARTNERS OFICIALES ARANET · CHILE
+                        </span>
+                        <h1 class="reveal">Tecnología para la Agricultura.</h1>
+                        <p class="lead reveal">
+                        <div class="eyebrow reveal in" style="--hd: 0ms;">
+                            <span>PARTNERS OFICIALES ARANET · CHILE</span>
+                        </div>
+                        <h1 class="reveal in" style="--hd: 100ms;">Tecnología para la Agricultura.</h1>
+                        <p class="hero-sub reveal in" style="--hd: 300ms; font-size: 1.25rem; color: var(--text-gray); margin-bottom: 40px; line-height: 1.6;">
+                            Sensores, datos y agronomía en una sola plataforma. Decisiones precisas para cada hectárea, desde tu computador o tu celular.
+                        </p>
+                        <div class="hero-actions reveal">
+                            <a href="#" class="btn btn-accent" style="background-color: var(--green); border-color: var(--green);">Hablar con un agrónomo</a>
+                            <a href="#" class="btn btn-outline">Ver la plataforma &rarr;</a>
+                        <div class="hero-actions reveal in" style="--hd: 400ms; display: flex; gap: 16px;">
+                            <a routerLink="/contacto" class="btn btn-primary" style="color: rgb(182, 246, 27); background-color: rgb(141, 179, 49); padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600;">Hablar con un agrónomo</a>
+                            <a href="#tecnologia" class="btn btn-outline" style="padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; border: 1px solid rgba(26, 31, 46, 0.15); color: var(--text-main);">Ver la plataforma &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div class="hero-visual reveal-scale">
+                        <div class="scene-stage">
+                            <div class="scene-frame">
+                    <div class="hero-visual">
+                        <div class="scene-stage reveal-scale in" id="sceneStage" style="--hd: 700ms; position: relative; max-width: 800px; margin: 0 auto;">
+                            <div class="scene-frame" id="sceneFrame" style="transform: rotateX(4deg) rotateY(0deg);">
+                                <div class="scene">
+                                  <!-- Imagen de fondo del modelo del campo -->
+                                 <img class="field" src="assets/Campo.png" alt="Modelo del campo Ingeap Agro" draggable="false">
+                                    <!-- Imagen de fondo del modelo del campo -->
+                                    <img class="field" src="assets/Campo.png" alt="Modelo del campo Ingeap Agro" draggable="false">
+
+                                  <!-- Capa de animación SVG superpuesta -->
+                                  <svg class="overlay-svg" viewBox="0 0 1536 1024" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                                    <defs>
+                                      <filter id="sceneGlow" x="-50%" y="-50%" width="200%" height="200%">
+                                        <feGaussianBlur stdDeviation="2.5" result="g"></feGaussianBlur>
+                                        <feMerge><feMergeNode in="g"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
+                                      </filter>
+                                    </defs>
+                                    <!-- Capa de animación SVG superpuesta -->
+                                    <svg class="overlay-svg" viewBox="0 0 1536 1024" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                                        <defs>
+                                            <filter id="sceneGlow" x="-50%" y="-50%" width="200%" height="200%">
+                                                <feGaussianBlur stdDeviation="2.5" result="g"></feGaussianBlur>
+                                                <feMerge><feMergeNode in="g"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
+                                            </filter>
+                                        </defs>
+                                        <path class="conn-line" d="M 370 320 Q 600 380 900 460 Q 1200 540 1410 520" stroke="#f7c92c" opacity="0.45" filter="url(#sceneGlow)"></path>
+                                        <path class="conn-line" d="M 1290 340 Q 1100 430 900 530 Q 700 600 580 660" stroke="#34487c" opacity="0.4" filter="url(#sceneGlow)" style="animation-delay: 0.5s;"></path>
+                                        <path class="conn-line" d="M 260 700 Q 420 680 580 660 Q 760 640 920 660" stroke="#31a5b3" opacity="0.45" filter="url(#sceneGlow)" style="animation-delay: 1s;"></path>
+                                        <path class="conn-line" d="M 1170 150 Q 1230 230 1280 310" stroke="#65ac4a" opacity="0.4" filter="url(#sceneGlow)" style="animation-delay: 1.5s;"></path>
+                                        <path class="conn-line" d="M 1410 540 Q 1330 600 1200 640 Q 1050 680 920 660" stroke="#65ac4a" opacity="0.4" filter="url(#sceneGlow)" style="animation-delay: 0.7s;"></path>
+                                        <circle r="4" fill="#f7c92c" filter="url(#sceneGlow)"><animateMotion dur="3.4s" repeatCount="indefinite" path="M 370 320 Q 600 380 900 460 Q 1200 540 1410 520"></animateMotion></circle>
+                                        <circle r="4" fill="#34487c" filter="url(#sceneGlow)"><animateMotion dur="2.8s" repeatCount="indefinite" path="M 1290 340 Q 1100 430 900 530 Q 700 600 580 660"></animateMotion></circle>
+                                        <circle r="4" fill="#31a5b3" filter="url(#sceneGlow)"><animateMotion dur="2.4s" repeatCount="indefinite" path="M 260 700 Q 420 680 580 660 Q 760 640 920 660"></animateMotion></circle>
+                                        <circle r="3" fill="#65ac4a" filter="url(#sceneGlow)"><animateMotion dur="3s" repeatCount="indefinite" path="M 1410 540 Q 1330 600 1200 640 Q 1050 680 920 660"></animateMotion></circle>
+                                        <g transform="translate(220 560)">
+                                            <circle r="8" fill="none" stroke="#31a5b3" stroke-width="1.8" class="wifi-wave"></circle>
+                                            <circle r="8" fill="none" stroke="#31a5b3" stroke-width="1.8" class="wifi-wave" style="animation-delay: 0.7s;"></circle>
+                                            <circle r="8" fill="none" stroke="#31a5b3" stroke-width="1.8" class="wifi-wave" style="animation-delay: 1.4s;"></circle>
+                                        </g>
+                                        <g transform="translate(1290 280)">
+                                            <circle r="8" fill="none" stroke="#34487c" stroke-width="1.8" class="wifi-wave"></circle>
+                                            <circle r="8" fill="none" stroke="#34487c" stroke-width="1.8" class="wifi-wave" style="animation-delay: 0.6s;"></circle>
+                                            <circle r="8" fill="none" stroke="#34487c" stroke-width="1.8" class="wifi-wave" style="animation-delay: 1.2s;"></circle>
+                                        </g>
+                                        <circle cx="430" cy="800" r="3" fill="#31a5b3" class="drip-drop" opacity="0.7"></circle>
+                                        <circle cx="510" cy="800" r="2.5" fill="#31a5b3" class="drip-drop" style="animation-delay: 0.4s;" opacity="0.7"></circle>
+                                        <circle cx="600" cy="810" r="3" fill="#31a5b3" class="drip-drop" style="animation-delay: 0.8s;" opacity="0.7"></circle>
+                                        <circle cx="340" cy="280" r="6" fill="#fffbe6" class="glint"></circle>
+                                        <circle cx="380" cy="265" r="5" fill="#f7c92c" class="glint" style="animation-delay: 1s;"></circle>
+                                        <g transform="translate(1180 145)">
+                                            <circle r="3" fill="none" stroke="#34487c" stroke-width="1" class="signal-ring"></circle>
+                                            <circle r="3" fill="none" stroke="#34487c" stroke-width="1" class="signal-ring" style="animation-delay: 0.85s;"></circle>
+                                        </g>
+                                        <circle cx="1395" cy="520" r="3.5" fill="#65ac4a" class="led" filter="url(#sceneGlow)"></circle>
+                                        <circle cx="1415" cy="520" r="3.5" fill="#f7c92c" class="led" style="animation-delay: 0.5s;" filter="url(#sceneGlow)"></circle>
+                                    </svg>
+
+                                    <path class="conn-line" d="M 370 320 Q 600 380 900 460 Q 1200 540 1410 520" stroke="#f7c92c" opacity="0.45" filter="url(#sceneGlow)"></path>
+                                    <path class="conn-line" d="M 1290 340 Q 1100 430 900 530 Q 700 600 580 660" stroke="#34487c" opacity="0.4" filter="url(#sceneGlow)" style="animation-delay: 0.5s;"></path>
+                                    <path class="conn-line" d="M 260 700 Q 420 680 580 660 Q 760 640 920 660" stroke="#31a5b3" opacity="0.45" filter="url(#sceneGlow)" style="animation-delay: 1s;"></path>
+                                    <path class="conn-line" d="M 1170 150 Q 1230 230 1280 310" stroke="#65ac4a" opacity="0.4" filter="url(#sceneGlow)" style="animation-delay: 1.5s;"></path>
+                                    <path class="conn-line" d="M 1410 540 Q 1330 600 1200 640 Q 1050 680 920 660" stroke="#65ac4a" opacity="0.4" filter="url(#sceneGlow)" style="animation-delay: 0.7s;"></path>
+
+                                    <circle r="4" fill="#f7c92c" filter="url(#sceneGlow)">
+                                      <animateMotion dur="3.4s" repeatCount="indefinite" path="M 370 320 Q 600 380 900 460 Q 1200 540 1410 520"></animateMotion>
+                                    </circle>
+                                    <circle r="4" fill="#34487c" filter="url(#sceneGlow)">
+                                      <animateMotion dur="2.8s" repeatCount="indefinite" path="M 1290 340 Q 1100 430 900 530 Q 700 600 580 660"></animateMotion>
+                                    </circle>
+                                    <circle r="4" fill="#31a5b3" filter="url(#sceneGlow)">
+                                      <animateMotion dur="2.4s" repeatCount="indefinite" path="M 260 700 Q 420 680 580 660 Q 760 640 920 660"></animateMotion>
+                                    </circle>
+                                    <circle r="3" fill="#65ac4a" filter="url(#sceneGlow)">
+                                      <animateMotion dur="3s" repeatCount="indefinite" path="M 1410 540 Q 1330 600 1200 640 Q 1050 680 920 660"></animateMotion>
+                                    </circle>
+
+                                    <g transform="translate(220 560)">
+                                      <circle r="8" fill="none" stroke="#31a5b3" stroke-width="1.8" class="wifi-wave"></circle>
+                                      <circle r="8" fill="none" stroke="#31a5b3" stroke-width="1.8" class="wifi-wave" style="animation-delay: 0.7s;"></circle>
+                                      <circle r="8" fill="none" stroke="#31a5b3" stroke-width="1.8" class="wifi-wave" style="animation-delay: 1.4s;"></circle>
+                                    </g>
+                                    <g transform="translate(1290 280)">
+                                      <circle r="8" fill="none" stroke="#34487c" stroke-width="1.8" class="wifi-wave"></circle>
+                                      <circle r="8" fill="none" stroke="#34487c" stroke-width="1.8" class="wifi-wave" style="animation-delay: 0.6s;"></circle>
+                                    </g>
+
+                                    <circle cx="430" cy="800" r="3" fill="#31a5b3" class="drip-drop" opacity="0.7"></circle>
+                                    <circle cx="510" cy="800" r="2.5" fill="#31a5b3" class="drip-drop" style="animation-delay: 0.4s;" opacity="0.7"></circle>
+                                    <circle cx="600" cy="810" r="3" fill="#31a5b3" class="drip-drop" style="animation-delay: 0.8s;" opacity="0.7"></circle>
+
+                                    <circle cx="340" cy="280" r="6" fill="#fffbe6" class="glint"></circle>
+                                    <circle cx="380" cy="265" r="5" fill="#f7c92c" class="glint" style="animation-delay: 1s;"></circle>
+
+                                    <g transform="translate(1180 145)">
+                                      <circle r="3" fill="none" stroke="#34487c" stroke-width="1" class="signal-ring"></circle>
+                                      <circle r="3" fill="none" stroke="#34487c" stroke-width="1" class="signal-ring" style="animation-delay: 0.85s;"></circle>
+                                    </g>
+
+                                    <circle cx="1395" cy="520" r="3.5" fill="#65ac4a" class="led" filter="url(#sceneGlow)"></circle>
+                                    <circle cx="1415" cy="520" r="3.5" fill="#f7c92c" class="led" style="animation-delay: 0.5s;" filter="url(#sceneGlow)"></circle>
+                                  </svg>
+
+                                  <!-- Hotspots con Click de Angular -->
+                                  <div class="hs" style="left: 17%; top: 67%; --hs-color: var(--turquoise);" (click)="activeHotspot = 'riego'">
+                                    <span class="hs-ring"></span><span class="hs-ring"></span>
+                                    <span class="hs-core"></span><span class="hs-label">Riego</span>
+                                  </div>
+                                  <div class="hs" style="left: 24%; top: 28%; --hs-color: var(--yellow-deep);" (click)="activeHotspot = 'solar'">
+                                    <span class="hs-ring"></span><span class="hs-ring"></span>
+                                    <span class="hs-core"></span><span class="hs-label">Solar</span>
+                                  </div>
+                                  <div class="hs" style="left: 14%; top: 53%; --hs-color: var(--blue);" (click)="activeHotspot = 'aranet'">
+                                    <span class="hs-ring"></span><span class="hs-ring"></span>
+                                    <span class="hs-core"></span><span class="hs-label">Aranet</span>
+                                  </div>
+                                  <div class="hs" style="left: 86%; top: 12%; --hs-color: var(--turquoise-deep);" (click)="activeHotspot = 'satelite'">
+                                    <span class="hs-ring"></span><span class="hs-ring"></span>
+                                    <span class="hs-core"></span><span class="hs-label">Satélite</span>
+                                  </div>
+                                  <div class="hs" style="left: 63%; top: 44%; --hs-color: var(--green-deep);" (click)="activeHotspot = 'energia'">
+                                    <span class="hs-ring"></span><span class="hs-ring"></span>
+                                    <span class="hs-core"></span><span class="hs-label">Energía</span>
+                                  </div>
+                                    <!-- Hotspots con Click de Angular -->
+                                    <div class="hs" [class.on]="activeHotspot === 'riego'" style="left: 17%; top: 67%; --hs-color: var(--turquoise);" (click)="activeHotspot = 'riego'">
+                                        <span class="hs-ring"></span><span class="hs-ring"></span>
+                                        <span class="hs-core"></span><span class="hs-label">Riego</span>
+                                    </div>
+                                    <div class="hs" [class.on]="activeHotspot === 'solar'" style="left: 24%; top: 28%; --hs-color: var(--yellow-deep);" (click)="activeHotspot = 'solar'">
+                                        <span class="hs-ring"></span><span class="hs-ring"></span>
+                                        <span class="hs-core"></span><span class="hs-label">Solar</span>
+                                    </div>
+                                    <div class="hs" [class.on]="activeHotspot === 'aranet'" style="left: 14%; top: 53%; --hs-color: var(--blue);" (click)="activeHotspot = 'aranet'">
+                                        <span class="hs-ring"></span><span class="hs-ring"></span>
+                                        <span class="hs-core"></span><span class="hs-label">Aranet</span>
+                                    </div>
+                                    <div class="hs" [class.on]="activeHotspot === 'satelite'" style="left: 86%; top: 12%; --hs-color: var(--turquoise-deep);" (click)="activeHotspot = 'satelite'">
+                                        <span class="hs-ring"></span><span class="hs-ring"></span>
+                                        <span class="hs-core"></span><span class="hs-label">Satélite</span>
+                                    </div>
+                                    <div class="hs" [class.on]="activeHotspot === 'energia'" style="left: 63%; top: 44%; --hs-color: var(--green-deep);" (click)="activeHotspot = 'energia'">
+                                        <span class="hs-ring"></span><span class="hs-ring"></span>
+                                        <span class="hs-core"></span><span class="hs-label">Energía</span>
+                                    </div>
+                                    <div class="hs" [class.on]="activeHotspot === 'auto'" style="left: 93%; top: 50%; --hs-color: var(--green);" (click)="activeHotspot = 'auto'">
+                                        <span class="hs-ring"></span><span class="hs-ring"></span>
+                                        <span class="hs-core"></span><span class="hs-label">Auto</span>
+                                    </div>
+                                </div>
+
+                                <!-- Tooltips Dinámicos Flotantes -->
+                                <div class="scene-tt" *ngIf="activeHotspot === 'riego'">
+                                <div class="scene-tt" *ngIf="activeHotspot === 'riego'" style="--tt-color: var(--turquoise); --tt-soft: rgba(49,165,179,0.1);">
+                                    <button class="close-tt" (click)="activeHotspot = null">&times;</button>
+                                    <div class="scene-tt-head">
+                                        <span class="tt-tag">LoRaWAN</span><span class="tt-status text-green">● activo</span>
+                                    <div class="scene-tt-head" style="display:flex;gap:8px;margin-bottom:8px;">
+                                        <div style="font-size:18px">💧</div>
+                                        <div><div style="font-size:10px;text-transform:uppercase;opacity:0.7">01 · Riego</div><h4 style="margin:0;font-size:16px;">Riego inteligente</h4></div>
+                                    </div>
+                                    <h4>Sensor de Humedad S-127</h4>
+                                    <p>Lectura continua a 30cm, 60cm y 90cm de profundidad.</p>
+                                    <div class="tt-metric">34.2% HR</div>
+                                    <p style="font-size:13px;color:var(--text-gray);margin-bottom:8px;">Pivotes, goteo y aspersores con gestión automatizada. Monitoreo de caudal, presión y humedad de suelo en tiempo real.</p>
+                                    <div style="display:flex;gap:4px;margin-bottom:12px;"><span style="font-size:10px;background:var(--tt-soft);color:var(--tt-color);padding:2px 6px;border-radius:4px;">Eficiencia hídrica</span><span style="font-size:10px;background:var(--tt-soft);color:var(--tt-color);padding:2px 6px;border-radius:4px;">Monitoreo 24/7</span></div>
+                                </div>
+                                <div class="scene-tt" *ngIf="activeHotspot === 'solar'">
+                                <div class="scene-tt" *ngIf="activeHotspot === 'solar'" style="--tt-color: var(--yellow-deep); --tt-soft: rgba(247,201,44,0.1);">
+                                    <button class="close-tt" (click)="activeHotspot = null">&times;</button>
+                                    <div class="scene-tt-head">
+                                        <span class="tt-tag">Energía</span><span class="tt-status text-green">● activo</span>
+                                    <div class="scene-tt-head" style="display:flex;gap:8px;margin-bottom:8px;">
+                                        <div style="font-size:18px">☀</div>
+                                        <div><div style="font-size:10px;text-transform:uppercase;opacity:0.7">02 · Sistema</div><h4 style="margin:0;font-size:16px;">Sistema fotovoltaico</h4></div>
+                                    </div>
+                                    <h4>Panel Monocristalino</h4>
+                                    <p>Suministro constante con batería de respaldo de 10 años.</p>
+                                    <div class="tt-metric">12.4V</div>
+                                    <p style="font-size:13px;color:var(--text-gray);margin-bottom:8px;">Paneles solares diseñados a medida para bombas, riego y operaciones. Ahorro energético hasta un 50%.</p>
+                                    <div style="display:flex;gap:4px;margin-bottom:12px;"><span style="font-size:10px;background:var(--tt-soft);color:var(--tt-color);padding:2px 6px;border-radius:4px;">Energía solar</span><span style="font-size:10px;background:var(--tt-soft);color:var(--tt-color);padding:2px 6px;border-radius:4px;">Ahorro</span></div>
+                                </div>
+                                <div class="scene-tt" *ngIf="activeHotspot === 'aranet'">
+                                <div class="scene-tt" *ngIf="activeHotspot === 'aranet'" style="--tt-color: var(--blue); --tt-soft: rgba(52,72,124,0.1);">
+                                    <button class="close-tt" (click)="activeHotspot = null">&times;</button>
+                                    <div class="scene-tt-head">
+                                        <span class="tt-tag">Estación</span><span class="tt-status text-green">● activo</span>
+                                    <div class="scene-tt-head" style="display:flex;gap:8px;margin-bottom:8px;">
+                                        <div style="font-size:18px">📡</div>
+                                        <div><div style="font-size:10px;text-transform:uppercase;opacity:0.7">03 · Sensores</div><h4 style="margin:0;font-size:16px;">Sensores Aranet</h4></div>
+                                    </div>
+                                    <h4>Aranet4 PRO</h4>
+                                    <p>Monitoreo de CO2, temperatura, humedad y presión atmosférica.</p>
+                                    <div class="tt-metric">420 ppm</div>
+                                    <p style="font-size:13px;color:var(--text-gray);margin-bottom:8px;">Partners oficiales en Chile. Humedad de suelo, tensión, T°/HR, CO₂, radiación PAR. Cumplimiento DGA.</p>
+                                    <div style="display:flex;gap:4px;margin-bottom:12px;"><span style="font-size:10px;background:var(--tt-soft);color:var(--tt-color);padding:2px 6px;border-radius:4px;">IoT</span><span style="font-size:10px;background:var(--tt-soft);color:var(--tt-color);padding:2px 6px;border-radius:4px;">DGA</span></div>
+                                </div>
+                                <div class="scene-tt" *ngIf="activeHotspot === 'satelite'">
+                                <div class="scene-tt" *ngIf="activeHotspot === 'satelite'" style="--tt-color: var(--turquoise-deep); --tt-soft: rgba(31,126,138,0.1);">
+                                    <button class="close-tt" (click)="activeHotspot = null">&times;</button>
+                                    <div class="scene-tt-head">
+                                        <span class="tt-tag">Conexión</span><span class="tt-status text-green">● activo</span>
+                                    <div class="scene-tt-head" style="display:flex;gap:8px;margin-bottom:8px;">
+                                        <div style="font-size:18px">🛰</div>
+                                        <div><div style="font-size:10px;text-transform:uppercase;opacity:0.7">04 · Mapas</div><h4 style="margin:0;font-size:16px;">Imágenes satelitales</h4></div>
+                                    </div>
+                                    <h4>Gateway Satelital</h4>
+                                    <p>Respaldo de conectividad en zonas sin cobertura celular.</p>
+                                    <div class="tt-metric">99.9% Up</div>
+                                    <p style="font-size:13px;color:var(--text-gray);margin-bottom:8px;">Mapeo periódico del predio con imágenes satelitales: NDVI, estrés hídrico y zonas de manejo diferenciado.</p>
+                                    <div style="display:flex;gap:4px;margin-bottom:12px;"><span style="font-size:10px;background:var(--tt-soft);color:var(--tt-color);padding:2px 6px;border-radius:4px;">NDVI</span><span style="font-size:10px;background:var(--tt-soft);color:var(--tt-color);padding:2px 6px;border-radius:4px;">Cuarteles</span></div>
+                                </div>
+                                <div class="scene-tt" *ngIf="activeHotspot === 'energia'">
+                                <div class="scene-tt" *ngIf="activeHotspot === 'energia'" style="--tt-color: var(--green-deep); --tt-soft: rgba(74,138,53,0.1);">
+                                    <button class="close-tt" (click)="activeHotspot = null">&times;</button>
+                                    <div class="scene-tt-head">
+                                        <span class="tt-tag">Control</span><span class="tt-status text-green">● activo</span>
+                                    <div class="scene-tt-head" style="display:flex;gap:8px;margin-bottom:8px;">
+                                        <div style="font-size:18px">⚡</div>
+                                        <div><div style="font-size:10px;text-transform:uppercase;opacity:0.7">05 · Medición</div><h4 style="margin:0;font-size:16px;">Medición de energía</h4></div>
+                                    </div>
+                                    <h4>Válvula Automatizada</h4>
+                                    <p>Control de flujo de agua y fertirriego a distancia.</p>
+                                    <div class="tt-metric">Abierta</div>
+                                    <p style="font-size:13px;color:var(--text-gray);margin-bottom:8px;">Medidor inteligente en la caseta eléctrica del predio. Consumo por bomba, factor de potencia y reportes.</p>
+                                    <div style="display:flex;gap:4px;margin-bottom:12px;"><span style="font-size:10px;background:var(--tt-soft);color:var(--tt-color);padding:2px 6px;border-radius:4px;">Consumo</span><span style="font-size:10px;background:var(--tt-soft);color:var(--tt-color);padding:2px 6px;border-radius:4px;">Reportes</span></div>
+                                </div>
+                                <div class="scene-tt" *ngIf="activeHotspot === 'auto'" style="--tt-color: var(--green); --tt-soft: rgba(101,172,74,0.1);">
+                                    <button class="close-tt" (click)="activeHotspot = null">&times;</button>
+                                    <div class="scene-tt-head" style="display:flex;gap:8px;margin-bottom:8px;">
+                                        <div style="font-size:18px">⚙</div>
+                                        <div><div style="font-size:10px;text-transform:uppercase;opacity:0.7">06 · Control</div><h4 style="margin:0;font-size:16px;">Automatización</h4></div>
+                                    </div>
+                                    <p style="font-size:13px;color:var(--text-gray);margin-bottom:8px;">Tablero eléctrico con control de heladas, cooling, bombas y válvulas. Operación remota 24/7 con alarmas.</p>
+                                    <div style="display:flex;gap:4px;margin-bottom:12px;"><span style="font-size:10px;background:var(--tt-soft);color:var(--tt-color);padding:2px 6px;border-radius:4px;">Alarmas</span><span style="font-size:10px;background:var(--tt-soft);color:var(--tt-color);padding:2px 6px;border-radius:4px;">24/7</span></div>
+                                </div>
+                            </div>
+
+                            <!-- Leyenda de Sensores Inferior -->
+                            <div class="scene-legend">
+                                <button type="button" class="legend-btn" [class.on]="activeHotspot === 'riego'" (click)="activeHotspot = 'riego'" data-key="riego" style="--lg-color: #31a5b3;"><span class="num">01</span><span>Riego</span><span class="dot"></span></button>
+                                <button type="button" class="legend-btn" [class.on]="activeHotspot === 'solar'" (click)="activeHotspot = 'solar'" data-key="solar" style="--lg-color: #d4a800;"><span class="num">02</span><span>Solar</span><span class="dot"></span></button>
+                                <button type="button" class="legend-btn" [class.on]="activeHotspot === 'aranet'" (click)="activeHotspot = 'aranet'" data-key="aranet" style="--lg-color: #34487c;"><span class="num">03</span><span>Aranet</span><span class="dot"></span></button>
+                                <button type="button" class="legend-btn" [class.on]="activeHotspot === 'satelite'" (click)="activeHotspot = 'satelite'" data-key="satelite" style="--lg-color: #1f7e8a;"><span class="num">04</span><span>Satélite</span><span class="dot"></span></button>
+                                <button type="button" class="legend-btn" [class.on]="activeHotspot === 'energia'" (click)="activeHotspot = 'energia'" data-key="energia" style="--lg-color: #4a8a35;"><span class="num">05</span><span>Energía</span><span class="dot"></span></button>
+                                <button type="button" class="legend-btn" [class.on]="activeHotspot === 'auto'" (click)="activeHotspot = 'auto'" data-key="auto" style="--lg-color: #65ac4a;"><span class="num">06</span><span>Auto</span><span class="dot"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==========================================
+                 FEATURES SECTION (TECNOLOGÍA)
+                 FEATURES SECTION (TEXTOS ORIGINALES)
+                 ========================================== -->
+            <section class="features-section" id="tecnologia">
+            <section class="features-section" id="tecnologia" style="padding: 100px 0; background: rgba(49, 165, 179, 0.05);">
+                <div class="container">
+                    <div class="section-header">
+                        <div class="head-left">
+                            <span class="eyebrow reveal"><span class="num">02</span>Por qué Ingeap Agro</span>
+                            <h2>Tecnología robusta <em>diseñada para el campo.</em></h2>
+                            <h2>Tecnología robusta <em style="color:var(--turquoise);">diseñada para el campo.</em></h2>
+                        </div>
+                        <p class="lead reveal">
+                            Infraestructura inalámbrica de largo alcance, baterías de ultra duración y paneles de control intuitivos que operan de forma autónoma incluso en zonas sin cobertura celular tradicional.
+                        </p>
+                    </div>
+
+                    <div class="features-grid">
+                        <div class="feat-card reveal">
+                            <div class="feat-icon">📡</div>
+                            <h3>Redes LoRaWAN Propias</h3>
+                            <p>Desplegamos antenas gateway con cobertura de hasta 15 km, garantizando la conectividad total de tus sensores sin depender de empresas de telecomunicaciones.</p>
+                        </div>
+                        <div class="feat-card reveal" style="transition-delay: 100ms;">
+                            <div class="feat-icon">🔋</div>
+                            <h3>Autonomía de 10 Años</h3>
+                            <p>Olvídate del mantenimiento constante. Nuestros nodos sensores consumen el mínimo de energía, operando por una década con una sola batería interna.</p>
+                        </div>
+                        <div class="feat-card reveal" style="transition-delay: 200ms;">
+                            <div class="feat-icon">📊</div>
+                            <h3>Dashboard a Medida</h3>
+                            <p>Una plataforma web y móvil rápida, diseñada en conjunto con ingenieros agrónomos para que veas alertas claras y gráficos limpios en un par de clics.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==========================================
+                 METRICS SECTION
+                 METRICS SECTION (TEXTOS ORIGINALES)
+                 ========================================== -->
+            <section class="num-section" style="padding: 60px 0;">
+            <section class="num-section" style="padding: 80px 0; background: var(--bg-main);">
+                <div class="container">
+                    <div class="num-grid">
+                        <div class="num-item reveal">
+                            <div class="num-big">60<sup>seg</sup></div>
+                            <div class="num-label">latencia sensor &rarr; app</div>
+                        </div>
+                        <div class="num-item reveal" style="transition-delay: 100ms;">
+                            <div class="num-big">32<sup>%</sup></div>
+                            <div class="num-label">ahorro hídrico promedio</div>
+                        </div>
+                        <div class="num-item reveal" style="transition-delay: 200ms;">
+                            <div class="num-big">10<sup>años</sup></div>
+                            <div class="num-label">batería sensores LoRa</div>
+                        </div>
+                        <div class="num-item reveal" style="transition-delay: 300ms;">
+                            <div class="num-big">99.5<sup>%</sup></div>
+                            <div class="num-label">uptime telemetría</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==========================================
+                 MAPA SECTION (LEAFLET)
+                 MAPA SECTION (TEXTOS ORIGINALES + MAPA NUEVO)
+                 ========================================== -->
+            <section class="map-section" id="mapa">
+            <section class="map-section" id="mapa" style="padding: 100px 0;">
+                <div class="container">
+                    <div class="section-header">
+                        <div class="head-left">
+                            <span class="eyebrow reveal"><span class="num">03</span>Mapa del predio</span>
+                            <h2>Tu predio, <em>en un solo plano.</em></h2>
+                            <h2>Tu predio, <em style="color:var(--turquoise);">en un solo plano.</em></h2>
+                        </div>
+                        <p class="lead reveal">
+                            Visualiza cada sensor, cada válvula y cada cuartel en un mapa interactivo. Pasa el mouse sobre un punto y ves su lectura actual; haz click y abres su histórico.
+                        </p>
+                    </div>
+
+                    <div class="map-grid">
+                        <div class="map-features">
+                            <div class="map-feat reveal"><span class="dot tq"></span> Sensor de humedad</div>
+                            <div class="map-feat reveal" style="transition-delay: 60ms;"><span class="dot gr"></span> Estación fitopatológica</div>
+                            <div class="map-feat reveal" style="transition-delay: 120ms;"><span class="dot ye"></span> Válvula automatizada</div>
+                        </div>
+
+                        <div class="map-vis-wrap reveal-scale">
+                            <app-mapa-widget></app-mapa-widget>
+                            <!-- Selector de Pestañas Visuales -->
+                            <div class="map-tabs" style="display: flex; gap: 8px; margin-bottom: 16px;">
+                                <button class="btn btn-outline" [style.background]="mapView !== 'leaflet' ? 'var(--ink-200)' : 'transparent'" (click)="mapView = 'cuarteles'" style="padding: 8px 16px;">Cuarteles</button>
+                                <button class="btn btn-outline" [style.background]="mapView === 'leaflet' ? 'var(--ink-200)' : 'transparent'" (click)="mapView = 'leaflet'" style="padding: 8px 16px;">Mapa Interactivo</button>
+                            </div>
+
+                            <!-- VISTA: SVG Cuarteles (Maqueta) -->
+                            <div *ngIf="mapView !== 'leaflet'" style="aspect-ratio: 4/3; background: #fff; border-radius: 12px; overflow: hidden; border: 1px solid rgba(0,0,0,0.05);">
+                                <svg class="map-svg view-cuarteles" viewBox="0 0 600 460" style="width: 100%; height: 100%;">
+                                    <defs>
+                                        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0,0,0,0.06)" stroke-width="1"></path></pattern>
+                                        <radialGradient id="cuartelA" cx="50%" cy="50%"><stop offset="0%" stop-color="#31a5b3" stop-opacity="0.4"></stop><stop offset="100%" stop-color="#31a5b3" stop-opacity="0.05"></stop></radialGradient>
+                                        <radialGradient id="cuartelB" cx="50%" cy="50%"><stop offset="0%" stop-color="#65ac4a" stop-opacity="0.4"></stop><stop offset="100%" stop-color="#65ac4a" stop-opacity="0.05"></stop></radialGradient>
+                                        <radialGradient id="cuartelC" cx="50%" cy="50%"><stop offset="0%" stop-color="#f7c92c" stop-opacity="0.35"></stop><stop offset="100%" stop-color="#f7c92c" stop-opacity="0.05"></stop></radialGradient>
+                                    </defs>
+                                    <rect width="600" height="460" fill="url(#grid)"></rect>
+                                    <path d="M 60 60 L 290 50 L 320 220 L 80 230 Z" fill="url(#cuartelA)" stroke="rgba(49,165,179,0.5)" stroke-width="1.5" stroke-dasharray="6 4"></path>
+                                    <path d="M 320 70 L 540 90 L 530 260 L 340 250 Z" fill="url(#cuartelB)" stroke="rgba(101,172,74,0.5)" stroke-width="1.5" stroke-dasharray="6 4"></path>
+                                    <path d="M 80 260 L 350 270 L 360 410 L 90 400 Z" fill="url(#cuartelC)" stroke="rgba(247,201,44,0.5)" stroke-width="1.5" stroke-dasharray="6 4"></path>
+                                    <g font-family="monospace" font-size="10" fill="rgba(0,0,0,0.6)">
+                                        <text x="80" y="80">CUARTEL A · UVA</text>
+                                        <text x="340" y="100">CUARTEL B · CEREZO</text>
+                                        <text x="100" y="285">CUARTEL C · PALTO</text>
+                                    </g>
+                                    <circle cx="120" cy="125" r="5" fill="#31a5b3"></circle>
+                                    <circle cx="220" cy="170" r="5" fill="#31a5b3"></circle>
+                                    <circle cx="400" cy="155" r="5" fill="#31a5b3"></circle>
+                                    <rect x="245" y="135" width="14" height="14" rx="3" fill="#65ac4a"></rect>
+                                    <polygon points="155,195 165,205 155,215 145,205" fill="#f7c92c"></polygon>
+                                </svg>
+                            </div>
+
+                            <!-- VISTA: Componente Leaflet Real de Angular -->
+                            <div *ngIf="mapView === 'leaflet'" style="aspect-ratio: 4/3; overflow: hidden; border-radius: 12px;">
+                                <app-mapa-widget style="width: 100%; height: 100%; display: block;"></app-mapa-widget>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==========================================
+                 CTA SECTION
+                 CTA SECTION (TEXTOS ORIGINALES + ESTILOS NUEVOS)
+                 ========================================== -->
+            <section class="cta-section">
+            <section class="cta-section" style="padding: 100px 0;">
+                                <div class="container">
+                    <div class="section-header">
+                        <div class="head-left">
+                            <span class="eyebrow reveal"><span class="num">01</span>Por qué Ingeap Agro</span>
+                            <h2>Tecnología robusta <em style="color:var(--turquoise);">diseñada para el campo.</em></h2>
+                        </div>
+                        <p class="lead reveal">
+
+            </section>
+
+        </div>
+    </div>
+
+    <!-- FOOTER GLOBAL DE LA APP -->
+    <div class="mt-auto">
+        <app-footer></app-footer>
+    </div>
+</div>

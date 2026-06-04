@@ -12,16 +12,19 @@ export class IngeapComponent implements OnInit{
 
     @ViewChild('parentDiv') parentDiv!: ElementRef;
 
+    mostrarPreloader: boolean = true;
+    preloaderFadeOut: boolean = false;
+
     ngAfterViewInit() {
       this.adjustHeight();
     }
-  
+
     adjustHeight() {
         const childHeight = this.parentDiv.nativeElement.scrollHeight;
         const offset = 100; // Cantidad en píxeles que deseas restar
         this.parentDiv.nativeElement.style.height = `${childHeight - offset}px`;
     }
-    
+
 
     imagenSrc1 = 'assets/iconos-menu/1.png';
 
@@ -91,7 +94,14 @@ export class IngeapComponent implements OnInit{
   constructor(public layoutService: LayoutService, public router: Router) { }
 
     ngOnInit(): void {
-        
+        // Inicia el desvanecimiento después de 2.5 segundos
+        setTimeout(() => {
+            this.preloaderFadeOut = true;
+            // Remueve el elemento del HTML tras terminar la transición CSS (0.5s)
+            setTimeout(() => {
+                this.mostrarPreloader = false;
+            }, 500);
+        }, 2500);
     }
 
     navigateToFragment(fragment: string) {

@@ -19,9 +19,29 @@ import { trigger, transition, style, animate } from '@angular/animations';
         ])
     ]
 })
-export class LandingIngeapAgroComponent implements OnInit, AfterViewInit, OnDestroy { 
+export class LandingIngeapAgroComponent implements OnInit, AfterViewInit, OnDestroy {
 
     @ViewChild('parentDiv') parentDiv!: ElementRef;
+
+    // --- LÓGICA DE ANIMACIÓN DEL MAPA HERO ---
+    sceneKeys = ['riego', 'solar', 'aranet', 'satelite', 'energia', 'auto'];
+    currentSceneKey = 'solar';
+    sceneInterval: any;
+
+    sceneData: any = {
+        riego:    { num: '01', color: 'var(--turquoise)',      soft: 'var(--turquoise-soft)', icon: '💧', title: 'Riego inteligente',   desc: 'Pivotes, goteo y aspersores con gestión automatizada. Monitoreo de caudal, presión y humedad de suelo en tiempo real.', tags: ['Eficiencia hídrica','Monitoreo 24/7'], link: '/servicios' },
+        solar:    { num: '02', color: 'var(--yellow-deep)',    soft: 'var(--yellow-soft)',    icon: '☀',  title: 'Sistema fotovoltaico', desc: 'Paneles solares diseñados a medida para bombas, riego y operaciones. Ahorro energético hasta un 50%.', tags: ['Energía solar','Ahorro'], link: '/servicios' },
+        aranet:   { num: '03', color: 'var(--blue)',           soft: 'var(--blue-soft)',      icon: '📡', title: 'Sensores Aranet',      desc: 'Partners oficiales en Chile. Humedad de suelo, tensión, T°/HR, CO₂, radiación PAR. Cumplimiento DGA.', tags: ['IoT','Telemetría','DGA'], link: '/servicios' },
+        satelite: { num: '04', color: 'var(--turquoise-deep)', soft: 'var(--turquoise-soft)', icon: '🛰', title: 'Imágenes satelitales',  desc: 'Mapeo periódico del predio con imágenes satelitales: NDVI, estrés hídrico y zonas de manejo diferenciado por cuartel.', tags: ['NDVI','Mapas','Cuarteles'], link: '/servicios' },
+        energia:  { num: '05', color: 'var(--green-deep)',     soft: 'var(--green-soft)',     icon: '⚡', title: 'Medición de energía',  desc: 'Medidor inteligente en la caseta eléctrica del predio. Consumo por bomba, factor de potencia, horas-punta y reportes para cumplir con la norma.', tags: ['Consumo','Factor pot.','Reportes'], link: '/servicios' },
+        auto:     { num: '06', color: 'var(--green)',          soft: 'var(--green-soft)',     icon: '⚙', title: 'Automatización',       desc: 'Tablero eléctrico con control de heladas, cooling, bombas y válvulas. Operación remota 24/7 con alarmas inteligentes.', tags: ['Control remoto','Alarmas','24/7'], link: '/servicios' }
+    };
+
+    setScene(key: string) {
+        this.currentSceneKey = key;
+        // Si el usuario hace clic, detenemos el cambio automático
+        if (this.sceneInterval) clearInterval(this.sceneInterval);
+    }
 
     ngAfterViewInit() {
         this.adjustHeight();
@@ -76,8 +96,18 @@ export class LandingIngeapAgroComponent implements OnInit, AfterViewInit, OnDest
 
     constructor(public layoutService: LayoutService, public router: Router) {}
 
-    ngOnInit() {}
-    ngOnDestroy() {}
+    ngOnInit() {
+        // Inicia el rotador automático cada 3.8 segundos
+        let idx = this.sceneKeys.indexOf(this.currentSceneKey);
+        this.sceneInterval = setInterval(() => {
+            idx = (idx + 1) % this.sceneKeys.length;
+            this.currentSceneKey = this.sceneKeys[idx];
+        }, 3800);
+    }
+
+    ngOnDestroy() {
+        if (this.sceneInterval) clearInterval(this.sceneInterval);
+    }
 
     navigateToFragment(fragment: string) { this.router.navigate(['/agro'], { fragment }); }
     navegarIngeapAgro() { this.router.navigate(['/agro']); }

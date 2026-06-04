@@ -1,32 +1,23 @@
-<div class="py-2 px-4 mx-0 md:mx-6 lg:mx-8 lg:px-8 flex align-items-center justify-content-between relative lg:static bg-gray-100">
-    <a class="flex align-items-center" (click)="navegarIngeap()">
-        <img src="../../../../assets/ingeap/logo1.png" alt="Sakai Logo" height="80" class="mr-0 lg:mr-2">
+<nav class="nav">
+  <div class="nav-inner">
+
+    <a (click)="navegarIngeap()" class="brand" style="cursor: pointer;">
+      <img src="../../../../assets/ingeap/logo1.png" alt="Ingeap Servicios">
     </a>
-    <a pRipple class="cursor-pointer block lg:hidden text-700" pStyleClass=".menu-content" enterClass="hidden" leaveToClass="hidden" [hideOnOutsideClick]="true">
-        <i class="pi pi-bars text-4xl"></i>
-    </a>
-    <div class="menu-content align-items-center flex-grow-1 justify-content-between hidden lg:flex absolute lg:static w-full left-0 px-6 lg:px-0 z-2" style="top:120px">
-        <ul class="list-none p-0 m-0 flex lg:align-items-center select-none flex-column lg:flex-row cursor-pointer bg-gray-100">
-            <li>
-                <a (click)="navigateToFragment('historia')" pRipple class="flex justify-content-center lg:justify-content-start m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3">
-                    <span class="text-2xl">Nuestra Empresa</span>
-                </a>
-            </li>
-            <li>
-                <a (click)="navigateToFragment('negocios')" pRipple class="flex justify-content-center lg:justify-content-start m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3">
-                    <span class="text-2xl">Lineas de Negocios</span>
-                </a>
-            </li>
-            <li>
-                <a (click)="navigateToFragment('clientes')" pRipple class="flex justify-content-center lg:justify-content-start m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3">
-                    <span class="text-2xl">Clientes</span>
-                </a>
-            </li>
-            <li>
-                <a (click)="router.navigate(['home/contacto'])" pRipple class="flex justify-content-center lg:justify-content-start m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3">
-                    <span class="text-2xl">Contacto</span>
-                </a>
-            </li>
-        </ul>
+
+    <div class="brand-switcher">
+      <a (click)="navegarSalas()" class="seg-item sec" style="cursor: pointer;"><span class="sw"></span>Salas El.</a>
+      <a (click)="navegarIngeap()" class="seg-item svc active" style="cursor: pointer;"><span class="sw"></span>Servicios</a>
+      <a (click)="navegarIngeapAgro()" class="seg-item agro" style="cursor: pointer;"><span class="sw"></span>Agro</a>
     </div>
-</div>
+
+    <div class="nav-links">
+      <a (click)="navigateToFragment('historia')" style="cursor: pointer;">Historia</a>
+      <a (click)="navigateToFragment('negocios')" style="cursor: pointer;">Servicios</a>
+      <a (click)="navigateToFragment('clientes')" style="cursor: pointer;">Clientes</a>
+      <a (click)="router.navigate(['home/contacto'])" style="cursor: pointer;">Contacto</a>
+      <a (click)="router.navigate(['home/contacto'])" class="btn btn-primary" style="cursor: pointer; background-color: var(--ink-950); border-color: var(--ink-950); color: white;">Solicitar demo</a>
+    </div>
+
+  </div>
+</nav>
