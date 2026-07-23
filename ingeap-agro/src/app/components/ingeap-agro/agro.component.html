@@ -1,0 +1,61 @@
+<div class="min-h-screen flex flex-column" style="background-color: #fafbfc; color: #1a1f2e;">
+    <!-- HEADER GLOBAL DE LA APP (Fondo claro para combinar) -->
+    <div style="position: fixed; z-index: 1000; background-color: #f5f5f5; width: 100%; border-bottom: 1px solid rgba(0,0,0,0.05);">
+        <app-header></app-header>
+    </div>
+
+    <div class="flex justify-content-center w-full flex-grow-1" style="margin-top: 5.625rem;" #parentDiv>
+        <div class="landing-wrapper overflow-hidden w-full">
+
+            <!-- Secciones modulares extraídas -->
+            <app-agro-hero></app-agro-hero>
+
+            <!-- SECCIÓN: PREMIOS Y RECONOCIMIENTOS -->
+            <section class="premios-section">
+                <div class="container">
+                    <h2 class="premios-title">Premios y Reconocimientos</h2>
+                    <div class="premios-grid">
+                        <div class="premio-item">
+                            <img src="assets/ingeap-agro/servicios/corfo.webp" alt="Corfo">
+                        </div>
+                        <div class="premio-item">
+                            <img src="assets/ingeap-agro/servicios/ganador.png" alt="Ganador">
+                        </div>
+                        <div class="premio-item">
+                            <img src="assets/ingeap-agro/servicios/2dolugar.png" alt="2do Lugar">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+            <section id="servicios">
+                <app-agro-features></app-agro-features>
+            </section>
+
+            <section id="beneficios">
+                <app-agro-map></app-agro-map>
+            </section>
+
+            <!-- Nueva sección de Servicios (06) -->
+            <section id="areas-servicios">
+                <app-agro-servicios></app-agro-servicios>
+            </section>
+
+            <!-- Componente de Redes Sociales (Instagram) integrado -->
+            <section id="comunidad">
+                <app-redes-sociales></app-redes-sociales>
+            </section>
+
+            <app-agro-cta></app-agro-cta>
+
+        </div>
+    </div>
+
+    <!-- FOOTER GLOBAL DE LA APP -->
+    <div class="mt-auto">
+        <app-footer></app-footer>
+    </div>
+</div>

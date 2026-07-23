@@ -1,182 +1,168 @@
-<app-header></app-header>
-<app-header-servicios [highlightId] = 4></app-header-servicios>
-<div class="surface-0 flex justify-content-center">
-    <div id="home-ingeap" class="landing-wrapper overflow-hidden">
-        <div>    
-            <div class="grid">
-                <div class="col-12 my-auto flex flex-column">
-                    <div class="grid menu">
-                        <div class="col-3"></div>
-                        <div class="col-6">
-                            <div class="grid image-section pt-4">
-                                <div class="col-12 mb-2 text-6xl">Automatización de Riego</div>
-                                <span class="col-12 text-2xl ocultar-en-movil ">
-                                   Integrado con selenoides autónomos, Ingeap Agro logra automatizar los sistemas de riego,
-                                   de cualquier campo del país. Para así modenizar la agricultura y hacerla más eficiente.
-                                   Lo que se traduce en una mejor gestión hídrica y facilidad para realizar una de las labores
-                                   más importantes de nuestros huertos.
-                                </span>
-                            </div>  
-                        </div>
-                        <div class="col-3"></div>
-                    </div>
-                </div>  
-            
-            </div>
-        </div>   
-        
-        <div class="ocultar-en-movil">    
-            <div class="grid">
-                <div class="col-12 bg-gray-100 flex flex-column">
-                    <div class="col-12 text-center mt-3 mb-4">
-                        <h2 class="text-5xl font-normal mb-2">Tipos de Automatización</h2>
-                    </div>
-        
-                    <!-- Primera fila: Autónoma -->
-                    <div class="grid align-items-center">
-                        <div class="col-2"></div>
-                        <div class="col-4 flex justify-content-center">
-                            <img src="assets/ingeap-agro/servicios/servicio-ajustado.jpeg" alt="Imagen 2" style="border-radius: 4px; height: 300px; width: 500px;">
-                        </div>
-                        <div class="col-4">
-                            <div class="text-section">
-                                <h3 class="text-6xl text-900 mb-4">Autónoma</h3>
-                                <p class="text-2xl">
-                                    Mediante el uso de un PLC, se logra la automatización completa de riego.
-                                    La cual toma decisiones de manera autónoma,
-                                    mediante las mediciones que obtiene de las sondas IoT.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-2"></div>
-                    </div>
-        
-                    <!-- Segunda fila: Teledirigida -->
-                    <div class="grid align-items-center mt-8">
-                        <div class="col-2"></div>
-                        <div class="col-4">
-                            <div class="text-section">
-                                <h3 class="text-6xl text-900 mb-4">Teledirigida</h3>
-                                <p class="text-2xl">
-                                    Con el uso de controladores de selenoides, se logra la autonomía de estos.
-                                    Los cuales pueden ser accionados mediante cualquier dispositivo móvil.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-4 flex justify-content-center">
-                            <img src="assets/ingeap-agro/menu/5.png" alt="Imagen 5" style="border-radius: 4px; height: 300px; width: 500px;">
-                        </div>
-                        <div class="col-2"></div>
-                    </div>
-                </div>  
-            </div>
-        </div>
+<div class="min-h-screen flex flex-column" style="background-color: var(--bg-main, #fafbfc); color: var(--text-main, #1a1f2e);">
+    <!-- HEADER GLOBAL -->
+    <div style="position: fixed; z-index: 1000; background-color: #f5f5f5; width: 100%; border-bottom: 1px solid rgba(0,0,0,0.05);">
+        <app-header></app-header>
+    </div>
 
-        <div id="" class="px-4 text-center">
-            <div class="grid justify-content-center">
-                <div class="col-12 text-center mt-3 mb-4">
-                    <h2 class="text-5xl font-normal">Beneficios</h2>
+    <!-- ESPACIADOR GLOBAL Y HEADER DE SERVICIOS -->
+    <div class="w-full" style="margin-top: 5.625rem;">
+        <app-header-servicios [highlightId]="4"></app-header-servicios>
+    </div>
+
+    <div class="flex justify-content-center w-full flex-grow-1">
+        <div class="landing-wrapper w-full max-w-7xl mx-auto px-4 py-6">
+
+            <!-- INTRO SECCIÓN -->
+            <div class="grid align-items-center my-6">
+                <div class="col-12 md:col-6 pr-0 md:pr-6 mb-5 md:mb-0">
+                    <h1 class="text-5xl font-bold mb-4 text-900" style="color: var(--ink-950);">Automatización de Riego</h1>
+                    <p class="text-xl line-height-3 text-600 mb-0" style="color: var(--text-gray);">
+                        Integrado con selenoides autónomos, Ingeap Agro logra automatizar los sistemas de riego,
+                        de cualquier campo del país. Para así modenizar la agricultura y hacerla más eficiente.
+                        Lo que se traduce en una mejor gestión hídrica y facilidad para realizar una de las labores
+                        más importantes de nuestros huertos.
+                    </p>
                 </div>
-    
-                <div class="col-12 md:col-12 lg:col-6 p-0 lg:pr-5 lg:pb-5 mt-4 lg:mt-0">
-                    <div style="height:225px; padding:2px; border-radius:10px; background: linear-gradient(90deg, rgba(253, 228, 165, 0.2),rgba(187, 199, 205, 0.2)), linear-gradient(180deg, rgba(253, 228, 165, 0.2),rgba(187, 199, 205, 0.2));">
-                        <div class="p-3 surface-card h-full" style="border-radius:8px;">
-                            <div class="flex align-items-center justify-content-center">
-                                <div class="flex align-items-center justify-content-center" style="width:5rem;height:5rem; border-radius:10px;">
-                                    <img src="assets/ingeap-agro/iconos/26.png" alt="Cumplimiento de Ley" style="width: 100%; height: 80%; object-fit: contain; border-radius:10px;">
-                                </div>
-                            </div>
-                            <div class="mb-2 text-2xl text-900">Acción Remota</div>
-                            <span class="text-lg">Mediante el uso de ambos tipos de automatización se puede lograr dar o cortar el 
-                                flujo de agua de manera remota, sin importar el lugar del mundo en el que se encuentre, solo se debe tener acceso a internet.
-                            </span>
-                        </div>
+                <div class="col-12 md:col-6">
+                    <div class="border-round-2xl overflow-hidden shadow-4" style="aspect-ratio: 16/9;">
+                        <img src="assets/ingeap-agro/menu/4.jpeg" class="w-full h-full" style="object-fit: cover;" alt="Automatización de Riego">
                     </div>
-                </div>
-        
-                <div class="col-12 md:col-12 lg:col-6 p-0 lg:pr-5 lg:pb-5 mt-4 lg:mt-0">
-                    <div style="height:225px; padding:2px; border-radius:10px; background: linear-gradient(90deg, rgba(145,226,237,0.2),rgba(251, 199, 145, 0.2)), linear-gradient(180deg, rgba(253, 228, 165, 0.2), rgba(172, 180, 223, 0.2));">
-                        <div class="p-3 surface-card h-full" style="border-radius:8px;">
-                            <div class="flex align-items-center justify-content-center">
-                                <div class="flex align-items-center justify-content-center" style="width:5rem;height:5rem; border-radius:10px;">
-                                    <img src="assets/ingeap-agro/iconos/27.png" alt="Cumplimiento de Ley" style="width: 100%; height: 80%; object-fit: contain; border-radius:10px;">
-                                </div>
-                            </div>
-                            <div class="mb-2 text-2xl text-900">Automatización de labores</div>
-                            <span class="text-lg">Con este sistema ya no será necesario enviar a una persona a abrir y cerrar llaves de manera manual, debido a que se podrá realizar este servicio de manera remota, permitiéndole al agricultor aumentar la eficiencia de su riego.</span>
-                        </div>
-                    </div>
-                </div>
-        
-                <div class="col-12 md:col-12 lg:col-6 p-0 lg:pr-5 lg:pb-5 mt-4 lg:mt-0">
-                    <div style="height:225px; padding:2px; border-radius:10px; background: linear-gradient(90deg, rgba(145, 226, 237, 0.2), rgba(172, 180, 223, 0.2)), linear-gradient(180deg, rgba(172, 180, 223, 0.2), rgba(246, 158, 188, 0.2));">
-                        <div class="p-3 surface-card h-full" style="border-radius:8px;">
-                            <div class="flex align-items-center justify-content-center">
-                                <div class="flex align-items-center justify-content-center" style="width:5rem;height:5rem; border-radius:10px;">
-                                    <img src="assets/ingeap-agro/iconos/28.png" alt="Cumplimiento de Ley" style="width: 100%; height: 80%; object-fit: contain; border-radius:10px;">
-                                </div>
-                            </div>
-                            <div class="mb-2 text-2xl text-900">Precisión</div>
-                            <span class="text-lg">El análisis realizado por el plc permite enviar el pulso de riego en el momento exacto y cantidad precisa. Sin tener que realizar calicatas u otro método físico que nos permita conocer el estado del suelo.</span>
-                        </div>
-                    </div>
-                </div>
-        
-                <div class="col-12 md:col-12 lg:col-6 p-0 lg:pr-5 lg:pb-5 mt-4 lg:mt-0">
-                    <div style="height:225px; padding:2px; border-radius:10px; background: linear-gradient(90deg, rgba(187, 199, 205, 0.2),rgba(251, 199, 145, 0.2)), linear-gradient(180deg, rgba(253, 228, 165, 0.2),rgba(145, 210, 204, 0.2));">
-                        <div class="p-3 surface-card h-full" style="border-radius:8px;">
-                            <div class="flex align-items-center justify-content-center">
-                                <div class="flex align-items-center justify-content-center" style="width:5rem;height:5rem; border-radius:10px;">
-                                    <img src="assets/ingeap-agro/iconos/29.png" alt="Cumplimiento de Ley" style="width: 100%; height: 80%; object-fit: contain; border-radius:10px;">
-                                </div>
-                            </div>
-                            <div class="mb-2 text-2xl text-900">Tecnología</div>
-                            <span class="text-lg">La integración de diversas tecnologías confluyen en la implementación de este sistema. Ya que une el universo de los sensores con el mundo de la automatización con los más altos estándares de calidad.</span>
-                        </div>
-                    </div>
-                </div>          
-            </div>
-        </div>
-        
-        <div id="" class="px-4 text-center">
-            <div class="grid justify-content-center">
-                <div class="col-12 text-center mt-3 mb-4">
-                    <h2 class="text-5xl font-normal mb-2">FAQ's</h2>
-                </div>
-    
-                <div class="col-12 md:col-12 lg:col-3 p-0 lg:pr-5 lg:pb-5 mt-4 lg:mt-0">
-                    <p-accordion [activeIndex]="1">
-                        <p-accordionTab header="¿Como funciona este servicios?">
-                            <p>
-                                Los sensores IoT detectan el parámetro, en este caso es el potencial matrico del suelo. 
-                                Luego estos datos son procesados por un plc, en donde esta la información de toma decisiones
-                                pre cargado. Luego estos datos son los que permiten el accionar de la válvula de riego.
-                            </p>
-                        </p-accordionTab>
-                    </p-accordion>
-                </div>
-                <div class="col-12 md:col-12 lg:col-3 p-0 lg:pr-5 lg:pb-5 mt-4 lg:mt-0">
-                    <p-accordion [activeIndex]="2">
-                        <p-accordionTab header="¿Como detecto el correcto funcionamiento del sistema?">
-                            <p>
-                                La instalación de este sistema esta compuesto por un flujómetro el cual indica si esta pasando agua por el sistema de riego e indica la condición de falla.
-                            </p>
-                        </p-accordionTab>
-                    </p-accordion>
-                </div>
-                <div class="col-12 md:col-12 lg:col-3 p-0 lg:pr-5 lg:pb-5 mt-4 lg:mt-0">
-                    <p-accordion [activeIndex]="3">
-                        <p-accordionTab header="¿Qué es un PLC?">
-                            <p>
-                                Un PLC (Controlador Lógico Programable, por sus siglas en inglés) es un dispositivo electrónico utilizado en la automatización,
-                                programable para realizar tareas como encender y apagar dispositivos, monitorear sensores, y manejar señales de entrada y 
-                                salida, un PLC actúa como el "cerebro" de sistemas de automatización, ejecutando operaciones de manera precisa y confiable en entornos industriales.
-                            </p>
-                        </p-accordionTab>
-                    </p-accordion>
                 </div>
             </div>
+
+            <!-- TIPOS DE AUTOMATIZACIÓN -->
+            <div class="py-6 mt-4 border-top-1 border-200">
+                <div class="text-center mb-6">
+                    <h2 class="text-4xl font-bold mb-2 text-900">Tipos de Automatización</h2>
+                </div>
+
+                <div class="flex flex-column gap-6">
+                    <!-- Autónoma -->
+                    <div class="grid align-items-center">
+                        <div class="col-12 md:col-6 flex justify-content-center mb-4 md:mb-0">
+                            <div class="border-round-2xl overflow-hidden shadow-3" style="width: 100%; max-width: 500px; aspect-ratio: 5/3;">
+                                <img src="assets/ingeap-agro/servicios/servicio-ajustado.jpeg" class="w-full h-full" style="object-fit: cover;" alt="Autónoma">
+                            </div>
+                        </div>
+                        <div class="col-12 md:col-6 md:pl-6">
+                            <h3 class="text-4xl font-bold text-900 mb-3" style="color: #31a5b3;">Autónoma</h3>
+                            <p class="text-xl line-height-3 text-600 m-0">
+                                Mediante el uso de un PLC, se logra la automatización completa de riego.
+                                La cual toma decisiones de manera autónoma,
+                                mediante las mediciones que obtiene de las sondas IoT.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Teledirigida -->
+                    <div class="grid align-items-center flex-column-reverse md:flex-row">
+                        <div class="col-12 md:col-6 md:pr-6">
+                            <h3 class="text-4xl font-bold text-900 mb-3" style="color: #31a5b3;">Teledirigida</h3>
+                            <p class="text-xl line-height-3 text-600 m-0">
+                                Con el uso de controladores de selenoides, se logra la autonomía de estos.
+                                Los cuales pueden ser accionados mediante cualquier dispositivo móvil.
+                            </p>
+                        </div>
+                        <div class="col-12 md:col-6 flex justify-content-center mb-4 md:mb-0">
+                            <div class="border-round-2xl overflow-hidden shadow-3" style="width: 100%; max-width: 500px; aspect-ratio: 5/3;">
+                                <img src="assets/ingeap-agro/menu/5.png" class="w-full h-full" style="object-fit: cover;" alt="Teledirigida">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BENEFICIOS -->
+            <div class="py-6 mt-4">
+                <div class="text-center mb-6">
+                    <h2 class="text-4xl font-bold mb-2 text-900">Beneficios</h2>
+                </div>
+
+                <div class="grid">
+                    <!-- Card 1 -->
+                    <div class="col-12 md:col-6 p-3">
+                        <div class="p-4 h-full bg-white border-round-2xl shadow-1 border-1 border-200 hover:shadow-4 transition-all transition-duration-300 hover:-translate-y-1">
+                            <div class="flex align-items-center justify-content-center mb-4" style="width: 4.5rem; height: 4.5rem; background: rgba(49, 165, 179, 0.08); border-radius: 14px;">
+                                <img src="assets/ingeap-agro/iconos/26.png" alt="Acción Remota" style="width: 60%; height: 60%; object-fit: contain;">
+                            </div>
+                            <h3 class="text-xl font-bold text-900 mb-3">Acción Remota</h3>
+                            <p class="text-600 line-height-3 m-0">Mediante el uso de ambos tipos de automatización se puede lograr dar o cortar el flujo de agua de manera remota, sin importar el lugar del mundo en el que se encuentre, solo se debe tener acceso a internet.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="col-12 md:col-6 p-3">
+                        <div class="p-4 h-full bg-white border-round-2xl shadow-1 border-1 border-200 hover:shadow-4 transition-all transition-duration-300 hover:-translate-y-1">
+                            <div class="flex align-items-center justify-content-center mb-4" style="width: 4.5rem; height: 4.5rem; background: rgba(101, 172, 74, 0.08); border-radius: 14px;">
+                                <img src="assets/ingeap-agro/iconos/27.png" alt="Automatización de labores" style="width: 60%; height: 60%; object-fit: contain;">
+                            </div>
+                            <h3 class="text-xl font-bold text-900 mb-3">Automatización de labores</h3>
+                            <p class="text-600 line-height-3 m-0">Con este sistema ya no será necesario enviar a una persona a abrir y cerrar llaves de manera manual, debido a que se podrá realizar este servicio de manera remota, permitiéndole al agricultor aumentar la eficiencia de su riego.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="col-12 md:col-6 p-3">
+                        <div class="p-4 h-full bg-white border-round-2xl shadow-1 border-1 border-200 hover:shadow-4 transition-all transition-duration-300 hover:-translate-y-1">
+                            <div class="flex align-items-center justify-content-center mb-4" style="width: 4.5rem; height: 4.5rem; background: rgba(247, 201, 44, 0.08); border-radius: 14px;">
+                                <img src="assets/ingeap-agro/iconos/28.png" alt="Precisión" style="width: 60%; height: 60%; object-fit: contain;">
+                            </div>
+                            <h3 class="text-xl font-bold text-900 mb-3">Precisión</h3>
+                            <p class="text-600 line-height-3 m-0">El análisis realizado por el plc permite enviar el pulso de riego en el momento exacto y cantidad precisa. Sin tener que realizar calicatas u otro método físico que nos permita conocer el estado del suelo.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="col-12 md:col-6 p-3">
+                        <div class="p-4 h-full bg-white border-round-2xl shadow-1 border-1 border-200 hover:shadow-4 transition-all transition-duration-300 hover:-translate-y-1">
+                            <div class="flex align-items-center justify-content-center mb-4" style="width: 4.5rem; height: 4.5rem; background: rgba(49, 165, 179, 0.08); border-radius: 14px;">
+                                <img src="assets/ingeap-agro/iconos/29.png" alt="Tecnología" style="width: 60%; height: 60%; object-fit: contain;">
+                            </div>
+                            <h3 class="text-xl font-bold text-900 mb-3">Tecnología</h3>
+                            <p class="text-600 line-height-3 m-0">La integración de diversas tecnologías confluyen en la implementación de este sistema. Ya que une el universo de los sensores con el mundo de la automatización con los más altos estándares de calidad.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ -->
+            <div class="py-6">
+                <div class="text-center mb-5">
+                    <h2 class="text-4xl font-bold mb-2 text-900">FAQ's</h2>
+                </div>
+
+                <div class="grid justify-content-center">
+                    <div class="col-12 lg:col-10">
+                        <p-accordion [multiple]="true">
+                            <p-accordionTab header="¿Como funciona este servicios?">
+                                <p class="line-height-3 m-0 text-700">
+                                    Los sensores IoT detectan el parámetro, en este caso es el potencial matrico del suelo.
+                                    Luego estos datos son procesados por un plc, en donde esta la información de toma decisiones
+                                    pre cargado. Luego estos datos son los que permiten el accionar de la válvula de riego.
+                                </p>
+                            </p-accordionTab>
+                            <p-accordionTab header="¿Como detecto el correcto funcionamiento del sistema?">
+                                <p class="line-height-3 m-0 text-700">
+                                    La instalación de este sistema esta compuesto por un flujómetro el cual indica si esta pasando agua por el sistema de riego e indica la condición de falla.
+                                </p>
+                            </p-accordionTab>
+                            <p-accordionTab header="¿Qué es un PLC?">
+                                <p class="line-height-3 m-0 text-700">
+                                    Un PLC (Controlador Lógico Programable, por sus siglas en inglés) es un dispositivo electrónico utilizado en la automatización,
+                                    programable para realizar tareas como encender y apagar dispositivos, monitorear sensores, y manejar señales de entrada y
+                                    salida, un PLC actúa como el "cerebro" de sistemas de automatización, ejecutando operaciones de manera precisa y confiable en entornos industriales.
+                                </p>
+                            </p-accordionTab>
+                        </p-accordion>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
+
+    <!-- FOOTER GLOBAL DE LA APP -->
+    <div class="mt-auto">
+        <app-footer></app-footer>
+    </div>
 </div>
-<app-footer></app-footer>

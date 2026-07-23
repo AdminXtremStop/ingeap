@@ -1,27 +1,56 @@
-<div class="redes-sociales">
-    <div class="col-12 text-center mb-4">
-        <h2 class="text-5xl font-normal mb-2">Redes Sociales</h2>
-    </div>
-
-    <div class="follow-button mb-4">
-      <a href="https://www.instagram.com/ingeap.agro/" target="_blank" class="btn-follow">
-        Seguir en Instagram
-      </a>
-    </div>
-
-    <p-progressSpinner ariaLabel="loading" *ngIf="!Instagramposts"/>
-
-    <div *ngIf="Instagramposts" class="instagram-container mb-4">
-      <div *ngFor="let post of Instagramposts; let i = index" 
-           class="post" [ngClass]="getSizeClass(i)">
-        <a [href]="post.permalink" target="_blank">
-          <img *ngIf="post.media_type === 'IMAGE' || post.media_type === 'CAROUSEL_ALBUM'" 
-               [src]="post.media_url" alt="Instagram Post" />
-          <img *ngIf="post.media_type === 'VIDEO'" 
-               [src]="post.thumbnail_url" alt="Instagram Video" />
+<div class="py-6 w-full instagram-section-wrap" style="background: var(--bg-soft, #f8f9fa); position: relative;">
+    <div class="text-center mb-6 px-4">
+        <span class="eyebrow" style="display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono, monospace); font-size: 0.85rem; text-transform: uppercase; color: var(--turquoise, #31a5b3); letter-spacing: 0.5px; margin-bottom: 8px;">
+            <span class="num" style="opacity: 0.4;">07</span> Galería
+        </span>
+        <h2 class="text-4xl font-bold mb-3 text-900" style="font-family: var(--font-display, inherit); color: #1a1f2e;">Trabajos Realizados</h2>
+        <p class="text-lg text-600 max-w-30rem mx-auto mb-4" style="line-height: 1.6; color: #718096;">
+            Explora las imágenes de nuestras últimas instalaciones en terreno. Soluciones de telemetría y automatización en acción.
+        </p>
+        <a href="https://www.instagram.com/ingeap.agro/" target="_blank" class="btn-instagram inline-flex align-items-center justify-content-center gap-2 px-4 py-3 border-round-3xl font-bold text-white text-lg transition-all transition-duration-300 hover:-translate-y-1 hover:shadow-4 text-decoration-none shadow-2" style="background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);">
+            <i class="pi pi-instagram text-xl"></i>
+            &#64;ingeap.agro
         </a>
-      </div>
-    </div>                     
-  
+    </div>
+
+    <!-- Estado de Carga -->
+    <div class="flex justify-content-center my-6" *ngIf="isLoading">
+        <p-progressSpinner ariaLabel="Cargando publicaciones"></p-progressSpinner>
+    </div>
+
+    <!-- Carrusel de Imágenes de Trabajos -->
+    <div *ngIf="!isLoading && instagramPosts.length > 0" class="instagram-carousel-container max-w-7xl mx-auto px-4">
+        <p-carousel 
+            [value]="instagramPosts" 
+            [numVisible]="4" 
+            [numScroll]="1" 
+            [circular]="true" 
+            [autoplayInterval]="4000"
+            [responsiveOptions]="responsiveOptions"
+            [showNavigators]="true"
+            class="instagram-gallery-carousel">
+            <ng-template let-post pTemplate="item">
+                <div class="gallery-item-wrap px-2 py-3">
+                    <a [href]="post.permalink" target="_blank" class="gallery-item-card block relative border-round-2xl overflow-hidden shadow-2 hover:shadow-6 transition-all transition-duration-300 cursor-pointer aspect-ratio-1" style="aspect-ratio: 1; display: block; position: relative;">
+                        <!-- Imagen de fondo -->
+                        <img *ngIf="post.media_type === 'IMAGE' || post.media_type === 'CAROUSEL_ALBUM'"
+                             [src]="post.media_url" [alt]="post.caption || 'Trabajo realizado'" class="gallery-img w-full h-full object-fit-cover transition-all transition-duration-500 absolute top-0 left-0" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover;" />
+                        <img *ngIf="post.media_type === 'VIDEO'"
+                             [src]="post.thumbnail_url || 'assets/ingeap-agro/carrusel/5.png'" [alt]="post.caption || 'Trabajo realizado'" class="gallery-img w-full h-full object-fit-cover transition-all transition-duration-500 absolute top-0 left-0" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover;" />
+                        
+                        <!-- Capa oscura e info en Hover -->
+                        <div class="gallery-hover-overlay absolute inset-0 flex flex-column justify-content-end p-4 opacity-0 transition-opacity transition-duration-300" style="background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.1) 100%); position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 10;">
+                            <i class="pi pi-instagram text-white text-3xl mb-3 align-self-start"></i>
+                            <p class="text-white text-sm line-height-3 mb-3 text-ellipsis" style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; margin: 0; font-family: inherit;">
+                                {{ post.caption || 'Instalación y monitoreo de tecnología agrícola.' }}
+                            </p>
+                            <span class="text-xs font-semibold flex align-items-center gap-1 uppercase tracking-wider" style="color: var(--turquoise, #31a5b3);">
+                                Ver en Instagram <i class="pi pi-arrow-up-right text-xs"></i>
+                            </span>
+                        </div>
+                    </a>
+                </div>
+            </ng-template>
+        </p-carousel>
+    </div>
 </div>
-  

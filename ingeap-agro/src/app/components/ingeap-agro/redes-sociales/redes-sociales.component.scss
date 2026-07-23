@@ -1,88 +1,88 @@
-.redes-sociales {
-    text-align: center;
-  }
-  
-.iconos {
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 20px;
-}
-  
-.icono {
-  cursor: pointer;
-  color: green;
-}
-  
-.informacion {
-  margin-top: 20px;
-}
-  
-.informacion img {
-  width: 100px;
-  height: 100px;
-  margin-right: 10px;
-}
-  
-/* Imagenes Instagram */
-.instagram-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
-  gap: 10px;
-  justify-items: center;
-  align-items: start;
-  max-width: 1000px;
-  margin: 0 auto;
+/* Botón con el degradado oficial de Instagram */
+.btn-instagram {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  border: none;
+  box-shadow: 0 4px 15px rgba(220, 39, 67, 0.3);
 }
 
-.instagram-container .post {
+.instagram-section-wrap {
   position: relative;
   overflow: hidden;
-  transition: transform 0.3s ease-in-out; 
 }
 
-.instagram-container .post.size-small {
-  grid-column: span 1; 
-  grid-row: span 1; 
+/* Gallery Item Cards Layout */
+.gallery-item-wrap {
+  height: 100%;
 }
 
-.instagram-container .post.size-medium {
-  grid-column: span 1; 
-  grid-row: span 2; 
-}
-
-.instagram-container .post.size-large {
-  grid-column: span 2; 
-  grid-row: span 2; 
-}
-
-.instagram-container .post img {
+.gallery-item-card {
+  position: relative;
   width: 100%;
-  height: auto;
-  object-fit: cover;
-  transition: transform 0.3s ease-in-out;
+  aspect-ratio: 1; /* Cuadrado perfecto */
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #f1f2f5;
+  transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+
+  .gallery-img {
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .gallery-hover-overlay {
+    transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transform: translateY(5px);
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+
+    .gallery-img {
+      transform: scale(1.08);
+    }
+
+    .gallery-hover-overlay {
+      opacity: 1 !important;
+      transform: translateY(0);
+    }
+  }
 }
 
-.instagram-container .post:hover img {
-  transform: scale(1.1); 
-}
+/* Custom primeNG carousel overrides for Gallery Slider */
+.instagram-gallery-carousel {
+  ::ng-deep {
+    .p-carousel-content {
+      overflow: visible !important;
+    }
+    
+    .p-carousel-indicators {
+      margin-top: 1.5rem;
+      padding: 0;
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+    }
 
-/* end estilo contenedor de img Instagram*/
+    .p-carousel-indicator button {
+      background-color: rgba(0, 0, 0, 0.15) !important;
+      width: 8px !important;
+      height: 8px !important;
+      border-radius: 50% !important;
+      border: none !important;
+      padding: 0 !important;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+      cursor: pointer;
 
-/* Estilo para el botón de seguir en Instagram */
-.follow-button {
-  margin-top: 20px;
-  text-align: center;
-}
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.35) !important;
+      }
+    }
 
-.btn-follow {
-  background-color: #E1306C; /* Color de fondo similar al de Instagram */
-  color: white; /* Color del texto */
-  padding: 10px 20px; /* Espaciado interno */
-  border-radius: 5px; /* Bordes redondeados */
-  text-decoration: none; /* Sin subrayado */
-  font-weight: bold; /* Texto en negrita */
-}
-
-.btn-follow:hover {
-  background-color: #C13584; /* Color de fondo al pasar el mouse */
+    .p-carousel-indicator.p-highlight button {
+      background-color: var(--turquoise, #31a5b3) !important;
+      width: 24px !important;
+      border-radius: 4px !important;
+    }
+  }
 }

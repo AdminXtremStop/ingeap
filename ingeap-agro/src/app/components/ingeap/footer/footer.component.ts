@@ -1,16 +1,14 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FooterSharedComponent } from 'src/app/shared/components/footer/footer-shared.component';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, FooterSharedComponent],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
-
-  
-  topBarData = {direccion: "Ariztia 1050 Quillota", correo: "Atención/ ventas@ingeap.cl", numeroContacto: "+56 9 7517 5359"};
-
-
 }
+

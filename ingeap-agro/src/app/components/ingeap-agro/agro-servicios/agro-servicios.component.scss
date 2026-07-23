@@ -1,0 +1,167 @@
+/* Container base por si no está global */
+.container {
+  max-width: var(--container, 1240px);
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+.section-light {
+  padding: var(--space-section, 96px) 0;
+  background: var(--bg-soft, #f5f6f8);
+}
+
+/* Header de la sección */
+.section-header {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 64px;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  .head-left {
+    flex: 1;
+    max-width: 500px;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: var(--turquoise);
+    letter-spacing: 0.5px;
+
+    .num { opacity: 0.4; color: inherit; font-size: inherit; }
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 1.15;
+    margin: 16px 0 0 0;
+    color: var(--ink-950);
+
+    em {
+      font-style: normal;
+      color: var(--turquoise);
+    }
+  }
+
+  .lead {
+    flex: 1;
+    max-width: 500px;
+    color: var(--ink-700);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+}
+
+/* Grilla de Servicios */
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gutter, 32px);
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Tarjetas de Servicios */
+.svc-card {
+  background: var(--white);
+  border: 1px solid var(--ink-200);
+  border-radius: var(--r-xl, 28px);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+
+  /* Las variables locales (--svc-color, --svc-soft) vienen del HTML */
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--svc-color);
+
+    .icon {
+      background: var(--svc-color);
+      color: var(--white);
+      transform: scale(1.05);
+    }
+
+    .link {
+      color: var(--svc-color);
+      span {
+        transform: translateX(4px);
+      }
+    }
+  }
+
+  .svc-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 24px;
+
+    .icon {
+      width: 56px;
+      height: 56px;
+      border-radius: var(--r-md, 16px);
+      background: var(--svc-soft);
+      color: var(--svc-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .num {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      color: var(--ink-300);
+      font-weight: 600;
+    }
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--ink-900);
+    margin: 0 0 12px 0;
+  }
+
+  p {
+    color: var(--ink-700);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0 0 32px 0;
+    flex-grow: 1; /* Empuja el link hacia abajo si las tarjetas tienen distintas alturas */
+  }
+
+  .link {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--ink-900);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.2s ease;
+
+    span {
+      transition: transform 0.2s ease;
+    }
+  }
+}

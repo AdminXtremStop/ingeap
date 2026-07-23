@@ -1,233 +1,275 @@
-<app-header></app-header>
-<app-header-servicios [highlightId] = 7></app-header-servicios>
-<div class="surface-0 flex justify-content-center">
-    <div id="home-ingeap" class="landing-wrapper overflow-hidden">
-        <div>    
-            <div class="grid">
-                <div class="col-12 my-auto">
-                    <div class="grid">
-                        <div class="col-3"></div>
-                        <div class="col-6">
-                            <div class="grid image-section pt-4">
-                                <div class="col-12 mb-2 text-6xl text-900">Solución IoT para tu Negocio.</div>
-                                <span class="col-12 text-2xl ocultar-en-movil">
-                                    INGEAP AGRO, como partner oficial de Aranet te ayuda con la comprensión y soporte del ecosistema IoT de Aranet,
-                                    el cual se destaca como un actor único en el mercado de sensores inalámbricos. Nos encargamos de diseñar, fabricar
-                                    y desarrollar una solución completa que incluye sensores, una estación base 3 en 1 (compuesta por una puerta de enlace, 
-                                    almacenamiento de datos y servidor web) y una nube.
-                                </span>
-                            </div>  
-                        </div>
-                        <div class="col-3"></div>
+<div class="min-h-screen flex flex-column" style="background-color: var(--bg-main, #fafbfc); color: var(--text-main, #1a1f2e);">
+    <!-- HEADER GLOBAL -->
+    <div style="position: fixed; z-index: 1000; background-color: #f5f5f5; width: 100%; border-bottom: 1px solid rgba(0,0,0,0.05);">
+        <app-header></app-header>
+    </div>
+
+    <!-- ESPACIADOR GLOBAL Y HEADER DE SERVICIOS -->
+    <div class="w-full" style="margin-top: 5.625rem;">
+        <app-header-servicios [highlightId]="7"></app-header-servicios>
+    </div>
+
+    <div class="flex justify-content-center w-full flex-grow-1">
+        <div class="landing-wrapper w-full max-w-7xl mx-auto px-4 py-6">
+
+            <!-- INTRO Y SENSORES SECCIÓN -->
+            <section class="intro-hero-section">
+                <!-- Orbes difuminados de fondo -->
+                <div class="hero-orb tq"></div>
+                <div class="hero-orb gr"></div>
+                <div class="hero-orb bl"></div>
+                <div class="hero-orb yl"></div>
+                <div class="hero-orb tq2"></div>
+
+                <div class="text-center mb-6 max-w-4xl mx-auto" style="position: relative; z-index: 2;">
+                    <h1 class="text-5xl font-bold mb-4 text-900" style="color: var(--ink-950);">Solución IoT para tu Negocio.</h1>
+                    <p class="text-xl line-height-3 text-600 m-0" style="color: var(--text-gray);">
+                        INGEAP AGRO, como partner oficial de Aranet te ayuda con la comprensión y soporte del ecosistema IoT de Aranet,
+                        el cual se destaca como un actor único en el mercado de sensores inalámbricos. Nos encargamos de diseñar, fabricar
+                        y desarrollar una solución completa que incluye sensores, una estación base 3 en 1 (compuesta por una puerta de enlace,
+                        almacenamiento de datos y servidor web) y una nube.
+                    </p>
+                </div>
+
+                <div class="py-6 mt-6" style="position: relative; z-index: 2;">
+                    <div class="text-center mb-6">
+                        <h2 class="text-4xl font-bold mb-2 text-900" style="color: var(--ink-950);">Sensores Disponibles</h2>
                     </div>
-                </div>  
-            
-            </div>
-        </div>   
-        
-        <div class="grid justify-content-center">
-            <!-- Fila 1 -->
-            <div class="col-12 md:col-6 lg:col-5 p-4 flex justify-content-end flex-wrap">
-                <div class="card">
-                    <h4 class="text-center">Sensor de Pluviometría</h4>
-                    <p-carousel [value]="imagesPluviometria" [numVisible]="1" [numScroll]="1" [circular]="true" autoplayInterval="5000">
-                        <ng-template pTemplate="item" let-image>
-                            <img [src]="image.source" [alt]="image.alt" class="w-20rem h-20rem">
-                        </ng-template>
-                    </p-carousel>
-                    <p class="text-center text-lg">El kit de sensores de lluvia y precipitación Aranet está diseñado específicamente para el monitoreo de lluvia y lluvia en exteriores.</p>
-                    <ul class="text-lg">
-                        <li class="text-lg">Precisión: ± 2%</li>
-                        <li class="text-lg">Inalámbrico y con batería</li>
-                        <li class="text-lg">IP68</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-12 md:col-6 lg:col-5 p-4">
-                <div class="card">
-                    <h4 class="text-center">Sensor de LUX</h4>
-                    <p-carousel [value]="imagesLUX" [numVisible]="1" [numScroll]="1" [circular]="true" autoplayInterval="5000">
-                        <ng-template pTemplate="item" let-image>
-                            <img [src]="image.source" [alt]="image.alt" class="w-20rem h-20rem">
-                        </ng-template>
-                    </p-carousel>
-                    <p class="text-center text-lg">El sensor de lux permite conocer la cantidad de luz visible en un área.</p>
-                    <ul class="text-lg">
-                        <li class="text-lg">Rangos: LUX:0-200.000 lux.</li>
-                        <li class="text-lg">Inalámbrico y con batería.</li>
-                        <li class="text-lg">IP67</li>
-                    </ul>
-                </div>
-            </div>
-        
-            <!-- Fila 2 -->
-            <div class="col-12 md:col-6 lg:col-5 p-4 flex justify-content-end flex-wrap">
-                <div class="card">
-                    <h4 class="text-center">Sensor de Temperatura</h4>
-                    <p-carousel [value]="imagesTemperatura" [numVisible]="1" [numScroll]="1" [circular]="true" autoplayInterval="5000">
-                        <ng-template pTemplate="item" let-image>
-                            <img [src]="image.source" [alt]="image.alt" class="w-20rem h-20rem">
-                        </ng-template>
-                    </p-carousel>
-                    <p class="text-center text-lg">Mide la temperatura a través de distintos tipos de sustratos,  tal como lana de roca, fibra de coco, suelo desnudo, entre otras.</p>
-                    <ul class="text-lg">
-                        <li class="text-lg">Rangos: -40°C / 60°C</li>
-                        <li class="text-lg">Inalámbrico y con batería</li>
-                        <li class="text-lg">IP68</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-12 md:col-6 lg:col-5 p-4">
-                <div class="card">
-                    <h4 class="text-center">Sensor de Drenaje</h4>
-                    <p-carousel [value]="imagesDrenaje" [numVisible]="1" [numScroll]="1" [circular]="true" autoplayInterval="5000">
-                        <ng-template pTemplate="item" let-image>
-                            <img [src]="image.source" [alt]="image.alt" class="w-20rem h-20rem">
-                        </ng-template>
-                    </p-carousel>
-                    <p class="text-center text-lg">Este instrumento permite conocer en tiempo real la cantidad de agua que ha sido drenada desde algún afluente.</p>
-                    <ul class="text-lg">
-                        <li class="text-lg">Rangos: 1 pulso/ 5 mL</li>
-                        <li class="text-lg">Inalámbrico y con batería</li>
-                        <li class="text-lg">IP68</li>
-                    </ul>
-                </div>
-            </div>
 
-            <!-- Fila 3 -->
-            <div class="col-12 md:col-6 lg:col-5 p-4 flex justify-content-end flex-wrap">
-                <div class="card">
-                    <h4 class="text-center">Sensor T°/HR.</h4>
-                    <p-carousel [value]="imagesSensorTHR" [numVisible]="1" [numScroll]="1" [circular]="true" autoplayInterval="5000">
-                        <ng-template pTemplate="item" let-image>
-                            <img [src]="image.source" [alt]="image.alt" class="w-20rem h-20rem">
-                        </ng-template>
-                    </p-carousel>
-                    <p class="text-center text-lg">Este instrumento mide temperatura ambiental y Humedad relativa.</p>
-                    <ul class="text-lg">
-                        <li class="text-lg">Rangos:   -T°: -40°C / 85°C.
-                            -HR: 0%-100%</li>
-                        <li class="text-lg">Inalámbrico y con batería</li>
-                        <li class="text-lg">IP67</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-12 md:col-6 lg:col-5 p-4">
-                <div class="card">
-                    <h4 class="text-center">Sensor Movimiento de Savia.</h4>
-                    <p-carousel [value]="imagesMovimientoSavia" [numVisible]="1" [numScroll]="1" [circular]="true" autoplayInterval="5000">
-                        <ng-template pTemplate="item" let-image>
-                            <img [src]="image.source" [alt]="image.alt" class="w-20rem h-20rem">
-                        </ng-template>
-                    </p-carousel>
-                    <p class="text-center text-lg">El sensor de flujo de savia está diseñado para monitorear la relativa
-                        variaciones del caudal de savia en plantas pecíolo o brote pequeño.</p>
-                </div>
-            </div>
-        
-            <!-- Fila 4 -->
-            <div class="col-12 md:col-6 lg:col-5 p-4 flex justify-content-end flex-wrap">
-                <div class="card">
-                    <h4 class="text-center">Sensor de “Suelo”</h4>
-                    <p-carousel [value]="imagesSuelo" [numVisible]="1" [numScroll]="1" [circular]="true" autoplayInterval="5000">
-                        <ng-template pTemplate="item" let-image>
-                            <img [src]="image.source" [alt]="image.alt" class="w-20rem h-20rem">
-                        </ng-template>
-                    </p-carousel>
-                    <p class="text-center text-lg">El sensor de suelo mide temperatura, CE y contenido volumétrico de diversos sustratos.</p>
-                    <ul class="text-lg">
-                        <li class="text-lg">Rangos:        -CE: 0-12 ds/m. 
-                            -Cont.Vol: 0-100%
-                            -T°: -20°C/60°C</li>
-                        <li class="text-lg">Inalámbrico y con batería</li>
-                        <li class="text-lg">IP67</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-12 md:col-6 lg:col-5 p-4">
-                <div class="card">
-                    <h4 class="text-center">Sensor de CO2</h4>
-                    <p-carousel [value]="imagesCO2" [numVisible]="1" [numScroll]="1" [circular]="true" autoplayInterval="5000">
-                        <ng-template pTemplate="item" let-image>
-                            <img [src]="image.source" [alt]="image.alt" class="w-20rem h-20rem">
-                        </ng-template>
-                    </p-carousel>
-                    <p class="text-center text-lg">Este instrumento mide la concentración de CO2 ambiental y presión atmosférica.</p>
-                    <ul class="text-lg">
-                        <li class="text-lg">Rangos: 
-                            -CO2: 0-9999 ppm.</li>
-                        <li class="text-lg">Inalámbrico y con batería</li>
-                        <li class="text-lg">IP67</li>
-                    </ul>
-                </div>
-            </div>
+                    <div class="grid">
 
-            <!-- Fila 5 -->
-            <div class="col-12 md:col-6 lg:col-5 p-4 flex justify-content-end flex-wrap">
-                <div class="card">
-                    <h4 class="text-center">Sensor de Peso</h4>
-                    <p-carousel [value]="imagesPeso" [numVisible]="1" [numScroll]="1" [circular]="true" autoplayInterval="5000">
-                        <ng-template pTemplate="item" let-image>
-                            <img [src]="image.source" [alt]="image.alt" class="w-20rem h-20rem">
-                        </ng-template>
-                    </p-carousel>
-                    <p class="text-center text-lg">Esta herramienta mide el peso usando una celda de carga tipo gancho ideal para
-                        cargas suspendidas. Adecuado para ambiente de invernadero
-                        para monitorear la ganancia de masa relacionada con el crecimiento en las plantas.</p>
-                        <ul class="text-lg">
-                            <li class="text-lg">Rangos: 0 - 50 kg and 0 - 100 kg (segun sea el modelo)
-                            </li>
-                        </ul>
-                </div>
-            </div>
-            <div class="col-12 md:col-6 lg:col-5 p-4">
-                <div class="card">
-                    <h4 class="text-center">Transmisor DGA #1238</h4>
-                    <p-carousel [value]="imagesDGA" [numVisible]="1" [numScroll]="1" [circular]="true" autoplayInterval="5000">
-                        <ng-template pTemplate="item" let-image>
-                            <img [src]="image.source" [alt]="image.alt" class="w-20rem h-20rem">
-                        </ng-template>
-                    </p-carousel>
-                    <p class="text-center text-lg">Permite conocer el flujo de agua extraído desde el pozo profundo, y/o transmitir es información a la DGA, cumpliendo con el decreto #1238.</p>
-                </div>
-            </div>
-        
-            <!-- Fila 6 -->
-            <div class="col-12 md:col-6 lg:col-5 p-4 flex justify-content-end flex-wrap">
-                <div class="card">
-                    <h4 class="text-center">Sensor de PAR</h4>
-                    <p-carousel [value]="imagesPAR" [numVisible]="1" [numScroll]="1" [circular]="true" autoplayInterval="5000">
-                        <ng-template pTemplate="item" let-image>
-                            <img [src]="image.source" [alt]="image.alt" class="w-20rem h-20rem">
-                        </ng-template>
-                    </p-carousel>
-                    <p class="text-center text-lg">El sensor PAR, mide la cantidad de radiación fotosintéticamente activa en un área.</p>
-                    <ul class="text-lg">
-                        <li class="text-lg">Rangos: 
-                            -PAR:0-4000 μmol/s/m².</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-12 md:col-6 lg:col-5 p-4">
-                <div class="card">
-                    <h4 class="text-center">Sensor de diámetro</h4>
-                    <p-carousel [value]="imagesSensorDiametro" [numVisible]="1" [numScroll]="1" [circular]="true" autoplayInterval="5000">
-                        <ng-template pTemplate="item" let-image>
-                            <img [src]="image.source" [alt]="image.alt" class="w-20rem h-20rem">
-                        </ng-template>
-                    </p-carousel>
-                    <p class="text-center text-lg">Esta herramienta permite conocer el crecimiento diametral de un cultivo.</p>
-                    <ul class="text-lg">
-                        <li class="text-lg">
-                            Rango:-0-5 mm.
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        
-        
+                    <!-- Tarjeta 1 -->
+                    <div class="col-12 md:col-6 lg:col-4 p-3">
+                        <div class="p-4 h-full benefit-card flex flex-column">
+                            <h3 class="text-2xl font-bold text-center mb-4" style="color: #31a5b3;">Sensor de Pluviometría</h3>
+                            <div class="mb-4">
+                                <p-carousel [value]="imagesPluviometria" [numVisible]="1" [numScroll]="1" [circular]="true" autoplayInterval="5000">
+                                    <ng-template pTemplate="item" let-image>
+                                        <img [src]="image.source" [alt]="image.alt" class="w-15rem h-15rem object-fit-contain block mx-auto">
+                                    </ng-template>
+                                </p-carousel>
+                            </div>
+                            <p class="text-lg line-height-3 text-600 text-center mb-4">El kit de sensores de lluvia y precipitación Aranet está diseñado específicamente para el monitoreo de lluvia y lluvia en exteriores.</p>
+                            <ul class="text-md line-height-3 text-700 m-0 pl-3 mt-auto">
+                                <li class="mb-2">Precisión: ± 2%</li>
+                                <li class="mb-2">Inalámbrico y con batería</li>
+                                <li>IP68</li>
+                            </ul>
+                        </div>
+                    </div>
 
+                    <!-- Tarjeta 2 -->
+                    <div class="col-12 md:col-6 lg:col-4 p-3">
+                        <div class="p-4 h-full benefit-card flex flex-column">
+                            <h3 class="text-2xl font-bold text-center mb-4" style="color: #31a5b3;">Sensor de LUX</h3>
+                            <div class="mb-4">
+                                <p-carousel [value]="imagesLUX" [numVisible]="1" [numScroll]="1" [circular]="true" autoplayInterval="5000">
+                                    <ng-template pTemplate="item" let-image>
+                                        <img [src]="image.source" [alt]="image.alt" class="w-15rem h-15rem object-fit-contain block mx-auto">
+                                    </ng-template>
+                                </p-carousel>
+                            </div>
+                            <p class="text-lg line-height-3 text-600 text-center mb-4">El sensor de lux permite conocer la cantidad de luz visible en un área.</p>
+                            <ul class="text-md line-height-3 text-700 m-0 pl-3 mt-auto">
+                                <li class="mb-2">Rangos: LUX:0-200.000 lux.</li>
+                                <li class="mb-2">Inalámbrico y con batería.</li>
+                                <li>IP67</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 3 -->
+                    <div class="col-12 md:col-6 lg:col-4 p-3">
+                        <div class="p-4 h-full benefit-card flex flex-column">
+                            <h3 class="text-2xl font-bold text-center mb-4" style="color: #31a5b3;">Sensor de Temperatura</h3>
+                            <div class="mb-4">
+                                <p-carousel [value]="imagesTemperatura" [numVisible]="1" [numScroll]="1" [circular]="true" autoplayInterval="5000">
+                                    <ng-template pTemplate="item" let-image>
+                                        <img [src]="image.source" [alt]="image.alt" class="w-15rem h-15rem object-fit-contain block mx-auto">
+                                    </ng-template>
+                                </p-carousel>
+                            </div>
+                            <p class="text-lg line-height-3 text-600 text-center mb-4">Mide la temperatura a través de distintos tipos de sustratos, tal como lana de roca, fibra de coco, suelo desnudo, entre otras.</p>
+                            <ul class="text-md line-height-3 text-700 m-0 pl-3 mt-auto">
+                                <li class="mb-2">Rangos: -40°C / 60°C</li>
+                                <li class="mb-2">Inalámbrico y con batería</li>
+                                <li>IP68</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 4 -->
+                    <div class="col-12 md:col-6 lg:col-4 p-3">
+                        <div class="p-4 h-full benefit-card flex flex-column">
+                            <h3 class="text-2xl font-bold text-center mb-4" style="color: #31a5b3;">Sensor de Drenaje</h3>
+                            <div class="mb-4">
+                                <p-carousel [value]="imagesDrenaje" [numVisible]="1" [numScroll]="1" [circular]="true" autoplayInterval="5000">
+                                    <ng-template pTemplate="item" let-image>
+                                        <img [src]="image.source" [alt]="image.alt" class="w-15rem h-15rem object-fit-contain block mx-auto">
+                                    </ng-template>
+                                </p-carousel>
+                            </div>
+                            <p class="text-lg line-height-3 text-600 text-center mb-4">Este instrumento permite conocer en tiempo real la cantidad de agua que ha sido drenada desde algún afluente.</p>
+                            <ul class="text-md line-height-3 text-700 m-0 pl-3 mt-auto">
+                                <li class="mb-2">Rangos: 1 pulso/ 5 mL</li>
+                                <li class="mb-2">Inalámbrico y con batería</li>
+                                <li>IP68</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 5 -->
+                    <div class="col-12 md:col-6 lg:col-4 p-3">
+                        <div class="p-4 h-full benefit-card flex flex-column">
+                            <h3 class="text-2xl font-bold text-center mb-4" style="color: #31a5b3;">Sensor T°/HR.</h3>
+                            <div class="mb-4">
+                                <p-carousel [value]="imagesSensorTHR" [numVisible]="1" [numScroll]="1" [circular]="true" autoplayInterval="5000">
+                                    <ng-template pTemplate="item" let-image>
+                                        <img [src]="image.source" [alt]="image.alt" class="w-15rem h-15rem object-fit-contain block mx-auto">
+                                    </ng-template>
+                                </p-carousel>
+                            </div>
+                            <p class="text-lg line-height-3 text-600 text-center mb-4">Este instrumento mide temperatura ambiental y Humedad relativa.</p>
+                            <ul class="text-md line-height-3 text-700 m-0 pl-3 mt-auto">
+                                <li class="mb-2">Rangos:   -T°: -40°C / 85°C.<br>-HR: 0%-100%</li>
+                                <li class="mb-2">Inalámbrico y con batería</li>
+                                <li>IP67</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 6 -->
+                    <div class="col-12 md:col-6 lg:col-4 p-3">
+                        <div class="p-4 h-full benefit-card flex flex-column">
+                            <h3 class="text-2xl font-bold text-center mb-4" style="color: #31a5b3;">Sensor Movimiento de Savia.</h3>
+                            <div class="mb-4">
+                                <p-carousel [value]="imagesMovimientoSavia" [numVisible]="1" [numScroll]="1" [circular]="true" autoplayInterval="5000">
+                                    <ng-template pTemplate="item" let-image>
+                                        <img [src]="image.source" [alt]="image.alt" class="w-15rem h-15rem object-fit-contain block mx-auto">
+                                    </ng-template>
+                                </p-carousel>
+                            </div>
+                            <p class="text-lg line-height-3 text-600 text-center mb-0 mt-auto">El sensor de flujo de savia está diseñado para monitorear la relativa variaciones del caudal de savia en plantas pecíolo o brote pequeño.</p>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 7 -->
+                    <div class="col-12 md:col-6 lg:col-4 p-3">
+                        <div class="p-4 h-full benefit-card flex flex-column">
+                            <h3 class="text-2xl font-bold text-center mb-4" style="color: #31a5b3;">Sensor de “Suelo”</h3>
+                            <div class="mb-4">
+                                <p-carousel [value]="imagesSuelo" [numVisible]="1" [numScroll]="1" [circular]="true" autoplayInterval="5000">
+                                    <ng-template pTemplate="item" let-image>
+                                        <img [src]="image.source" [alt]="image.alt" class="w-15rem h-15rem object-fit-contain block mx-auto">
+                                    </ng-template>
+                                </p-carousel>
+                            </div>
+                            <p class="text-lg line-height-3 text-600 text-center mb-4">El sensor de suelo mide temperatura, CE y contenido volumétrico de diversos sustratos.</p>
+                            <ul class="text-md line-height-3 text-700 m-0 pl-3 mt-auto">
+                                <li class="mb-2">Rangos: -CE: 0-12 ds/m. <br>-Cont.Vol: 0-100%<br>-T°: -20°C/60°C</li>
+                                <li class="mb-2">Inalámbrico y con batería</li>
+                                <li>IP67</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 8 -->
+                    <div class="col-12 md:col-6 lg:col-4 p-3">
+                        <div class="p-4 h-full benefit-card flex flex-column">
+                            <h3 class="text-2xl font-bold text-center mb-4" style="color: #31a5b3;">Sensor de CO2</h3>
+                            <div class="mb-4">
+                                <p-carousel [value]="imagesCO2" [numVisible]="1" [numScroll]="1" [circular]="true" autoplayInterval="5000">
+                                    <ng-template pTemplate="item" let-image>
+                                        <img [src]="image.source" [alt]="image.alt" class="w-15rem h-15rem object-fit-contain block mx-auto">
+                                    </ng-template>
+                                </p-carousel>
+                            </div>
+                            <p class="text-lg line-height-3 text-600 text-center mb-4">Este instrumento mide la concentración de CO2 ambiental y presión atmosférica.</p>
+                            <ul class="text-md line-height-3 text-700 m-0 pl-3 mt-auto">
+                                <li class="mb-2">Rangos: <br>-CO2: 0-9999 ppm.</li>
+                                <li class="mb-2">Inalámbrico y con batería</li>
+                                <li>IP67</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 9 -->
+                    <div class="col-12 md:col-6 lg:col-4 p-3">
+                        <div class="p-4 h-full benefit-card flex flex-column">
+                            <h3 class="text-2xl font-bold text-center mb-4" style="color: #31a5b3;">Sensor de Peso</h3>
+                            <div class="mb-4">
+                                <p-carousel [value]="imagesPeso" [numVisible]="1" [numScroll]="1" [circular]="true" autoplayInterval="5000">
+                                    <ng-template pTemplate="item" let-image>
+                                        <img [src]="image.source" [alt]="image.alt" class="w-15rem h-15rem object-fit-contain block mx-auto">
+                                    </ng-template>
+                                </p-carousel>
+                            </div>
+                            <p class="text-lg line-height-3 text-600 text-center mb-4">Esta herramienta mide el peso usando una celda de carga tipo gancho ideal para cargas suspendidas. Adecuado para ambiente de invernadero para monitorear la ganancia de masa relacionada con el crecimiento en las plantas.</p>
+                            <ul class="text-md line-height-3 text-700 m-0 pl-3 mt-auto">
+                                <li>Rangos: 0 - 50 kg and 0 - 100 kg (segun sea el modelo)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 10 -->
+                    <div class="col-12 md:col-6 lg:col-4 p-3">
+                        <div class="p-4 h-full benefit-card flex flex-column">
+                            <h3 class="text-2xl font-bold text-center mb-4" style="color: #31a5b3;">Transmisor DGA #1238</h3>
+                            <div class="mb-4">
+                                <p-carousel [value]="imagesDGA" [numVisible]="1" [numScroll]="1" [circular]="true" autoplayInterval="5000">
+                                    <ng-template pTemplate="item" let-image>
+                                        <img [src]="image.source" [alt]="image.alt" class="w-15rem h-15rem object-fit-contain block mx-auto">
+                                    </ng-template>
+                                </p-carousel>
+                            </div>
+                            <p class="text-lg line-height-3 text-600 text-center mb-0 mt-auto">Permite conocer el flujo de agua extraído desde el pozo profundo, y/o transmitir es información a la DGA, cumpliendo con el decreto #1238.</p>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 11 -->
+                    <div class="col-12 md:col-6 lg:col-4 p-3">
+                        <div class="p-4 h-full benefit-card flex flex-column">
+                            <h3 class="text-2xl font-bold text-center mb-4" style="color: #31a5b3;">Sensor de PAR</h3>
+                            <div class="mb-4">
+                                <p-carousel [value]="imagesPAR" [numVisible]="1" [numScroll]="1" [circular]="true" autoplayInterval="5000">
+                                    <ng-template pTemplate="item" let-image>
+                                        <img [src]="image.source" [alt]="image.alt" class="w-15rem h-15rem object-fit-contain block mx-auto">
+                                    </ng-template>
+                                </p-carousel>
+                            </div>
+                            <p class="text-lg line-height-3 text-600 text-center mb-4">El sensor PAR, mide la cantidad de radiación fotosintéticamente activa en un área.</p>
+                            <ul class="text-md line-height-3 text-700 m-0 pl-3 mt-auto">
+                                <li>Rangos: <br>-PAR:0-4000 μmol/s/m².</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 12 -->
+                    <div class="col-12 md:col-6 lg:col-4 p-3">
+                        <div class="p-4 h-full benefit-card flex flex-column">
+                            <h3 class="text-2xl font-bold text-center mb-4" style="color: #31a5b3;">Sensor de diámetro</h3>
+                            <div class="mb-4">
+                                <p-carousel [value]="imagesSensorDiametro" [numVisible]="1" [numScroll]="1" [circular]="true" autoplayInterval="5000">
+                                    <ng-template pTemplate="item" let-image>
+                                        <img [src]="image.source" [alt]="image.alt" class="w-15rem h-15rem object-fit-contain block mx-auto">
+                                    </ng-template>
+                                </p-carousel>
+                            </div>
+                            <p class="text-lg line-height-3 text-600 text-center mb-4">Esta herramienta permite conocer el crecimiento diametral de un cultivo.</p>
+                            <ul class="text-md line-height-3 text-700 m-0 pl-3 mt-auto">
+                                <li>Rango:-0-5 mm.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
     </div>
 </div>
-<app-footer></app-footer>
+
+    <!-- FOOTER GLOBAL DE LA APP -->
+    <div class="mt-auto">
+        <app-footer></app-footer>
+    </div>
+</div>

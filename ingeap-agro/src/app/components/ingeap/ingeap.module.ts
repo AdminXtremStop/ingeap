@@ -15,7 +15,7 @@ import { AccordionModule } from 'primeng/accordion';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { SharedModule } from 'src/app/shared/shared.module';
-import { MapaWidgetComponent } from './mapa-widget.component';
+import { CollapsiblePanelComponent } from '../collapsible-panel/collapsible-panel.component';
 
 @NgModule({
     imports: [
@@ -33,11 +33,11 @@ import { MapaWidgetComponent } from './mapa-widget.component';
         AccordionModule,
         FooterComponent,
         HeaderComponent,
-        SharedModule
+        SharedModule,
+        CollapsiblePanelComponent
     ],
     declarations: [
-        IngeapComponent,
-        MapaWidgetComponent
+        IngeapComponent
     ]
 })
 export class IngeapLandingModule { }

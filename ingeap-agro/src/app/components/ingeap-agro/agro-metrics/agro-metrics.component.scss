@@ -1,0 +1,109 @@
+.num-section {
+  /* Variables de color por si no están definidas a nivel global */
+  --turquoise: #31a5b3;
+  --green: #65ac4a;
+
+  color: #ffffff;
+
+  .num-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    text-align: center;
+
+    /* En tablets, 2 columnas */
+    @media (min-width: 576px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* En pantallas grandes, 4 columnas */
+    @media (min-width: 992px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .num-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1.5rem;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      border-color: var(--turquoise);
+    }
+
+    .num-big {
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--green);
+      line-height: 1;
+      margin-bottom: 0.75rem;
+
+      sup {
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-left: 4px;
+        color: var(--turquoise);
+      }
+    }
+
+    .num-label {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #a0aec0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  }
+}
+
+/* Estilos para partners-strip copiando el tamaño estándar de la página */
+.partners-strip {
+  width: 100%;
+  padding: 1.5rem 5%;
+  display: flex;
+  justify-content: center;
+
+  .partners-inner {
+    width: 100%;
+    max-width: 1080px; /* Se copia el tamaño base de los contenedores */
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+    .partners-label {
+      font-size: 0.85rem;
+      color: #a0aec0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      line-height: 1.4;
+      font-weight: 600;
+      text-align: right;
+      border-right: 2px solid rgba(255, 255, 255, 0.1);
+      padding-right: 1.5rem;
+    }
+
+    .partners-list {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+      flex: 1;
+
+      .partner-name {
+        min-width: 100px;
+        height: 40px;
+        display: block;
+        /* Aquí podrás insertar los logos (background-image o imgs internas) */
+      }
+    }
+  }
+}

@@ -1,243 +1,180 @@
-<app-header></app-header>
-<app-header-servicios [highlightId] = 1></app-header-servicios>
-<div class="surface-0 flex justify-content-center">
-    <div id="home-ingeap" class="landing-wrapper overflow-hidden">
-        <div id="" class="px-4">    
-            <div class="grid">
-                <div class="col-12 my-auto flex flex-column">
+<div class="min-h-screen flex flex-column" style="background-color: var(--bg-main, #fafbfc); color: var(--text-main, #1a1f2e);">
+    <!-- HEADER GLOBAL -->
+    <div style="position: fixed; z-index: 1000; background-color: #f5f5f5; width: 100%; border-bottom: 1px solid rgba(0,0,0,0.05);">
+        <app-header></app-header>
+    </div>
+
+    <!-- ESPACIADOR GLOBAL Y HEADER DE SERVICIOS -->
+    <div class="w-full" style="margin-top: 5.625rem;">
+        <app-header-servicios [highlightId]="1"></app-header-servicios>
+    </div>
+
+    <div class="flex justify-content-center w-full flex-grow-1">
+        <div class="landing-wrapper w-full max-w-7xl mx-auto px-4 py-6">
+
+            <!-- INTRO SECCIÓN Y VIDEO -->
+            <section class="intro-hero-section">
+                <!-- Orbes difuminados de fondo -->
+                <div class="hero-orb tq"></div>
+                <div class="hero-orb gr"></div>
+                <div class="hero-orb bl"></div>
+                <div class="hero-orb yl"></div>
+                <div class="hero-orb tq2"></div>
+
+                <div class="grid align-items-center">
+                    <div class="col-12 md:col-6 pr-0 md:pr-6 mb-5 md:mb-0" style="position: relative; z-index: 2;">
+                        <h1 class="text-5xl font-bold mb-4 text-900" style="color: var(--ink-950);">Sistema de Gestión de riego</h1>
+                        <p class="text-xl line-height-3 text-600 mb-0" style="color: var(--text-gray);">
+                            Para conocer cuando, y cuanto regar, se hace uso de sensores de humedad o tensiómetros. Estos obtienen información del estado de saturación de agua en el suelo, los cuales son enviados de forma inalámbrica a la estación base Aranet. Luego, estos se pueden visualizar desde cualquier dispositivo con acceso a internet, en un dashboard intuitivo y editable.
+                        </p>
+                    </div>
+                    <div class="col-12 md:col-6" style="position: relative; z-index: 2;">
+                        <div class="border-round-2xl overflow-hidden shadow-4" style="aspect-ratio: 16/9;">
+                            <iframe
+                              class="w-full h-full"
+                              src="https://www.youtube.com/embed/qBjSOarA7po"
+                              frameborder="0"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BENEFICIOS -->
+                <div class="py-6 mt-6" style="position: relative; z-index: 2;">
+                    <div class="text-center mb-6">
+                        <h2 class="text-4xl font-bold mb-2 text-900" style="color: var(--ink-950);">Beneficios</h2>
+                    </div>
+
                     <div class="grid">
-                        <div class="col-6 ocultar-en-movil">
-                            <div class="text-center m-5">
-                                <div class="grid justify-content-center mt-8 md:mt-0">
-                                    <iframe 
-                                      width="560" 
-                                      height="315" 
-                                      src="https://www.youtube.com/embed/qBjSOarA7po" 
-                                      frameborder="0" 
-                                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                      allowfullscreen>
-                                    </iframe>
-                                  </div>                  
-                            </div>
-                        </div>
-                        <div class="col-12 md:col-6">
-                            <div class="grid image-section pt-4">
-                                <div class="col-12 mb-2 text-6xl text-900">Sistema de Gestión de riego</div>
-                                <span class="col-12 text-3xl">
-                                    Para conocer cuando, y cuanto regar, se hace uso de sensores de humedad o tensiómetros
-                                    . Estos obtienen información del estado de saturación de agua en el suelo, los cual es 
-                                    enviados de forma inalámbrica a la estación base Aranet. Luego, estos se pueden visualizar 
-                                    desde cualquier dispositivo con acceso a internet, en una dashboard intuitivo y editable.
-                                </span>
-                            </div>   
-                        </div>
-                    </div>
-                </div>  
-            
-            </div>
-        </div>   
-        
-        <div id="" class="px-4 bg-gray-100 text-center">
-            <div class="grid justify-content-center">
-                <div class="col-12 text-center mt-3 mb-4">
-                    <h2 class="text-5xl font-normal mb-2">Beneficios</h2>
-                </div>
-    
-                <div class="col-12 md:col-12 lg:col-4 p-0 lg:pr-5 lg:pb-5 mt-4 lg:mt-0">
-                    <div style="height:225px; padding:2px; border-radius:10px; background: linear-gradient(90deg, rgba(253, 228, 165, 0.2),rgba(187, 199, 205, 0.2)), linear-gradient(180deg, rgba(253, 228, 165, 0.2),rgba(187, 199, 205, 0.2));">
-                        <div class="p-3 surface-card h-full" style="border-radius:8px;">
-                            <div class="flex align-items-center justify-content-center">
-                                <div class="flex align-items-center justify-content-center" style="width:5rem;height:5rem; border-radius:10px;">
-                                    <img src="assets/ingeap-agro/iconos/14.png" alt="Cumplimiento de Ley" style="width: 100%; height: 80%; object-fit: contain; border-radius:10px;">
+                        <!-- Card 1 -->
+                        <div class="col-12 md:col-6 lg:col-4 p-3">
+                            <div class="p-4 h-full benefit-card">
+                                <div class="flex align-items-center justify-content-center mb-4" style="width: 4.5rem; height: 4.5rem; background: rgba(49, 165, 179, 0.08); border-radius: 14px;">
+                                    <img src="assets/ingeap-agro/iconos/14.png" alt="Aumento de productividad" style="width: 60%; height: 60%; object-fit: contain;">
                                 </div>
+                                <h3 class="text-xl font-bold text-900 mb-3">Aumento de productividad</h3>
+                                <p class="text-600 line-height-3 m-0">El principal beneficio del SGR, es la de mantener de forma óptimas el principal factor que afecta la productividad de un cultivo, el agua. Con el SGR puedes conocer cuando, y cuanto regar, de forma de evitar problemas por exceso y falta de agua.</p>
                             </div>
-                            <div class="mb-2 text-2xl text-900">Aumento de productividad</div>
-                            <span class="text-600">El principal beneficio del SGR, es la de mantener de forma óptimas el principal factor que afecta la productividad de un cultivo, el agua. Con el SGR puedes conocer cuando, y cuanto regar, de forma de evitar problemas por exceso y falta de agua.</span>
                         </div>
-                    </div>
-                </div>
-        
-                <div class="col-12 md:col-12 lg:col-4 p-0 lg:pr-5 lg:pb-5 mt-4 lg:mt-0">
-                    <div style="height:225px; padding:2px; border-radius:10px; background: linear-gradient(90deg, rgba(145,226,237,0.2),rgba(251, 199, 145, 0.2)), linear-gradient(180deg, rgba(253, 228, 165, 0.2), rgba(172, 180, 223, 0.2));">
-                        <div class="p-3 surface-card h-full" style="border-radius:8px;">
-                            <div class="flex align-items-center justify-content-center">
-                                <div class="flex align-items-center justify-content-center" style="width:5rem;height:5rem; border-radius:10px;">
-                                    <img src="assets/ingeap-agro/iconos/15.png" alt="Cumplimiento de Ley" style="width: 100%; height: 80%; object-fit: contain; border-radius:10px;">
-                                </div>
-                            </div>
-                            <div class="mb-2 text-2xl text-900">Eficiencia en el uso de agua y energía</div>
-                            <span class="text-600">Poder tener el dato exacto del estado de saturación del suelo, permite dar un riego optimo, esto usualmente provoca un menor uso de bombas, utilizando una menor cantidad de energía. 
-                            </span>
-                        </div>
-                    </div>
-                </div>
-        
-                <div class="col-12 md:col-12 lg:col-4 p-0 lg:pr-5 lg:pb-5 mt-4 lg:mt-0">
-                    <div style="height:225px; padding:2px; border-radius:10px; background: linear-gradient(90deg, rgba(145, 226, 237, 0.2), rgba(172, 180, 223, 0.2)), linear-gradient(180deg, rgba(172, 180, 223, 0.2), rgba(246, 158, 188, 0.2));">
-                        <div class="p-3 surface-card h-full" style="border-radius:8px;">
-                            <div class="flex align-items-center justify-content-center">
-                                <div class="flex align-items-center justify-content-center" style="width:5rem;height:5rem; border-radius:10px;">
-                                    <img src="assets/ingeap-agro/iconos/16.png" alt="Cumplimiento de Ley" style="width: 100%; height: 80%; object-fit: contain; border-radius:10px;">
-                                </div>
-                            </div>
-                            <div class="mb-2 text-2xl text-900">Monitoreo remoto</div>
-                            <span class="text-600">En nuestro Dashboard, se pueden observar los datos en tiempo real e historico de todos nuestros sensores. Permitiéndole al agricultor analizar toda esta información para poder tomar decisiones con datos cuantitativos.
-                            </span>
-                        </div>
-                    </div>
-                </div>
-        
-                <div class="col-12 md:col-12 lg:col-4 p-0 lg:pr-5 lg:pb-5 mt-4 lg:mt-0">
-                    <div style="height:225px; padding:2px; border-radius:10px; background: linear-gradient(90deg, rgba(187, 199, 205, 0.2),rgba(251, 199, 145, 0.2)), linear-gradient(180deg, rgba(253, 228, 165, 0.2),rgba(145, 210, 204, 0.2));">
-                        <div class="p-3 surface-card h-full" style="border-radius:8px;">
-                            <div class="flex align-items-center justify-content-center">
-                                <div class="flex align-items-center justify-content-center" style="width:5rem;height:5rem; border-radius:10px;">
-                                    <img src="assets/ingeap-agro/iconos/17.png" alt="Cumplimiento de Ley" style="width: 100%; height: 80%; object-fit: contain; border-radius:10px;">
-                                </div>
-                            </div>
-                            <div class="mb-2 text-2xl text-900">Aumenta la capacidad de análisis y mejora en la toma de decisiones.</div>
-                            <span class="text-600">Nuestro sistema almacena datos históricos de las mediciones, lo que permite al usuario conocer el comportamiento del agua en el suelo, a lo largo de minutos, horas, días, semanas y años, desde la implementación del sistema.</span>
-                        </div>
-                    </div>
-                </div>
-        
-                <div class="col-12 md:col-12 lg:col-4 p-0 lg:pr-5 lg:pb-5 mt-4 lg:mt-0">
-                    <div style="height:225px; padding:2px; border-radius:10px; background: linear-gradient(90deg, rgba(187, 199, 205, 0.2),rgba(246, 158, 188, 0.2)), linear-gradient(180deg, rgba(145, 226, 237, 0.2),rgba(160, 210, 250, 0.2));">
-                        <div class="p-3 surface-card h-full" style="border-radius:8px;">
-                            <div class="flex align-items-center justify-content-center">
-                                <div class="flex align-items-center justify-content-center" style="width:5rem;height:5rem; border-radius:10px;">
-                                    <img src="assets/ingeap-agro/iconos/18.png" alt="Cumplimiento de Ley" style="width: 100%; height: 80%; object-fit: contain; border-radius:10px;">
-                                </div>
-                            </div>
-                            <div class="mb-2 text-2xl text-900">Acompañamiento del agricultor</div>
-                            <span class="text-600">Mediante el servicio de mantenición Ingeap Agro busca tener una directa relación con el agricultor, para así guiarlo en su toma de decisiones y análisis de datos.</span>
-                        </div>
-                    </div>
-                </div>
-        
-                <div class="col-12 md:col-12 lg:col-4 p-0 lg:pr-5 lg:pb-5 mt-4 lg:mt-0">
-                    <div style="height:225px; padding:2px; border-radius:10px; background: linear-gradient(90deg, rgba(251, 199, 145, 0.2), rgba(246, 158, 188, 0.2)), linear-gradient(180deg, rgba(172, 180, 223, 0.2), rgba(212, 162, 221, 0.2));">
-                        <div class="p-3 surface-card h-full" style="border-radius:8px;">
-                            <div class="flex align-items-center justify-content-center">
-                                <div class="flex align-items-center justify-content-center" style="width:5rem;height:5rem; border-radius:10px;">
-                                    <img src="assets/ingeap-agro/iconos/12.png" alt="Cumplimiento de Ley" style="width: 100%; height: 80%; object-fit: contain; border-radius:10px;">
-                                </div>
-                            </div>
-                            <div class="mb-2 text-2xl text-900">Alarmas</div>
-                            <span class="text-600">Nuestro sistema permite configurar alarmas, asociados a los parámetros medidos por el sistema, lo que permite estar atento a cualquier problema que el agricultor requiera estar informado y tomar decisiones de manera oportuna e inmediata.</span>
-                        </div>
-                    </div>
-                </div>                
-            </div>
-        </div>
 
-        <div id="" class="px-4 text-center ocultar-en-movil">
-            <div class="grid justify-content-center">
-                <div class="col-12 text-center mt-3 mb-4">
-                    <h2 class="text-5xl font-normal mb-2">Dashboard</h2>
-                    <span class="text-2xl">En el siguiente esquema se puede visualizar el dashboard, en donde se en tiempo real el estado de saturación del Suelo.</span>
-                </div>
-    
-                <div class="grid">
-                    <div class="col-12">
-                        <img src="assets/ingeap-agro/menu/dashboard.jpg"  style="width:100%; height:40rem; border-radius:10px;" alt="dashboard">
-                    </div>
-                </div>
-           
-            </div>
-        </div>
+                        <!-- Card 2 -->
+                        <div class="col-12 md:col-6 lg:col-4 p-3">
+                            <div class="p-4 h-full benefit-card">
+                                <div class="flex align-items-center justify-content-center mb-4" style="width: 4.5rem; height: 4.5rem; background: rgba(101, 172, 74, 0.08); border-radius: 14px;">
+                                    <img src="assets/ingeap-agro/iconos/15.png" alt="Eficiencia" style="width: 60%; height: 60%; object-fit: contain;">
+                                </div>
+                                <h3 class="text-xl font-bold text-900 mb-3">Eficiencia en el uso de agua y energía</h3>
+                                <p class="text-600 line-height-3 m-0">Poder tener el dato exacto del estado de saturación del suelo, permite dar un riego optimo, esto usualmente provoca un menor uso de bombas, utilizando una menor cantidad de energía.</p>
+                            </div>
+                        </div>
 
-        <!-- <div class="grid justify-content-between md:mt-0">
-            <div class="col-12 text-center mt-3 mb-4">
-                <h2 class="text-5xl font-normal mb-2">Planes de mantención</h2>
-                <span>Los planes de mantenimiento corresponden a un servicio necesario para mantener el funcionamiento del sistema de gestión de riego.
-                    Estos aseguran el correcto desempeño de los sensores y del sistema en su conjunto, además de ofrecer servicios adicionales que
-                    permiten a los agricultores realizar un análisis más detallado de sus campos.
-                </span>
-            </div>
-                <div class="col-12 lg:col-4 p-0 md:p-3">
-                    <div class="p-3 flex flex-column border-200 pricing-card cursor-pointer border-2 hover:border-green-700 transition-duration-300 transition-all" style="border-radius:10px">
-                        <h3 class="text-900 text-center my-5">Standar</h3>
-                        <div class="my-5 text-center">
-                            <span class="text-5xl font-bold mr-2 text-900">$ 13.990</span>
-                            <span class="text-600">mes/por muestra
-                            </span>
-                            <button pButton pRipple label="Seleccione" class="block mx-auto mt-4 p-button-rounded border-none ml-3 font-light line-height-2 bg-green-700 text-white"></button>
+                        <!-- Card 3 -->
+                        <div class="col-12 md:col-6 lg:col-4 p-3">
+                            <div class="p-4 h-full benefit-card">
+                                <div class="flex align-items-center justify-content-center mb-4" style="width: 4.5rem; height: 4.5rem; background: rgba(247, 201, 44, 0.08); border-radius: 14px;">
+                                    <img src="assets/ingeap-agro/iconos/16.png" alt="Monitoreo remoto" style="width: 60%; height: 60%; object-fit: contain;">
+                                </div>
+                                <h3 class="text-xl font-bold text-900 mb-3">Monitoreo remoto</h3>
+                                <p class="text-600 line-height-3 m-0">En nuestro Dashboard, se pueden observar los datos en tiempo real e historico de todos nuestros sensores. Permitiéndole al agricultor analizar toda esta información para poder tomar decisiones con datos cuantitativos.</p>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                
-                <div class="col-12 lg:col-4 p-0 md:p-3 mt-4 md:mt-0">
-                    <div class="p-3 flex flex-column border-200 pricing-card cursor-pointer border-2 hover:border-green-700 transition-duration-300 transition-all" style="border-radius:10px">
-                        <h3 class="text-900 text-center my-5">Pro</h3>
-                        <div class="my-5 text-center">
-                            <span class="text-5xl font-bold mr-2 text-900">$ 39.990</span>
-                            <span class="text-600">mes/por muestra (min. 10)
-                            </span>
-                            <button pButton pRipple label="Seleccione" class="block mx-auto mt-4 p-button-rounded border-none ml-3 font-light line-height-2 bg-green-700 text-white"></button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-12 lg:col-4 p-0 md:p-3 mt-4 md:mt-0">
-                    <div class="p-3 flex flex-column border-200 pricing-card cursor-pointer border-2 hover:border-green-700 transition-duration-300 transition-all" style="border-radius:10px">
-                        <h3 class="text-900 text-center my-5">Full</h3>
-                        <div class="my-5 text-center">
-                            <span class="text-5xl font-bold mr-2 text-900">$ 49.990</span>
-                            <span class="text-600">mes/por muestra (min. 10)
-                            </span>
-                            <button pButton pRipple label="Seleccione" class="block mx-auto mt-4 p-button-rounded border-none ml-3 font-light line-height-2 bg-green-700 text-white"></button>
-                        </div>
-                    </div>
-                </div>
-        </div>  -->
 
-        <div id="" class="px-4 bg-gray-100 text-center">
-            <div class="grid justify-content-center">
-                <div class="col-12 text-center mt-3 mb-4">
-                    <h2 class="text-5xl font-normal mb-2">FAQ's</h2>
+                        <!-- Card 4 -->
+                        <div class="col-12 md:col-6 lg:col-4 p-3">
+                            <div class="p-4 h-full benefit-card">
+                                <div class="flex align-items-center justify-content-center mb-4" style="width: 4.5rem; height: 4.5rem; background: rgba(49, 165, 179, 0.08); border-radius: 14px;">
+                                    <img src="assets/ingeap-agro/iconos/17.png" alt="Análisis" style="width: 60%; height: 60%; object-fit: contain;">
+                                </div>
+                                <h3 class="text-xl font-bold text-900 mb-3">Aumenta la capacidad de análisis y mejora en la toma de decisiones.</h3>
+                                <p class="text-600 line-height-3 m-0">Nuestro sistema almacena datos históricos de las mediciones, lo que permite al usuario conocer el comportamiento del agua en el suelo, a lo largo de minutos, horas, días, semanas y años, desde la implementación del sistema.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 5 -->
+                        <div class="col-12 md:col-6 lg:col-4 p-3">
+                            <div class="p-4 h-full benefit-card">
+                                <div class="flex align-items-center justify-content-center mb-4" style="width: 4.5rem; height: 4.5rem; background: rgba(101, 172, 74, 0.08); border-radius: 14px;">
+                                    <img src="assets/ingeap-agro/iconos/18.png" alt="Acompañamiento" style="width: 60%; height: 60%; object-fit: contain;">
+                                </div>
+                                <h3 class="text-xl font-bold text-900 mb-3">Acompañamiento del agricultor</h3>
+                                <p class="text-600 line-height-3 m-0">Mediante el servicio de mantenición Ingeap Agro busca tener una directa relación con el agricultor, para así guiarlo en su toma de decisiones y análisis de datos.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 6 -->
+                        <div class="col-12 md:col-6 lg:col-4 p-3">
+                            <div class="p-4 h-full benefit-card">
+                                <div class="flex align-items-center justify-content-center mb-4" style="width: 4.5rem; height: 4.5rem; background: rgba(247, 201, 44, 0.08); border-radius: 14px;">
+                                    <img src="assets/ingeap-agro/iconos/12.png" alt="Alarmas" style="width: 60%; height: 60%; object-fit: contain;">
+                                </div>
+                                <h3 class="text-xl font-bold text-900 mb-3">Alarmas</h3>
+                                <p class="text-600 line-height-3 m-0">Nuestro sistema permite configurar alarmas, asociados a los parámetros medidos por el sistema, lo que permite estar atento a cualquier problema que el agricultor requiera estar informado y tomar decisiones de manera oportuna e inmediata.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-    
-                <div class="col-12 md:col-12 lg:col-4 p-0 lg:pr-5 lg:pb-5 mt-4 lg:mt-0">
-                    <p-accordion [activeIndex]="0">
-                        <p-accordionTab header="1. ¿Cómo funciona el tensiómetro?">
-                            <p>
-                                Este instrumento mide la tensión real o potencial hídrico del suelo, 
-                                lo que indica el esfuerzo requerido por las raíces para extraer agua.
-                                Esta característica es la principal diferencia con un sensor de humedad
-                                el cual solo ve el porcentaje de humedad presente en el suelo.
-                            </p>
-                        </p-accordionTab>
-                    </p-accordion>
+            </section>
+
+
+            <!-- DASHBOARD -->
+            <div class="py-6 text-center">
+                <div class="text-center mb-5">
+                    <h2 class="text-4xl font-bold mb-3 text-900">Dashboard</h2>
+                    <p class="text-xl text-600 max-w-30rem mx-auto">En el siguiente esquema se puede visualizar el dashboard, en donde se en tiempo real el estado de saturación del Suelo.</p>
                 </div>
-        
-                <div class="col-12 md:col-12 lg:col-4 p-0 lg:pr-5 lg:pb-5 mt-4 lg:mt-0">
-                    <p-accordion [activeIndex]="1">
-                        <p-accordionTab header="2. ¿Cómo funciona la demo?">
-                            <p>
-                                Ingeap Agro permite el uso del sistema S.G.R al cliente sin costo,
-                                durante un tiempo acordado, en el cual el usuario podrá evidenciar
-                                en su campo los beneficios que confiere el sistema a su cultivo.
-                            </p>
-                        </p-accordionTab>
-                    </p-accordion>
+
+                <div class="border-round-2xl overflow-hidden shadow-4 border-1 border-200 mx-auto" style="max-width: 800px;">
+                    <img src="assets/ingeap-agro/menu/dashboard.jpeg" class="w-full block" style="object-fit: cover; max-height: 480px;" alt="Dashboard Ingeap Agro">
                 </div>
-        
-                <div class="col-12 md:col-12 lg:col-4 p-0 lg:pr-5 lg:pb-5 mt-4 lg:mt-0">
-                    <p-accordion [activeIndex]="2">
-                        <p-accordionTab header="3.¿Cómo determinan los sectores en donde instalar el S.G.R en el campo?">
-                            <p>
-                                Con la finalidad de obtener datos más certeros y homogéneos, 
-                                Ingeap Agro realiza un análisis satelital, en donde conoce el 
-                                tipo de suelo. Y luego se contrasta con sectores de riego, además
-                                de otros factores relevantes particulares del campo trabajado,
-                                y se seleccionan los lugares ideales para obtener las mejores mediciones.
-                            </p>
-                        </p-accordionTab>
-                    </p-accordion>
-                </div>             
+
             </div>
+
+
+            <!-- FAQ -->
+            <div class="py-6">
+                <div class="text-center mb-5">
+                    <h2 class="text-4xl font-bold mb-2 text-900">FAQ's</h2>
+                </div>
+
+                <div class="grid justify-content-center">
+                    <div class="col-12 lg:col-10">
+                        <p-accordion [multiple]="true">
+                            <p-accordionTab header="1. ¿Cómo funciona el tensiómetro?">
+                                <p class="line-height-3 m-0 text-700">
+                                    Este instrumento mide la tensión real o potencial hídrico del suelo,
+                                    lo que indica el esfuerzo requerido por las raíces para extraer agua.
+                                    Esta característica es la principal diferencia con un sensor de humedad
+                                    el cual solo ve el porcentaje de humedad presente en el suelo.
+                                </p>
+                            </p-accordionTab>
+                            <p-accordionTab header="2. ¿Cómo funciona la demo?">
+                                <p class="line-height-3 m-0 text-700">
+                                    Ingeap Agro permite el uso del sistema S.G.R al cliente sin costo,
+                                    durante un tiempo acordado, en el cual el usuario podrá evidenciar
+                                    en su campo los beneficios que confiere el sistema a su cultivo.
+                                </p>
+                            </p-accordionTab>
+                            <p-accordionTab header="3.¿Cómo determinan los sectores en donde instalar el S.G.R en el campo?">
+                                <p class="line-height-3 m-0 text-700">
+                                    Con la finalidad de obtener datos más certeros y homogéneos,
+                                    Ingeap Agro realiza un análisis satelital, en donde conoce el
+                                    tipo de suelo. Y luego se contrasta con sectores de riego, además
+                                    de otros factores relevantes particulares del campo trabajado,
+                                    y se seleccionan los lugares ideales para obtener las mejores mediciones.
+                                </p>
+                            </p-accordionTab>
+                        </p-accordion>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
+
+    <!-- FOOTER GLOBAL DE LA APP -->
+    <div class="mt-auto">
+        <app-footer></app-footer>
+    </div>
 </div>
-<app-footer></app-footer>

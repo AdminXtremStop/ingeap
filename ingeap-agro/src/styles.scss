@@ -3,42 +3,138 @@
 $gutter: 1rem; //for primeflex grid system
 @import "assets/layout/styles/layout/layout.scss";
 
-/* PrimeNG */
-@import "../node_modules/primeng/resources/primeng.min.css";
-@import "../node_modules/primeflex/primeflex.scss";
-@import "../node_modules/primeicons/primeicons.css";
+/* PrimeNG & Utility Imports */
+@import "primeflex/primeflex.scss";
+@import "primeng/resources/primeng.min.css";
+@import "primeicons/primeicons.css";
 
-@import '~primeng/resources/themes/saga-blue/theme.css';
-@import '~primeng/resources/primeng.min.css';
-@import '~primeicons/primeicons.css';
+/* ==========================================================================
+   FLOATING GLASSMORPHIC HEADER OVERRIDES
+   ========================================================================== */
 
-// .p-carousel-container {
-//     width: 100% !important;
-//     margin: auto;
-//   }
-  
-//   .p-carousel-items-content {
-//     overflow: visible !important;
-//     width: 100% !important; /* adapt this to show more/less of the sided items */
-//   }
-  
-//   .p-carousel-prev {
-//     z-index: 9999;
-//   }
+/* 1. Make parent header wrappers transparent so header can float */
+div:has(> app-header) {
+  background-color: transparent !important;
+  border-bottom: none !important;
+  border-bottom-width: 0 !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+  pointer-events: none; /* Let mouse clicks pass through the gap between viewport and floating bar */
+}
 
-//   .p-carousel-next {
-//     z-index: 9999;
-//   }
+/* 2. Re-enable pointer events for the header itself */
+app-header {
+  pointer-events: auto;
+  width: 100%;
+}
+
+/* 3. Pull the main content up to go behind the header */
+div:has(> app-header) + div {
+  margin-top: 0 !important;
+}
+
+/* Except when it contains the service navigation header, which should stay below the header */
+div:has(> app-header) + div:has(app-header-servicios) {
+  margin-top: 5.625rem !important;
+}
+
+
+/* ========== PARTNERS STRIP HOME/AGRO (GLOBAL) ========== */
+.partners-strip-home {
+  padding: 1.25rem 0 !important; /* Menor altura en pixeles */
+  background: #ffffff;
+  border-bottom: 1px solid var(--ink-200, #e3e6ec);
+  position: relative;
+  z-index: 10;
   
-//   /* https://www.w3schools.com/howto/howto_css_hide_scrollbars.asp */
+  .partners-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    align-items: center;
+    justify-content: center;
+  }
   
-//   /* Hide scrollbar for Chrome, Safari and Opera */
-//   .p-carousel-content::-webkit-scrollbar {
-//     display: none;
-//   }
+  .partners-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3.5rem;
+    flex-wrap: wrap;
+    width: 100%;
+  }
   
-//   /* Hide scrollbar for IE, Edge and Firefox */
-//   .p-carousel-content {
-//     -ms-overflow-style: none; /* IE and Edge */
-//     scrollbar-width: none; /* Firefox */
-//   }
+  .partner-logo-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 85px; /* Logos más grandes */
+    transition: all 0.3s ease;
+    
+    img {
+      max-height: 100%;
+      width: auto;
+      object-fit: contain;
+      opacity: 1;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .partners-row {
+      gap: 2rem;
+    }
+    .partner-logo-item {
+      height: 55px; /* Logos más grandes en móvil */
+    }
+  }
+}
+
+/* ========== CUSTOM LOGO MARQUEE FOR PARTNERSHIP ========== */
+.partners-strip-home {
+  padding: 3rem 0 !important;
+  background: #ffffff !important;
+
+  .logo-carousel-wrapper {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    display: flex;
+    /* Fade out effect on edges */
+    mask-image: linear-gradient(to right, transparent, white 15%, white 85%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, white 15%, white 85%, transparent);
+  }
+
+  .logo-carousel-track {
+    display: flex;
+    flex-wrap: nowrap !important;
+    width: max-content;
+    animation: logo-scroll 25s linear infinite;
+
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+
+  .logo-group {
+    display: flex;
+    flex-wrap: nowrap !important;
+    flex-shrink: 0 !important;
+    gap: 6rem;
+    padding-right: 6rem;
+    align-items: center;
+  }
+}
+
+@keyframes logo-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

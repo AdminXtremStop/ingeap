@@ -22,4 +22,8 @@ export class HeaderServiciosComponent {
     { id: 7, src: 'assets/ingeap-agro/menu/9.png', alt: 'Imagen 7', caption: 'Sensores Aranet', routerLink: '/agro/aranet' },
     // { id: 8, src: 'assets/ingeap-agro/menu/10.png', alt: 'Imagen 8', caption: 'Bombas de riego', routerLink: '**' }
   ];
+
+  trackById(index: number, image: any): any {
+    return image.id;
+  }
 }

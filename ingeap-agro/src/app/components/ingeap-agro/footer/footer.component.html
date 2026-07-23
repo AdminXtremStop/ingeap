@@ -1,20 +1,13 @@
-<div class="flex flex-wrap justify-content-center align-items-center col-12 p-2 bg-green-700">
-    <div class="col-12 md:col-3 text-white text-lg flex justify-content-center md:justify-content-start align-items-center">
-        <i class="pi pi-map-marker pr-2" style="font-size: 1rem; color:orange"></i>
-        <strong>{{topBarData.direccion}}</strong>
-    </div>
-    <div class="col-12 md:col-3 text-white text-lg flex justify-content-center md:justify-content-start align-items-center">
-        <i class="pi pi-envelope pr-2" style="font-size: 1rem; color:orange"></i>
-        <strong>{{topBarData.correo}}</strong>
-    </div>
-    <div class="col-12 md:col-3 text-white text-lg flex justify-content-center md:justify-content-start align-items-center">
-        <i class="pi pi-phone pr-2" style="font-size: 1rem; color:orange"></i>
-        <strong>{{topBarData.numeroContacto}}</strong>
-    </div>
-    <div class="col-12 md:col-3 text-center md:text-right text-white text-lg">
-        <strong><i class="ml-2 mr-2 pi pi-facebook text-2xl" style="cursor: pointer;" (click)="NavegarFacebook()"></i></strong>
-        <strong><i class="ml-2 mr-2 pi pi-instagram text-2xl" style="cursor: pointer;" (click)="NavegarInstagram()"></i></strong>
-        <strong><i class="ml-2 mr-2 pi pi-linkedin text-2xl" style="cursor: pointer;" (click)="NavegarLinkedin()"></i></strong>
-        <strong><i class="ml-2 mr-2 pi pi-whatsapp text-2xl" style="cursor: pointer;" (click)="NavegarWhatsapp()"></i></strong>
-    </div>
-</div>
+<app-footer-shared
+    [address]="'Ariztia 1050 Quillota'"
+    [email]="'info.agro@ingeap.cl'"
+    [phone]="'+56 9 2388 7974'"
+    [facebookUrl]="'https://www.facebook.com/profile.php?id=61557423617768'"
+    [instagramUrl]="'https://www.instagram.com/ingeap.agro/'"
+    [linkedinUrl]="'https://www.linkedin.com/company/ingeap-agro/'"
+    [whatsappUrl]="'https://wa.me/56923887974'"
+    [borderTop]="'4px solid #8db331'"
+    [iconColor]="'#31a5b3'"
+    [hoverBgColor]="'#31a5b3'">
+</app-footer-shared>
+

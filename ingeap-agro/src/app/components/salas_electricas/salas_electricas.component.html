@@ -1,312 +1,190 @@
-<div class="min-h-screen flex flex-column">    
-    <div style="position: fixed; z-index: 1000; background-color: #f5f5f5; width: 100%;">
+<div class="min-h-screen flex flex-column surface-ground font-sans">
+    <!-- HEADER FIJO -->
+    <div style="position: fixed; z-index: 1000; background-color: #f5f5f5; width: 100%; border-bottom: 1px solid rgba(0,0,0,0.05);">
         <app-header></app-header>
     </div>
-    <div class="surface-0 flex justify-content-center mt-2">
-        <div class="landing-wrapper overflow-hidden">
-            <div id="home-salas" style="margin-top: 5.625rem !important;" #parentDiv>
-                <p-carousel 
-                    [value]="products" 
-                    [numVisible]="1" 
-                    [numScroll]="1" 
-                    [circular]="true" 
-                    [responsiveOptions]="responsiveOptions" 
-                    autoplayInterval="5000"
-                    class="custom-carousel">
-                    <ng-template let-product pTemplate="item">
-                        <div class="carousel-item flex align-items-center justify-content-center">
-                            <div class="carousel-background" [ngStyle]="{'background-image': 'url(' + product.image + ')'}"></div>
-                            <div class="carousel-overlay"></div>
-                            <div class="carousel-content">
-                                <div class="corner top-left ocultar-en-movil" ></div>
-                                <div class="corner top-right ocultar-en-movil"></div>
-                                <div class="corner bottom-left ocultar-en-movil"></div>
-                                <div class="corner bottom-right ocultar-en-movil"></div>
-                                <h1 class="text-7xl text-white text-center">{{product.name}}</h1>
-                                <p id="parrafo_slider" class="text-base text-white text-center ocultar-en-movil">{{product.detalle}}</p>
-                            </div>
-                        </div>
-                    </ng-template>
-                </p-carousel>
-                    
-                <div class="grid overlay-block">
-                    <div id="elemento_chico" class="col-12 md:col-4 lg:col-4 flex flex-column align-items-center justify-content-center text-xl border-md-right">
-                        <div class="flex align-items-center justify-content-center" 
-                            style="width:6rem;height:6rem; border-radius:10px;">
-                            <img [src]="imagenSrc1"
-                                (mouseover)="cambiarImagen1(true)"
-                                (mouseout)="cambiarImagen1(false)"
-                                (click)="navegarSalas()"
-                                alt="Salas Eléctricas Chile" 
-                                style="width: 100%; height: 100%; object-fit: contain; border-radius:10px; cursor: pointer;" class="img-responsive">
-                        </div>
-                        <span class="">Salas Eléctricas Chile</span>
-                    </div>
-                    <div id="elemento_chico" class="col-12 md:col-4 lg:col-4 flex flex-column align-items-center justify-content-center text-xl border-md-right">
-                        <div class="flex align-items-center justify-content-center" 
-                            style="width:6rem;height:6rem; border-radius:10px;">
-                            <img [src]="imagenSrc2"
-                                (mouseover)="cambiarImagen2(true)"
-                                (mouseout)="cambiarImagen2(false)"
-                                (click)="navegarIngeap()"
-                                alt="Ingeap Servicios" 
-                                style="width: 100%; height: 100%; object-fit: contain; border-radius:10px; cursor: pointer;" class="img-responsive">
-                        </div>
-                        <span class="">Ingeap Servicios</span>
-                    </div>   
-                    <div id="elemento_chico" class="col-12 md:col-4 lg:col-4 flex flex-column align-items-center justify-content-center text-xl border-md-right">
-                        <div class="flex align-items-center justify-content-center" 
-                            style="width:6rem;height:6rem; border-radius:10px;">
-                            <img [src]="imagenSrc3"
-                                (mouseover)="cambiarImagen3(true)"
-                                (mouseout)="cambiarImagen3(false)"
-                                (click)="navegarIngeapAgro()"
-                                alt="Ingeap Agro" 
-                                style="width: 100%; height: 100%; object-fit: contain; border-radius:10px; cursor: pointer;" class="img-responsive">
-                        </div>
-                        <span class="">Ingeap Agro</span>
-                    </div>               
-                </div>
-            </div>       
-            
-            <div id="historia" class="py-2 px-4 bg-gray-100 ">    
-                <div class="grid mt-6 md:pb-8">
-                    <div class="col-12 my-auto flex flex-column">
-                        <div class="grid mt-5 ocultar-en-movil">
-                            <div class="col-1"></div>
-                            <div class="col-10 text-center">
-                                <h2 class="line-height-1 text-900 text-5xl font-normal">Nuestra Empresa</h2>
-                                <span class="text-xl text-lg line-height-3 mx-auto">
-                                    Como Ingeap en respuesta a la creciente demanda de soluciones especializadas en el diseño, construcción y montaje de equipos de control, 
-                                    protección, y gestión eléctrica hemos decidido dar un paso estratégico en base a nuestra experiencia y el éxito sostenido que se ha 
-                                    logrado con las salas eléctricas modulares, y por lo tanto,  utilizamos el dominio "Salas Eléctricas Chile" para ofrecer de forma exclusiva, 
-                                    la ingeniería, construcción y montaje de salas eléctricas modulares pre fabricadas.
-                                </span>
-                            </div>
-                            <div class="col-1"></div>
-                        </div>
-                        <div id="salas" class="py-4 px-4 lg:px-8">
-                            <div class="text-center pb-5 mb-5">
-                            <h2 class="text-5xl font-normal mb-2">Nuestras Salas</h2>
-                            </div>
-                        
-                            <div class="image-section">
-                                <div class="image-container h-25rem">
-                                    <img src="assets/salas_electricas/menu/1.jpg" class="h-25rem" alt="Imagen 1">
-                                    <div class="info-overlay text-100 text-2xl">Fácil Transporte</div>
-                                </div>
-                                <div class="image-container h-25rem">
-                                    <img src="assets/salas_electricas/menu/2.jpg" class="h-25rem" alt="Imagen 2">
-                                    <div class="info-overlay text-100 text-2xl">Versatilidad</div>
-                                </div>
-                                <div class="image-container h-25rem">
-                                    <img src="assets/salas_electricas/menu/3.jpg" class="h-25rem" alt="Imagen 3">
-                                    <div class="info-overlay text-100 text-2xl">Modelamiento 3D</div>
-                                </div>
-                            </div>
-            
-                            <div class="image-section">
-                                <div class="image-container h-25rem">
-                                    <img src="assets/salas_electricas/menu/4.jpg" class="h-25rem" alt="Imagen 4">
-                                    <div class="info-overlay text-100 text-2xl">Seguridad y Protección</div>
-                                </div>
-                                <div class="image-container h-25rem">
-                                    <img src="assets/salas_electricas/menu/5.jpg" class="h-25rem" alt="Imagen 5">
-                                    <div class="info-overlay text-100 text-2xl">Pruebas en Ambiente controlado</div>
-                                </div>
-                                <div class="image-container h-25rem">
-                                    <img src="assets/salas_electricas/menu/6.png" class="h-25rem" alt="Imagen 6">
-                                    <div class="info-overlay text-100 text-2xl">Instalación Fácil y Rápida</div>
-                                </div>
-                            </div>
-                        </div>  
-                    </div>  
-                </div>
-            </div>   
 
-            <div id="beneficios" class="px-4 lg:px-8 mx-0 lg:mx-8 text-center">
-                <div class="grid justify-content-center">
-                    <div class="col-12 text-center mt-8 mb-4">
-                        <h2 class="text-900 font-normal mb-2">Beneficios</h2>
-                        <!-- <span>La seguridad es nuestro primer valor, todas nuestras actividades deben desarrollarse de manera segura, de tal forma de promover la salud, seguridad y bienestar de nuestro personal</span> -->
-                    </div>
-                    <div class="col-12 md:col-4 p-0 lg:pb-5 mt-4 lg:mt-0">
-                        <app-collapsible-panel
-                            title="Asesorías en ingeniería eléctrica"
-                            imageUrl="assets/salas_electricas/iconos/44.png"
-                            description="Contamos con ingenieros de las áreas eléctrica, electrónica, y mecánica para realizar un desarrollo integral de los proyectos."
-                            [items]="[
-                                'Estudio y medición de mallas de puesta a tierra.',
-                                'Estudios y mediciones de calidad de energía.',
-                                'Diseño de sistemas de distribución de media y baja tensión.',
-                                'Estudios de coordinación de protecciones.',
-                                'Estudio y memorias de cálculos estructurales con confección de maquetas 3D.',
-                                'Estudio y memorias de cálculos de climatización.',
-                                'Estudio y memorias de cálculos de iluminación.',
-                                'Otros (Consúltanos).'
-                            ]">
-                        </app-collapsible-panel>
-                    </div>
-                    <div class="col-12 md:col-4 p-0 lg:pb-5 mt-4 lg:mt-0">
-                        <app-collapsible-panel
-                            title="Ahorro en el Proyecto"
-                            imageUrl="assets/salas_electricas/iconos/1.png"
-                            description=""
-                            [items]="[
-                                'Fabricación en entornos controlados.',
-                                'Las salas modulares se fabrican en un entorno controlado.',
-                                'Fácil transporte al lugar de instalación.',
-                                'Ahorro de tiempo y dinero.',
-                                'Las salas modulares suelen ser más eficientes en términos de tiempo y costos que las fabricadas in situ.',
-                                'El ahorro se debe a la reducción en los trabajos necesarios para trasladar, montar, cablear y configurar los equipos.',
-                                'Costos de construcción y montaje:',
-                                'La construcción in situ implica elevados costos de faena.',
-                                'Además, la propia estructura de la sala eléctrica debe construirse en el lugar, lo que incrementa los costos.'
-                            ]">
-                        </app-collapsible-panel>
-                    </div>
-                    <div class="col-12 md:col-4 p-0 lg:pb-5 mt-4 lg:mt-0">
-                        <app-collapsible-panel
-                            title="Gran Variedad de Aplicaciones"
-                            imageUrl="assets/salas_electricas/iconos/3.png"
-                            description=""
-                            [items]="[
-                            'Industrias que utilizan salas eléctricas: Energía, Manufactura, Minería, Petróleo y gas, Telecomunicaciones,  Otras industrias según las necesidades del cliente.',
-                            'Equipos que pueden contener:',
-                            'Equipos de control',
-                            'Equipos de medición',
-                            'Sistemas de protección',
-                            'Variadores de frecuencia',
-                            'Transformadores',
-                            'UPS (Sistemas de Alimentación Ininterrumpida)',
-                            'Baterías',
-                            'Sistemas de comunicaciones',
-                            'Computadoras',
-                            'Routers',
-                            'Flexibilidad en diseño:',
-                            'Se pueden montar diferentes equipos según los requerimientos del cliente.',
-                            'Las dimensiones de la sala se adaptan a las necesidades del proyecto.'
-                            ]">
-                        </app-collapsible-panel>
-                    </div>
-                    <div class="col-12 md:col-4 p-0 lg:pb-5 mt-4 lg:mt-0">
-                        <app-collapsible-panel
-                            title="Personalización y flexibilidad"
-                            imageUrl="assets/salas_electricas/iconos/2.png"
-                            description=""
-                            [items]="[
-                            'Diseño y construcción personalizados:',
-                            'Requerimientos específicos del cliente',
-                            'Dimensiones',
-                            'Distribución interna',
-                            'Características de resistencia y seguridad',
-                            'Maquetas 3D:',
-                            'Facilitan la visualización de la construcción',
-                            'Reflejan los requerimientos del cliente'
-                            ]">
-                        </app-collapsible-panel>
-                    </div>
-                    <div class="col-12 md:col-4 p-0 lg:pb-5 mt-4 lg:mt-0">
-                        <app-collapsible-panel
-                            title="Seguridad y Protección"
-                            imageUrl="assets/salas_electricas/iconos/4.png"
-                            description="PRUEBAS EN AMBIENTE CONTROLADO Para asegurar la calidad del producto a nuestro cliente, además de asegurar las memorias de cálculo de lo realizado, utilizamos diversos protocolos para asegurar los altos estándares de calidad. Esto incluye las pruebas de impermeabilidad, isaje, climatización, aislación, continuidad eléctrica, sistemas contra incendio, de iluminación,"
-                            [items]="[
-                            'Protección contra factores externos:',
-                            'Clima',
-                            'Contaminación',
-                            'Interferencia electromagnética',
-                            'Diseño resistente a:',
-                            'Condiciones extremas',
-                            'Sismos',
-                            'Incendios',
-                            'Explosiones internas',
-                            'Sistemas utilizados:',
-                            'Aislación',
-                            'Climatización',
-                            'Presurización',
-                            'Detección y extinción de incendios',
-                            'Equipos especializados según sea necesario'
-                            ]">
-                        </app-collapsible-panel>
-                    </div>
-                    <div class="col-12 md:col-4 p-0 lg:pb-5 mt-4 lg:mt-0">
-                        <app-collapsible-panel
-                            title="Instalación Fácil y Rápida"
-                            imageUrl="assets/salas_electricas/iconos/5.png"
-                            description="Al ser prefabricadas, su instalación en el sitio es relativamente rápida y sencilla, lo que reduce el tiempo de montaje, inactividad, y probabilidad de errores."
-                            [items]="[]">
-                        </app-collapsible-panel>
-                    </div>
-                </div>
-            </div>
-        
-            <div id="modelacion" class="py-2 px-2 bg-gray-100"> 
-                <div class="grid justify-content-center">
-                    <div class="col-12 text-center mt-8 mb-4">
-                        <h2 class="text-900 font-normal mb-2">Ejemplo de Modelación</h2>
-                    </div>
-                    <div class="grid mb-7 ml-5">
-                        <div class="col-12 lg:col-7">
-                            <div class="flex">
-                                <div
-                                    class="flex flex-column w-2 justify-content-between"
-                                    style="row-gap: 1rem"
-                                >
-                                    <img
-                                        *ngFor="let image of images; let i = index"
-                                        [ngClass]="{
-                                            'border-primary': selectedImageIndex === i
-                                        }"
-                                        [src]="image"
-                                        class="w-full cursor-pointer border-2 border-transparent transition-colors transition-duration-150 border-round"
-                                        (click)="selectedImageIndex = i"
-                                    />
-                                </div>
-                                <div class="pl-3 w-10 flex">
-                                    <img
-                                        [src]="images[selectedImageIndex]"
-                                        class="w-full border-2 border-transparent border-round"
-                                    />
-                                </div>
-                            </div>
-                        </div>                        
-                        <div class="col-12 lg:col-4 py-3 lg:pl-6">
-                            <div class="flex align-items-center text-xl font-medium text-900 mb-4 text-2xl">
-                                Sala de bombeo sub centro 8 
-                            </div>
-                            <div class="grid">
-                                <div class="col-6 text-xl">
-                                    <ul>
-                                        <li>Cliente: SQM</li>
-                                        <li>Medidas: 4 x 3 x 3 m</li>
-                                        <li>Sala cuenta con:</li>
-                                        <li>Detección de incendios con central de alarma BOSCH.</li>
-                                        <li>Kit de rescate eléctrico</li>
-                                        <li>Iluminación DS 43.</li>
-                                        <li>VDF 315 kW de integración propia</li>
-                                    </ul>
-                                </div>
-                                <div class="col-6 text-xl">
-                                    <ul>
-                                        <li>VDF 132 kW de integración propia</li>
-                                        <li>Tablero de alumbrado y fuerza</li>
-                                        <li>Centro de distribución de carga, CDC.</li>
-                                        <li>Equipo de climatización de 60.000 Btu /h</li>
-                                        <li>Entrega de memoria de cálculo de izaje</li>
-                                        <li>Entrega de memoria de cálculo de climatización</li>
-                                        <li>Entrega de Memoria de carga combustible</li>
-                                        <li>Entrega de Dossier de calidad de pruebas eléctricas /estructurales</li>
-                                    </ul>
+    <!-- CONTENIDO PRINCIPAL -->
+    <div class="flex flex-column flex-grow-1" style="margin-top: 5.625rem;">
+
+        <!-- HERO BANNER -->
+        <div class="landing-wrapper overflow-hidden w-full">
+            <section class="hero section-soft">
+                <!-- Orbes difuminados de fondo -->
+                <div class="hero-orb orange-light"></div>
+                <div class="hero-orb orange-primary"></div>
+                <div class="hero-orb rust"></div>
+                <div class="hero-orb slate"></div>
+                <div class="hero-orb orange-light2"></div>
+
+                <div class="hero-inner">
+                    <div class="hero-grid-2">
+                        <!-- IMAGEN A LA IZQUIERDA -->
+                        <div class="hero-visual">
+                            <div class="scene-stage reveal-scale">
+                                <div class="scene-frame">
+                                    <div class="scene">
+                                        <img class="field" src="assets/salas_electricas/carrusel/1.jpg" alt="Sala Eléctrica Modular" draggable="false">
+                                    </div>
                                 </div>
                             </div>
                         </div>
+
+                        <!-- TEXTO A LA DERECHA -->
+                        <div class="hero-text">
+                            <div class="hero-eyebrow">
+                                <span class="pill">Soluciones Modulares</span>
+                                Salas Eléctricas Chile
+                            </div>
+                            <h1>Ingeniería y Montaje de <br/><em>Salas Eléctricas</em></h1>
+                            <p class="hero-sub">
+                                Diseño, construcción y montaje de salas eléctricas modulares transportables, garantizando los más altos estándares de calidad a un precio competitivo.
+                            </p>
+                            <div class="hero-actions">
+                                <button class="btn btn-primary" (click)="navigateToFragment('beneficios')">Ver Beneficios</button>
+                                <button class="btn btn-ghost" (click)="router.navigate(['/salas_electricas/contacto'])">Contáctanos</button>
+                            </div>
+                        </div>
                     </div>
-                           
+                </div>
+            </section>
+        </div>
+
+        <!-- SECCIÓN: NUESTRA EMPRESA -->
+        <div class="surface-section px-4 py-8 md:px-6 lg:px-8" id="historia">
+            <div class="grid grid-nogutter align-items-center">
+                <div class="col-12 lg:col-6 pr-0 lg:pr-6 mb-5 lg:mb-0 text-center lg:text-left">
+                    <div class="font-bold mb-2" style="color: #f26522;"><span class="mr-2">01</span> Quiénes Somos</div>
+                    <h2 class="text-900 font-bold text-4xl mb-4 mt-0">Nuestra Empresa</h2>
+                    <p class="text-700 line-height-3 text-lg m-0">
+                        Como Ingeap, en respuesta a la creciente demanda de soluciones especializadas en el diseño, construcción y montaje de equipos de control, protección y gestión eléctrica, hemos decidido dar un paso estratégico. Basándonos en nuestra experiencia y el éxito sostenido con las salas eléctricas modulares, utilizamos el dominio "Salas Eléctricas Chile" para ofrecer de forma exclusiva la ingeniería, construcción y montaje de estas soluciones prefabricadas.
+                    </p>
+                </div>
+                <div class="col-12 lg:col-6 flex justify-content-center">
+                    <img src="assets/salas_electricas/menu/2.jpg" alt="Equipo trabajando en Sala Eléctrica" class="w-full border-round-2xl shadow-4" style="object-fit: cover; max-height: 400px;">
                 </div>
             </div>
         </div>
+
+        <!-- SECCIÓN: NUESTRAS SALAS -->
+        <div class="surface-0 px-4 py-8 md:px-6 lg:px-8 text-center" id="salas">
+            <div class="font-bold mb-2" style="color: #f26522;"><span class="mr-2">02</span> Características</div>
+            <h2 class="text-900 font-bold text-4xl mb-3 mt-0">Nuestras Salas</h2>
+            <p class="text-700 text-lg mb-6 mt-0">Soluciones robustas, versátiles y diseñadas a la medida de cada proyecto.</p>
+
+            <div class="grid text-left">
+                <div class="col-12 md:col-6 lg:col-4 p-3" *ngFor="let item of [
+                    {img: 'assets/salas_electricas/menu/1.jpg', title: 'Fácil Transporte'},
+                    {img: 'assets/salas_electricas/menu/2.jpg', title: 'Versatilidad'},
+                    {img: 'assets/salas_electricas/menu/3.jpg', title: 'Modelamiento 3D'},
+                    {img: 'assets/salas_electricas/menu/4.jpg', title: 'Seguridad y Protección'},
+                    {img: 'assets/salas_electricas/menu/5.jpg', title: 'Pruebas en Ambiente Controlado'},
+                    {img: 'assets/salas_electricas/menu/6.png', title: 'Instalación Fácil y Rápida'}
+                ]">
+                    <div class="relative border-round-2xl overflow-hidden shadow-2 h-15rem transition-all transition-duration-300 hover:shadow-4 cursor-pointer">
+                        <img [src]="item.img" [alt]="item.title" class="absolute top-0 left-0 w-full h-full" style="object-fit: cover;">
+                        <div class="absolute bottom-0 left-0 w-full p-3" style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                            <h3 class="text-white text-xl font-bold m-0">{{item.title}}</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN: BENEFICIOS -->
+        <div class="surface-section px-4 py-8 md:px-6 lg:px-8" id="beneficios">
+            <div class="text-center mb-6">
+                <div class="font-bold mb-2" style="color: #f26522;"><span class="mr-2">03</span> Ventajas</div>
+                <h2 class="text-900 font-bold text-4xl mb-3 mt-0">Beneficios Clave</h2>
+                <p class="text-700 text-lg m-0">Nuestras salas modulares ofrecen ventajas significativas en costo, tiempo y seguridad para su proyecto.</p>
+            </div>
+            <div class="grid">
+                <div class="col-12 md:col-6 lg:col-4 mb-4">
+                    <app-collapsible-panel title="Ahorro en el Proyecto" imageUrl="assets/salas_electricas/iconos/1.png" [items]="[
+                        'Fabricación en entornos controlados, reduciendo imprevistos.',
+                        'Menores costos de faena en comparación con la construcción in-situ.',
+                        'Reducción de tiempo en montaje, cableado y configuración de equipos.'
+                    ]"></app-collapsible-panel>
+                </div>
+                <div class="col-12 md:col-6 lg:col-4 mb-4">
+                    <app-collapsible-panel title="Personalización y Flexibilidad" imageUrl="assets/salas_electricas/iconos/2.png" [items]="[
+                        'Diseño y construcción a medida según requerimientos del cliente.',
+                        'Adaptación de dimensiones, distribución interna y características de seguridad.',
+                        'Uso de maquetas 3D para visualización y validación del diseño.'
+                    ]"></app-collapsible-panel>
+                </div>
+                <div class="col-12 md:col-6 lg:col-4 mb-4">
+                    <app-collapsible-panel title="Gran Variedad de Aplicaciones" imageUrl="assets/salas_electricas/iconos/3.png" [items]="[
+                        'Aplicable en Energía, Minería, Petróleo y Gas, Telecomunicaciones, etc.',
+                        'Integración de equipos de control, medición, VDF, transformadores, UPS y más.'
+                    ]"></app-collapsible-panel>
+                </div>
+                <div class="col-12 md:col-6 lg:col-4 mb-4">
+                    <app-collapsible-panel title="Seguridad y Protección" imageUrl="assets/salas_electricas/iconos/4.png" [items]="[
+                        'Protección contra clima, contaminación e interferencia electromagnética.',
+                        'Diseño resistente a sismos, incendios y explosiones internas.',
+                        'Sistemas de aislación, climatización, presurización y detección de incendios.'
+                    ]"></app-collapsible-panel>
+                </div>
+                <div class="col-12 md:col-6 lg:col-4 mb-4">
+                    <app-collapsible-panel title="Instalación Fácil y Rápida" imageUrl="assets/salas_electricas/iconos/5.png" [items]="[
+                        'Al ser prefabricadas, se reduce significativamente el tiempo de montaje en sitio.',
+                        'Minimiza la inactividad de la planta y la probabilidad de errores durante la instalación.'
+                    ]"></app-collapsible-panel>
+                </div>
+                <div class="col-12 md:col-6 lg:col-4 mb-4">
+                    <app-collapsible-panel title="Asesoría en Ingeniería" imageUrl="assets/salas_electricas/iconos/44.png" [items]="[
+                        'Estudios de mallas de puesta a tierra y calidad de energía.',
+                        'Diseño de sistemas de distribución MT/BT y coordinación de protecciones.',
+                        'Memorias de cálculo estructural, climatización e iluminación.'
+                    ]"></app-collapsible-panel>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN: MODELACIÓN 3D -->
+        <div class="surface-0 px-4 py-8 md:px-6 lg:px-8" id="modelacion">
+            <div class="text-center mb-6">
+                <div class="font-bold mb-2" style="color: #f26522;"><span class="mr-2">04</span> Visualización</div>
+                <h2 class="text-900 font-bold text-4xl mb-3 mt-0">Ejemplo de Modelación 3D</h2>
+                <p class="text-700 text-lg m-0">Visualice su proyecto antes de la construcción. Aquí un ejemplo de una sala de bombeo para nuestro cliente SQM.</p>
+            </div>
+            <div class="grid align-items-center">
+                <div class="col-12 lg:col-7">
+                    <div class="flex flex-column md:flex-row gap-3">
+                        <!-- Miniaturas -->
+                        <div class="flex md:flex-column overflow-auto gap-2" style="flex: 0 0 auto; max-width: 100%;">
+                            <img *ngFor="let image of images; let i = index" [src]="image" alt="Vista {{i+1}}"
+                                 class="cursor-pointer border-2 transition-all transition-duration-150 border-round-md"
+                                 style="width: 80px; height: 60px; object-fit: cover;"
+                                 [ngClass]="selectedImageIndex === i ? 'border-primary shadow-3' : 'border-transparent opacity-50 hover:opacity-100'"
+                                 (click)="selectedImageIndex = i" />
+                        </div>
+                        <!-- Imagen Principal -->
+                        <div class="flex-grow-1 flex justify-content-center">
+                            <img [src]="images[selectedImageIndex]" alt="Vista principal de la sala" class="w-full border-round-xl shadow-4" style="object-fit: cover; max-height: 500px;" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 lg:col-5 py-5 lg:pl-6 text-center lg:text-left">
+                    <h3 class="text-3xl font-bold text-900 mb-3 mt-0">Sala de Bombeo - Sub Centro 8</h3>
+                    <p class="text-700 line-height-3 text-lg mt-0 mb-4">
+                        Un proyecto completo para <strong>SQM</strong>, incluyendo VDF de 315kW y 132kW, climatización de 60,000 BTU/h, y sistemas de detección de incendios BOSCH.
+                    </p>
+                    <ul class="list-none p-0 m-0 text-700 text-lg text-left inline-block">
+                        <li class="flex align-items-center mb-3"><i class="pi pi-check-circle mr-3 text-xl" style="color: #f26522;"></i><span>Cliente: SQM</span></li>
+                        <li class="flex align-items-center mb-3"><i class="pi pi-check-circle mr-3 text-xl" style="color: #f26522;"></i><span>Medidas: 4 x 3 x 3 m</span></li>
+                        <li class="flex align-items-center mb-3"><i class="pi pi-check-circle mr-3 text-xl" style="color: #f26522;"></i><span>Detección de incendios BOSCH</span></li>
+                        <li class="flex align-items-center mb-3"><i class="pi pi-check-circle mr-3 text-xl" style="color: #f26522;"></i><span>Kit de rescate eléctrico</span></li>
+                        <li class="flex align-items-center"><i class="pi pi-check-circle mr-3 text-xl" style="color: #f26522;"></i><span>Entrega de Dossier de Calidad</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
     </div>
+
+    <!-- FOOTER -->
     <div class="mt-auto">
         <app-footer></app-footer>
     </div>

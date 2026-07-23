@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FooterComponent } from '../footer/footer.component';
-import { HeaderComponent } from '../header/header.component';
+import { HeaderComponent } from '../../ingeap/header/header.component';
 import { ButtonModule } from 'primeng/button';
 import { AccordionModule } from 'primeng/accordion';
 import { HeaderServiciosComponent } from '../header-servicios/header-servicios.component';

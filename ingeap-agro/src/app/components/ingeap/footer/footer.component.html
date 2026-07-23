@@ -1,19 +1,10 @@
-<div class="flex flex-wrap justify-content-center align-items-center col-12 p-2" style="background-color: #000053;">
-    <div class="col-12 md:col-3 text-white text-lg flex justify-content-center md:justify-content-start align-items-center">
-        <i class="pi pi-map-marker pr-2" style="font-size: 1rem; color:orange"></i>
-        <strong>{{topBarData.direccion}}</strong>
-    </div>
-    <div class="col-12 md:col-3 text-white text-lg flex justify-content-center md:justify-content-start align-items-center">
-        <i class="pi pi-envelope pr-2" style="font-size: 1rem; color:orange"></i>
-        <strong>{{topBarData.correo}}</strong>
-    </div>
-    <div class="col-12 md:col-3 text-white text-lg flex justify-content-center md:justify-content-start align-items-center">
-        <i class="pi pi-phone pr-2" style="font-size: 1rem; color:orange"></i>
-        <strong>{{topBarData.numeroContacto}}</strong>
-    </div>
-    <div class="col-12 md:col-3 text-center md:text-right text-white text-lg">
-        <!-- <strong><i class="ml-2 mr-2 pi pi-facebook text-2xl" style="cursor: pointer;"></i></strong>
-        <strong><i class="ml-2 mr-2 pi pi-instagram text-2xl" style="cursor: pointer;"></i></strong> -->
-        <strong><i class="ml-2 mr-2 pi pi-linkedin text-2xl" style="cursor: pointer;"></i></strong>
-    </div>
-</div>
+<app-footer-shared
+    [address]="'Ariztia 1050 Quillota'"
+    [email]="'ventas@ingeap.cl'"
+    [phone]="'+56 9 7517 5359'"
+    [linkedinUrl]="'https://www.linkedin.com/company/ingeap'"
+    [borderTop]="'1px solid rgba(255,255,255,0.05)'"
+    [iconColor]="'#31a5b3'"
+    [hoverBgColor]="'#31a5b3'">
+</app-footer-shared>
+

@@ -13,7 +13,7 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { ContactoComponent } from './contacto/contacto.component';
 import { AccordionModule } from 'primeng/accordion';
 import { FooterComponent } from './footer/footer.component';
-import { HeaderComponent } from './header/header.component';
+import { HeaderComponent } from '../ingeap/header/header.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 @NgModule({
     imports: [
@@ -27,12 +27,14 @@ import { SharedModule } from 'src/app/shared/shared.module';
         CarouselModule,
         InputTextModule,
         InputTextareaModule,
-        ContactoComponent,
         AccordionModule,
-        FooterComponent,
         HeaderComponent,
-        SharedModule
+        SharedModule,
+        ContactoComponent,
+        FooterComponent
     ],
-    declarations: [SalasElectricasComponent]
+    declarations: [
+        SalasElectricasComponent
+    ]
 })
 export class SalasElectricasModule { }

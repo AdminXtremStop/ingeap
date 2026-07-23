@@ -1,54 +1,26 @@
 <div class="min-h-screen flex flex-column bg-gray-100">
-    
-    <app-header></app-header>
+    <div style="position: fixed; z-index: 1000; background-color: #f5f5f5; width: 100%; border-bottom: 1px solid rgba(0,0,0,0.05);">
+        <app-header></app-header>
+    </div>
 
-    <div class="surface-0 flex justify-content-center">
-        <div class="contact-form-wrapper overflow-hidden">
-            <div class="text-center">
-                <h2 class="text-5xl font-normal mb-2  mt-5">CONTÁCTENOS</h2>
-            </div>
-            <div class="py-4 px-4 mx-0 md:mx-6 lg:mx-8 lg:px-8 flex align-items-center justify-content-between relative lg:static mb-3">
-                <div class="grid">
-                    <div class="col-6">
-                      <form class="p-fluid" (ngSubmit)="EnviarMail()">
-                        <div class="p-field">
-                            <label for="name">Nombre</label>
-                            <input type="text" name="name" pInputText [(ngModel)]="formData.name" />
-                        </div>
-                        <div class="p-field">
-                            <label for="email">Email</label>
-                            <input type="email" name="email" pInputText [(ngModel)]="formData.email" />
-                        </div>
-                        <div class="p-field">
-                            <label for="comentario">Comentario</label>
-                            <textarea name="message" id="comentario" rows="6" pInputTextarea [(ngModel)]="formData.message"></textarea>
-                        </div>
-                        <div class="p-field p-d-flex p-ai-center">
-                            <div class="grid">
-                                <div class="col-6">
-                                    <button type="submit" pButton [label]="isSending ? 'ENVIANDO...' : 'ENVIAR'"  [disabled]="isSending" class="p-mr-2 bg-orange-500" style="border: 2px solid orange;"></button>
-                                </div>
-                                <div class="col-6">
-                                    <button type="button" pButton label="BORRAR" class="p-button-secondary" (click)="limpiarFormulario()"></button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>    
-                    </div>
-
-                    <div class="col-6 my-auto align-items-center text-center">
-                        <h2 class="line-height-1 text-900 text-xl font-normal">Nos puedes encontrar en</h2>
-                        <div class="text-lg text-2xl line-height-3 mx-auto" style="max-width:300px;">
-                            <p>{{topBarData.direccion}}</p>
-                        </div>
-                        <div class="mt-4">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d665.8578086635927!2d-71.2286226!3d-32.876881!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9689d89a2f3f7e8f%3A0x0!2zMzLCsDUyJzM2LjgiUyA3McKwMTMnNDMuMCJX!5e0!3m2!1ses!2sus!4v1697988269871!5m2!1ses!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                        </div>
-                    </div>                
-                </div>
-            </div>
-        </div>
+    <div class="surface-0 flex justify-content-center" style="margin-top: 5.625rem;">
+        <app-contacto-shared
+            [eyebrowNumber]="null"
+            [eyebrowText]="null"
+            [title]="'CONTÁCTENOS'"
+            [subtitle]="'Estamos aquí para ayudarle con su próximo proyecto eléctrico.'"
+            [address]="'Ariztia 1050 Quillota'"
+            [email]="'ventas@ingeap.cl'"
+            [phone]="'+56 9 7517 5359'"
+            [accentColor]="'#f58220'"
+            [accentColorHover]="'#d46a10'"
+            [successConfirmColor]="'#f58220'"
+            [emailjsServiceId]="env.emailjs.defaultServiceId"
+            [emailjsTemplateId]="env.emailjs.defaultTemplateId"
+            [emailjsPublicKey]="env.emailjs.publicKey">
+        </app-contacto-shared>
     </div>
 
     <app-footer class="mt-auto"></app-footer>
 </div>
+
