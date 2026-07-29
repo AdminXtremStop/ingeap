@@ -15,6 +15,8 @@ import { AccordionModule } from 'primeng/accordion';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { CollapsiblePanelComponent } from '../collapsible-panel/collapsible-panel.component';
+
 @NgModule({
     imports: [
         CommonModule,
@@ -31,8 +33,11 @@ import { SharedModule } from 'src/app/shared/shared.module';
         AccordionModule,
         FooterComponent,
         HeaderComponent,
-        SharedModule
+        SharedModule,
+        CollapsiblePanelComponent
     ],
-    declarations: [IngeapComponent]
+    declarations: [
+        IngeapComponent
+    ]
 })
 export class IngeapLandingModule { }

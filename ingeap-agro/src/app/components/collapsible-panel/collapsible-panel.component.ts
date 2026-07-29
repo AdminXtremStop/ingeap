@@ -1,9 +1,12 @@
 import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-collapsible-panel',
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './collapsible-panel.component.html',
-  styleUrls: ['./collapsible-panel.component.scss']
+  styleUrl: './collapsible-panel.component.scss'
 })
 export class CollapsiblePanelComponent {
   @Input() title: string = '';
@@ -11,9 +14,9 @@ export class CollapsiblePanelComponent {
   @Input() imageUrl: string = '';
   @Input() items: string[] = [];
 
-  isCollapsed = true;
+  isExpanded = false;
 
   togglePanel() {
-    this.isCollapsed = !this.isCollapsed;
+    this.isExpanded = !this.isExpanded;
   }
 }

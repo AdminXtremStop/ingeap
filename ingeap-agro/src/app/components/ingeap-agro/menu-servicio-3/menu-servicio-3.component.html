@@ -1,138 +1,129 @@
-<app-header></app-header>
-<app-header-servicios [highlightId] = 3></app-header-servicios>
-<div class="surface-0 flex justify-content-center">
-    <div id="home-ingeap" class="landing-wrapper overflow-hidden">
-        <div>    
-            <div class="grid menu">
-                <div class="col-12 my-auto flex flex-column">
-                    <div class="grid">
-                        <div class="col-3"></div>
-                        <div class="col-6">
-                            <div class="grid image-section pt-4">
-                                <div class="col-12 mb-2 text-6xl">Monitoreo de Extracción de Aguas</div>
-                                <span class="col-12 text-2xl ocultar-en-movil ">
-                                    Con la finalidad de cumplir con el decreto #1238 de la Dirección General de Aguas (DGA), Ingeap Agro, realiza
-                                    la instalación del sistema de telemetría que permite tener la visualización en tiempo real de los datos de caudal
-                                    extraída de pozos profundos y a su vez transmitir estos datos directamente a la DGA.
-                                </span>
-                            </div>  
-                        </div>
-                        <div class="col-3"></div>
+<div class="min-h-screen flex flex-column" style="background-color: var(--bg-main, #fafbfc); color: var(--text-main, #1a1f2e);">
+    <!-- HEADER GLOBAL -->
+    <div style="position: fixed; z-index: 1000; background-color: #f5f5f5; width: 100%; border-bottom: 1px solid rgba(0,0,0,0.05);">
+        <app-header></app-header>
+    </div>
+
+    <!-- ESPACIADOR GLOBAL Y HEADER DE SERVICIOS -->
+    <div class="w-full" style="margin-top: 5.625rem;">
+        <app-header-servicios [highlightId]="3"></app-header-servicios>
+    </div>
+
+    <div class="flex justify-content-center w-full flex-grow-1">
+        <div class="landing-wrapper w-full max-w-7xl mx-auto px-4 py-6">
+
+            <!-- INTRO SECCIÓN -->
+            <div class="grid align-items-center my-6">
+                <div class="col-12 md:col-6 pr-0 md:pr-6 mb-5 md:mb-0">
+                    <h1 class="text-5xl font-bold mb-4 text-900" style="color: var(--ink-950);">Monitoreo de Extracción de Aguas</h1>
+                    <p class="text-xl line-height-3 text-600 mb-0" style="color: var(--text-gray);">
+                        Con la finalidad de cumplir con el decreto #1238 de la Dirección General de Aguas (DGA), Ingeap Agro, realiza
+                        la instalación del sistema de telemetría que permite tener la visualización en tiempo real de los datos de caudal
+                        extraída de pozos profundos y a su vez transmitir estos datos directamente a la DGA.
+                    </p>
+                </div>
+                <div class="col-12 md:col-6">
+                    <div class="border-round-2xl overflow-hidden shadow-4" style="aspect-ratio: 16/9;">
+                        <img src="assets/ingeap-agro/menu/7.png" class="w-full h-full" style="object-fit: cover;" alt="Monitoreo de Aguas">
                     </div>
-                </div>  
-            
+                </div>
             </div>
-        </div>   
-        
-        <div id="" class="px-4 bg-gray-100 text-center">
-            <div class="grid justify-content-center">
-                <div class="col-12 text-center mt-3 mb-4">
-                    <h2 class="text-5xl font-normal mb-2">Beneficios</h2>
+
+            <!-- BENEFICIOS -->
+            <div class="py-6 mt-4">
+                <div class="text-center mb-6">
+                    <h2 class="text-4xl font-bold mb-2 text-900">Beneficios</h2>
                 </div>
-    
-                <div class="col-12 md:col-12 lg:col-6 p-0 lg:pr-5 lg:pb-5 mt-4 lg:mt-0">
-                    <div style="height:225px; padding:2px; border-radius:10px; background: linear-gradient(90deg, rgba(253, 228, 165, 0.2),rgba(187, 199, 205, 0.2)), linear-gradient(180deg, rgba(253, 228, 165, 0.2),rgba(187, 199, 205, 0.2));">
-                        <div class="p-3 surface-card h-full" style="border-radius:8px;">
-                            <div class="flex align-items-center justify-content-center">
-                                <div class="flex align-items-center justify-content-center" style="width:5rem;height:5rem; border-radius:10px;">
-                                    <img src="assets/ingeap-agro/iconos/23.png" alt="Cumplimiento de Ley" style="width: 100%; height: 80%; object-fit: contain; border-radius:10px;">
-                                </div>
+
+                <div class="grid">
+                    <!-- Card 1 -->
+                    <div class="col-12 md:col-6 p-3">
+                        <div class="p-4 h-full bg-white border-round-2xl shadow-1 border-1 border-200 hover:shadow-4 transition-all transition-duration-300 hover:-translate-y-1">
+                            <div class="flex align-items-center justify-content-center mb-4" style="width: 4.5rem; height: 4.5rem; background: rgba(49, 165, 179, 0.08); border-radius: 14px;">
+                                <img src="assets/ingeap-agro/iconos/23.png" alt="Transmisión a DGA" style="width: 60%; height: 60%; object-fit: contain;">
                             </div>
-                            <div class="mb-2 text-2xl text-900">Transmisión de datos directo a la DGA.</div>
-                            <span class="text-lg">Nuestro sistema permite transmitir los datos del caudalímetro en tiempo real hacia la DGA. A su vez se pueden almacenar estos datos de manera local.</span>
+                            <h3 class="text-xl font-bold text-900 mb-3">Transmisión de datos directo a la DGA.</h3>
+                            <p class="text-600 line-height-3 m-0">Nuestro sistema permite transmitir los datos del caudalímetro en tiempo real hacia la DGA. A su vez se pueden almacenar estos datos de manera local.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="col-12 md:col-6 p-3">
+                        <div class="p-4 h-full bg-white border-round-2xl shadow-1 border-1 border-200 hover:shadow-4 transition-all transition-duration-300 hover:-translate-y-1">
+                            <div class="flex align-items-center justify-content-center mb-4" style="width: 4.5rem; height: 4.5rem; background: rgba(101, 172, 74, 0.08); border-radius: 14px;">
+                                <img src="assets/ingeap-agro/iconos/24.png" alt="Flujo utilizado" style="width: 60%; height: 60%; object-fit: contain;">
+                            </div>
+                            <h3 class="text-xl font-bold text-900 mb-3">Conocer el flujo de agua utilizado.</h3>
+                            <p class="text-600 line-height-3 m-0">Conocer la cantidad de agua utilizada, permite una mejor gestión y aprovechamiento de los recursos hídricos, lo que puede traducirse en ahorros de agua, tiempo y costos operativos.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="col-12 md:col-6 p-3">
+                        <div class="p-4 h-full bg-white border-round-2xl shadow-1 border-1 border-200 hover:shadow-4 transition-all transition-duration-300 hover:-translate-y-1">
+                            <div class="flex align-items-center justify-content-center mb-4" style="width: 4.5rem; height: 4.5rem; background: rgba(247, 201, 44, 0.08); border-radius: 14px;">
+                                <img src="assets/ingeap-agro/iconos/25.png" alt="Planificación" style="width: 60%; height: 60%; object-fit: contain;">
+                            </div>
+                            <h3 class="text-xl font-bold text-900 mb-3">Base para la Planificación</h3>
+                            <p class="text-600 line-height-3 m-0">Los datos obtenidos del monitoreo pueden servir como base para la toma de decisiones informadas y estratégicas tanto a nivel empresarial como gubernamental.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="col-12 md:col-6 p-3">
+                        <div class="p-4 h-full bg-white border-round-2xl shadow-1 border-1 border-200 hover:shadow-4 transition-all transition-duration-300 hover:-translate-y-1">
+                            <div class="flex align-items-center justify-content-center mb-4" style="width: 4.5rem; height: 4.5rem; background: rgba(49, 165, 179, 0.08); border-radius: 14px;">
+                                <img src="assets/ingeap-agro/iconos/13.png" alt="Cumplimiento DGA" style="width: 60%; height: 60%; object-fit: contain;">
+                            </div>
+                            <h3 class="text-xl font-bold text-900 mb-3">Cumplimiento de decreto #1238</h3>
+                            <p class="text-600 line-height-3 m-0">Según lo estipulado por el decreto N°#1238 de la Dirección General de Aguas, establece que se debe informar la cantidad de agua extraída de pozos profundos.</p>
                         </div>
                     </div>
                 </div>
-        
-                <div class="col-12 md:col-12 lg:col-6 p-0 lg:pr-5 lg:pb-5 mt-4 lg:mt-0">
-                    <div style="height:225px; padding:2px; border-radius:10px; background: linear-gradient(90deg, rgba(145,226,237,0.2),rgba(251, 199, 145, 0.2)), linear-gradient(180deg, rgba(253, 228, 165, 0.2), rgba(172, 180, 223, 0.2));">
-                        <div class="p-3 surface-card h-full" style="border-radius:8px;">
-                            <div class="flex align-items-center justify-content-center">
-                                <div class="flex align-items-center justify-content-center" style="width:5rem;height:5rem; border-radius:10px;">
-                                    <img src="assets/ingeap-agro/iconos/24.png" alt="Cumplimiento de Ley" style="width: 100%; height: 80%; object-fit: contain; border-radius:10px;">
-                                </div>
-                            </div>
-                            <div class="mb-2 text-2xl text-900">Conocer el flujo de agua utilizado.</div>
-                            <span class="text-lg">Conocer la cantidad de agua utilizada, permite una mejor gestión y aprovechamiento de los recursos hídricos, lo que puede traducirse en ahorros de agua, tiempo y costos operativos.</span>
-                        </div>
-                    </div>
-                </div>
-        
-                <div class="col-12 md:col-12 lg:col-6 p-0 lg:pr-5 lg:pb-5 mt-4 lg:mt-0">
-                    <div style="height:225px; padding:2px; border-radius:10px; background: linear-gradient(90deg, rgba(145, 226, 237, 0.2), rgba(172, 180, 223, 0.2)), linear-gradient(180deg, rgba(172, 180, 223, 0.2), rgba(246, 158, 188, 0.2));">
-                        <div class="p-3 surface-card h-full" style="border-radius:8px;">
-                            <div class="flex align-items-center justify-content-center">
-                                <div class="flex align-items-center justify-content-center" style="width:5rem;height:5rem; border-radius:10px;">
-                                    <img src="assets/ingeap-agro/iconos/25.png" alt="Cumplimiento de Ley" style="width: 100%; height: 80%; object-fit: contain; border-radius:10px;">
-                                </div>
-                            </div>
-                            <div class="mb-2 text-2xl text-900">Base para la Planificación</div>
-                            <span class="text-lg">Los datos obtenidos del monitoreo pueden servir como base para la toma de decisiones informadas y estratégicas tanto a nivel empresarial como gubernamental.</span>
-                        </div>
-                    </div>
-                </div>
-        
-                <div class="col-12 md:col-12 lg:col-6 p-0 lg:pr-5 lg:pb-5 mt-4 lg:mt-0">
-                    <div style="height:225px; padding:2px; border-radius:10px; background: linear-gradient(90deg, rgba(187, 199, 205, 0.2),rgba(251, 199, 145, 0.2)), linear-gradient(180deg, rgba(253, 228, 165, 0.2),rgba(145, 210, 204, 0.2));">
-                        <div class="p-3 surface-card h-full" style="border-radius:8px;">
-                            <div class="flex align-items-center justify-content-center">
-                                <div class="flex align-items-center justify-content-center" style="width:5rem;height:5rem; border-radius:10px;">
-                                    <img src="assets/ingeap-agro/iconos/13.png" alt="Cumplimiento de Ley" style="width: 100%; height: 80%; object-fit: contain; border-radius:10px;">
-                                </div>
-                            </div>
-                            <div class="mb-2 text-2xl text-900">Cumplimiento de decreto #1238</div>
-                            <span class="text-lg">Según lo estipulado por el decreto N°#1238 de la Dirección General de Aguas, establece que se debe informar la cantidad de agua extraída de pozos profundos.</span>
-                        </div>
-                    </div>
-                </div>          
             </div>
-        </div>
-        
-        <div id="" class="px-4 text-center">
-            <div class="grid justify-content-center">
-                <div class="col-12 text-center mt-3 mb-4">
-                    <h2 class="text-5xl font-normal mb-2">FAQ's</h2>
+
+            <!-- FAQ -->
+            <div class="py-6">
+                <div class="text-center mb-5">
+                    <h2 class="text-4xl font-bold mb-2 text-900">FAQ's</h2>
                 </div>
-    
-                <div class="col-12 md:col-12 lg:col-3 p-0 lg:pr-5 lg:pb-5 mt-4 lg:mt-0">
-                    <p-accordion [activeIndex]="1">
-                        <p-accordionTab header="¿Cuáles son los tipos de transmisión de datos?">
-                            <p>
-                                Los datos de extracción deben ser transmitidos a la DGA mediante diferentes métodos:
-                                 en línea, por archivo o formulario, según lo determine la DGA. Esto garantiza la 
-                                 transparencia y el control sobre el uso de recursos hídricos​.
-                            </p>
-                        </p-accordionTab>
-                    </p-accordion>
+
+                <div class="grid justify-content-center">
+                    <div class="col-12 lg:col-10">
+                        <p-accordion [multiple]="true">
+                            <p-accordionTab header="¿Cuáles son los tipos de transmisión de datos?">
+                                <p class="line-height-3 m-0 text-700">
+                                    Los datos de extracción deben ser transmitidos a la DGA mediante diferentes métodos:
+                                    en línea, por archivo o formulario, según lo determine la DGA. Esto garantiza la
+                                    transparencia y el control sobre el uso de recursos hídricos​.
+                                </p>
+                            </p-accordionTab>
+                            <p-accordionTab header="¿Existen sanciones por el incumplimiento de este decreto?">
+                                <p class="line-height-3 m-0 text-700">
+                                    El incumplimiento de esta normativa puede acarrear sanciones
+                                    económicas significativas, que van desde 10 a 50 unidades tributarias
+                                    mensuales (UTM) para infracciones leves, hasta 2000 UTM para las más grave.
+                                </p>
+                            </p-accordionTab>
+                            <p-accordionTab header=".¿Quienes deben instalar este sistema?">
+                                <p class="line-height-3 m-0 text-700">
+                                    Todos los titulares de derechos de aprovechamiento de aguas
+                                    subterráneas deben instalar sistemas de monitoreo de
+                                    extracciones efectivas. Estos sistemas incluyen medidores
+                                    de flujo (flujómetros) y sensores de nivel freático, conectados
+                                    a un registrador de datos (Data Logger).​
+                                </p>
+                            </p-accordionTab>
+                        </p-accordion>
+                    </div>
                 </div>
-        
-                <div class="col-12 md:col-12 lg:col-3 p-0 lg:pr-5 lg:pb-5 mt-4 lg:mt-0">
-                    <p-accordion [activeIndex]="2">
-                        <p-accordionTab header="¿Existen sanciones por el incumplimiento de este decreto?">
-                            <p>
-                                El incumplimiento de esta normativa puede acarrear sanciones 
-                                económicas significativas, que van desde 10 a 50 unidades tributarias
-                                mensuales (UTM) para infracciones leves, hasta 2000 UTM para las más grave.
-                            </p>
-                        </p-accordionTab>
-                    </p-accordion>
-                </div>  
-                
-                <div class="col-12 md:col-12 lg:col-3 p-0 lg:pr-5 lg:pb-5 mt-4 lg:mt-0">
-                    <p-accordion [activeIndex]="3">
-                        <p-accordionTab header=".¿Quienes deben instalar este sistema?">
-                            <p>
-                                Todos los titulares de derechos de aprovechamiento de aguas
-                                subterráneas deben instalar sistemas de monitoreo de 
-                                extracciones efectivas. Estos sistemas incluyen medidores 
-                                de flujo (flujómetros) y sensores de nivel freático, conectados
-                                a un registrador de datos (Data Logger).​
-                            </p>
-                        </p-accordionTab>
-                    </p-accordion>
-                </div>  
             </div>
+
         </div>
     </div>
+
+    <!-- FOOTER GLOBAL DE LA APP -->
+    <div class="mt-auto">
+        <app-footer></app-footer>
+    </div>
 </div>
-<app-footer></app-footer>

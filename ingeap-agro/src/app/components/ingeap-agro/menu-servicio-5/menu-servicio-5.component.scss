@@ -1,16 +1,1 @@
-:host ::ng-deep .p-carousel-container{
-    max-width: 400px; /* Ajusta el ancho máximo del carrusel */
-    max-height: 400px; /* Ajusta el alto máximo del carrusel */
-    margin: 0 auto; /* Centra el carrusel dentro de la card */
-}
-
-.card{
-    height: 600px;
-    width: 500px;
-}
-
-@media (max-width: 768px) {
-    .ocultar-en-movil {
-      display: none;
-    }
-}
+@import '../servicios-shared.scss';

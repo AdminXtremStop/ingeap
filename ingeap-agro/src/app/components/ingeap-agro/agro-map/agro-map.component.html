@@ -1,0 +1,273 @@
+<section class="map-section" id="mapa" data-screen-label="06 Mapa" style="padding: 72px 0; background: transparent; color: inherit;">
+    <div class="container" style="max-width: 1160px; padding: 0 5%; margin: 0 auto;">
+
+        <!-- HEADER DIVIDIDO EN DOS COLUMNAS -->
+        <div class="section-header map-grid" style="align-items: center !important; margin-bottom: 64px;">
+            <div class="head-left">
+                <span class="eyebrow reveal in" style="display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono, monospace); font-size: 0.85rem; text-transform: uppercase; color: var(--turquoise, #31a5b3); letter-spacing: 0.5px;"><span class="num" style="opacity: 0.4;">05</span>Mapa del predio</span>
+                <h2 class="reveal in" style="font-size: 2.5rem; font-weight: 600; line-height: 1.15; margin-bottom: 0 !important;">Tu predio, <em>en<br>un solo plano.</em></h2>
+            </div>
+            <div class="head-right">
+                <p class="lead reveal in" style="margin-bottom: 0 !important;">Visualiza cada sensor, cada válvula y cada cuartel en un mapa interactivo. Pasa el mouse sobre un punto y ves su lectura actual; haz click y abres su histórico.</p>
+            </div>
+        </div>
+
+        <div class="map-grid">
+            <div class="map-text" style="align-self: center !important;">
+                <div class="map-features">
+                    <div class="map-feat reveal in"><span class="dot tq"></span>Sensor de humedad — lectura cada 60 s</div>
+                    <div class="map-feat reveal in" style="transition-delay: 60ms;"><span class="dot gr"></span>Estación fitopatológica — predicción 7 días</div>
+                    <div class="map-feat reveal in" style="transition-delay: 120ms;"><span class="dot yl"></span>Válvula automatizada — control remoto</div>
+                </div>
+            </div>
+
+            <div class="map-vis-wrap reveal-scale in">
+                <div class="map-tabs" style="margin-bottom: 16px;">
+                    <button class="map-tab" [class.active]="mapView !== 'leaflet'" (click)="mapView = 'cuarteles'">Cuarteles</button>
+                    <button class="map-tab" [class.active]="mapView === 'leaflet'" (click)="mapView = 'leaflet'">Mapa</button>
+                </div>
+
+                <div class="map-vis" id="mapVis">
+                    <!-- VISTA: SVG Cuarteles -->
+                    <div *ngIf="mapView !== 'leaflet'" style="aspect-ratio: 4/3; min-height: 460px; background: #1a1f2e; border-radius: 12px; overflow: hidden; position: relative; border: 1px solid rgba(26, 31, 46, 0.05);">
+                    <svg class="map-svg view-cuarteles" viewBox="0 0 600 460" style="width: 100%; height: 100%;">
+                        <defs>
+                            <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"></path>
+                            </pattern>
+                            <radialGradient id="cuartelA" cx="50%" cy="50%">
+                                <stop offset="0%" stop-color="#31a5b3" stop-opacity="0.4"></stop>
+                                <stop offset="100%" stop-color="#31a5b3" stop-opacity="0.05"></stop>
+                            </radialGradient>
+                            <radialGradient id="cuartelB" cx="50%" cy="50%">
+                                <stop offset="0%" stop-color="#65ac4a" stop-opacity="0.4"></stop>
+                                <stop offset="100%" stop-color="#65ac4a" stop-opacity="0.05"></stop>
+                            </radialGradient>
+                            <radialGradient id="cuartelC" cx="50%" cy="50%">
+                                <stop offset="0%" stop-color="#f7c92c" stop-opacity="0.35"></stop>
+                                <stop offset="100%" stop-color="#f7c92c" stop-opacity="0.05"></stop>
+                            </radialGradient>
+                        </defs>
+
+                        <rect width="600" height="460" fill="url(#grid)"></rect>
+
+                        <path d="M 60 60 L 290 50 L 320 220 L 80 230 Z" fill="url(#cuartelA)" stroke="rgba(49,165,179,0.5)" stroke-width="1.5" stroke-dasharray="6 4"></path>
+                        <path d="M 320 70 L 540 90 L 530 260 L 340 250 Z" fill="url(#cuartelB)" stroke="rgba(101,172,74,0.5)" stroke-width="1.5" stroke-dasharray="6 4"></path>
+                        <path d="M 80 260 L 350 270 L 360 410 L 90 400 Z" fill="url(#cuartelC)" stroke="rgba(247,201,44,0.5)" stroke-width="1.5" stroke-dasharray="6 4"></path>
+                        <path d="M 380 280 L 540 290 L 525 410 L 380 400 Z" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-dasharray="6 4"></path>
+
+                        <g font-family="JetBrains Mono, monospace" font-size="10" fill="rgba(255,255,255,0.6)">
+                            <text x="80" y="80">CUARTEL A · UVA</text>
+                            <text x="340" y="100">CUARTEL B · CEREZO</text>
+                            <text x="100" y="285">CUARTEL C · PALTO</text>
+                            <text x="395" y="305">CUARTEL D · NOGAL</text>
+                        </g>
+
+                        <g class="sensors">
+                            <g><circle cx="120" cy="125" r="5" fill="#31a5b3"></circle><circle cx="120" cy="125" r="10" fill="#31a5b3" opacity="0.3"><animate attributeName="r" values="5;14;5" dur="2.4s" repeatCount="indefinite"></animate><animate attributeName="opacity" values="0.5;0;0.5" dur="2.4s" repeatCount="indefinite"></animate></circle></g>
+                            <g><circle cx="220" cy="170" r="5" fill="#31a5b3"></circle><circle cx="220" cy="170" r="10" fill="#31a5b3" opacity="0.3"><animate attributeName="r" values="5;14;5" dur="2.4s" begin="0.4s" repeatCount="indefinite"></animate><animate attributeName="opacity" values="0.5;0;0.5" dur="2.4s" begin="0.4s" repeatCount="indefinite"></animate></circle></g>
+                            <g><circle cx="180" cy="100" r="5" fill="#31a5b3"></circle></g>
+                            <g><circle cx="400" cy="155" r="5" fill="#31a5b3"></circle><circle cx="400" cy="155" r="10" fill="#31a5b3" opacity="0.3"><animate attributeName="r" values="5;14;5" dur="2.4s" begin="0.8s" repeatCount="indefinite"></animate><animate attributeName="opacity" values="0.5;0;0.5" dur="2.4s" begin="0.8s" repeatCount="indefinite"></animate></circle></g>
+                            <g><circle cx="470" cy="210" r="5" fill="#31a5b3"></circle></g>
+                            <g><circle cx="200" cy="345" r="5" fill="#31a5b3"></circle><circle cx="200" cy="345" r="10" fill="#31a5b3" opacity="0.3"><animate attributeName="r" values="5;14;5" dur="2.4s" begin="1.2s" repeatCount="indefinite"></animate><animate attributeName="opacity" values="0.5;0;0.5" dur="2.4s" begin="1.2s" repeatCount="indefinite"></animate></circle></g>
+                            <g><circle cx="290" cy="370" r="5" fill="#31a5b3"></circle></g>
+                            <g><circle cx="450" cy="355" r="5" fill="#31a5b3"></circle></g>
+                        </g>
+
+                        <g>
+                            <rect x="245" y="135" width="14" height="14" rx="3" fill="#65ac4a"></rect>
+                            <rect x="430" y="320" width="14" height="14" rx="3" fill="#65ac4a"></rect>
+                        </g>
+
+                        <g>
+                            <polygon points="155,195 165,205 155,215 145,205" fill="#f7c92c"></polygon>
+                            <polygon points="375,195 385,205 375,215 365,205" fill="#f7c92c"></polygon>
+                            <polygon points="265,340 275,350 265,360 255,350" fill="#f7c92c"></polygon>
+                        </g>
+
+                        <g transform="translate(220, 115)">
+                            <rect x="20" y="-30" width="140" height="56" rx="8" fill="white" filter="drop-shadow(0 4px 12px rgba(0,0,0,0.2))"></rect>
+                            <text x="32" y="-12" font-family="JetBrains Mono, monospace" font-size="9" fill="#7a8195">SENSOR S-127</text>
+                            <text x="32" y="6" font-family="Inter Tight, system-ui, sans-serif" font-weight="600" font-size="18" fill="#1a1f2e">36% humedad</text>
+                            <text x="32" y="22" font-family="Inter Tight, sans-serif" font-size="10" fill="#65ac4a">↑ óptimo</text>
+                            <circle cx="14" cy="0" r="4" fill="#31a5b3"></circle>
+                        </g>
+
+                        <g transform="translate(540, 425)" font-family="JetBrains Mono, monospace" font-size="9" fill="rgba(255,255,255,0.6)">
+                            <circle cx="0" cy="0" r="14" fill="none" stroke="rgba(255,255,255,0.2)"></circle>
+                            <text x="0" y="-18" text-anchor="middle">N</text>
+                            <line x1="0" y1="-10" x2="0" y2="-4" stroke="#f7c92c" stroke-width="2"></line>
+                        </g>
+                    </svg>
+                </div>
+
+                <!-- VISTA: Componente Leaflet (Mapa Interactivo) -->
+                <div *ngIf="mapView === 'leaflet'" class="w-full border-round-xl overflow-hidden border-1 surface-border" style="aspect-ratio: 4/3; min-height: 460px; background: #f9f9f9;">
+                    <svg class="map-svg view-leaflet" viewBox="0 0 600 460" style="width: 100%; height: 100%;">
+                        <defs>
+                            <!-- Subtle topo lines -->
+                            <pattern id="topo" width="120" height="120" patternUnits="userSpaceOnUse">
+                                <path d="M 0 60 Q 30 50 60 60 T 120 60" fill="none" stroke="rgba(80,60,30,0.05)" stroke-width="1"></path>
+                                <path d="M 0 90 Q 30 80 60 90 T 120 90" fill="none" stroke="rgba(80,60,30,0.05)" stroke-width="1"></path>
+                            </pattern>
+                            <!-- Field textures: row crops -->
+                            <pattern id="f-vineyard" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(28)">
+                                <rect width="7" height="7" fill="#cfe1bd"></rect>
+                                <line x1="0" y1="0" x2="0" y2="7" stroke="#a8c585" stroke-width="1"></line>
+                            </pattern>
+                            <pattern id="f-cherry" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(48)">
+                                <rect width="10" height="10" fill="#d6e4be"></rect>
+                                <circle cx="5" cy="5" r="1.4" fill="#82a85e"></circle>
+                            </pattern>
+                            <pattern id="f-avocado" width="9" height="9" patternUnits="userSpaceOnUse">
+                                <rect width="9" height="9" fill="#dcd9a6"></rect>
+                                <circle cx="4.5" cy="4.5" r="1.6" fill="#a59c4f"></circle>
+                            </pattern>
+                            <pattern id="f-walnut" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(-22)">
+                                <rect width="8" height="8" fill="#d5c9a8"></rect>
+                                <line x1="0" y1="0" x2="0" y2="8" stroke="#a89876" stroke-width="0.8"></line>
+                            </pattern>
+                            <!-- Map base -->
+                            <linearGradient id="mapBg" x1="0" y1="0" x2="1" y2="1">
+                                <stop offset="0%" stop-color="#efe9d8"></stop>
+                                <stop offset="100%" stop-color="#e6dec8"></stop>
+                            </linearGradient>
+                            <!-- Pin drop-shadow -->
+                            <filter id="pinShadow" x="-50%" y="-50%" width="200%" height="200%">
+                                <feDropShadow dx="0" dy="2" stdDeviation="2" flood-opacity="0.28"></feDropShadow>
+                            </filter>
+                            <filter id="popupShadow" x="-50%" y="-50%" width="200%" height="200%">
+                                <feDropShadow dx="0" dy="3" stdDeviation="5" flood-opacity="0.18"></feDropShadow>
+                            </filter>
+                        </defs>
+
+                        <!-- Map background -->
+                        <rect width="600" height="460" fill="url(#mapBg)"></rect>
+                        <rect width="600" height="460" fill="url(#topo)"></rect>
+
+                        <!-- Acequia / canal de agua -->
+                        <path d="M -10 210 Q 100 195 200 215 T 410 222 Q 510 230 610 210" fill="none" stroke="#b6d2e6" stroke-width="7" stroke-linecap="round"></path>
+                        <path d="M -10 210 Q 100 195 200 215 T 410 222 Q 510 230 610 210" fill="none" stroke="#8db9d6" stroke-width="1" stroke-dasharray="3 4" opacity="0.6"></path>
+
+                        <!-- Camino principal y secundario -->
+                        <path d="M 0 90 L 600 105" stroke="#ffffff" stroke-width="7"></path>
+                        <path d="M 0 90 L 600 105" stroke="#c9bf9c" stroke-width="1"></path>
+                        <path d="M 312 0 L 322 460" stroke="#ffffff" stroke-width="7"></path>
+                        <path d="M 312 0 L 322 460" stroke="#c9bf9c" stroke-width="1"></path>
+
+                        <!-- CUARTELES como polígonos de campo -->
+                        <g>
+                            <path d="M 30 110 L 290 100 L 305 195 L 50 200 Z" fill="url(#f-vineyard)" stroke="#7a9456" stroke-width="1.5"></path>
+                            <path d="M 335 110 L 575 120 L 565 197 L 345 198 Z" fill="url(#f-cherry)" stroke="#7a9456" stroke-width="1.5"></path>
+                            <path d="M 30 235 L 305 240 L 318 415 L 40 405 Z" fill="url(#f-avocado)" stroke="#a08e4a" stroke-width="1.5"></path>
+                            <path d="M 340 240 L 575 232 L 580 410 L 335 415 Z" fill="url(#f-walnut)" stroke="#9a8a62" stroke-width="1.5"></path>
+                        </g>
+
+                        <!-- Field labels -->
+                        <g font-family="Inter Tight, system-ui, sans-serif" font-weight="600">
+                            <text x="60" y="138" font-size="11.5" fill="#3f4f1c">Cuartel A · Uva</text>
+                            <text x="60" y="152" font-family="JetBrains Mono, monospace" font-size="9" font-weight="500" fill="#697a3b">12.4 ha</text>
+                            <text x="352" y="138" font-size="11.5" fill="#3f4f1c">Cuartel B · Cerezo</text>
+                            <text x="352" y="152" font-family="JetBrains Mono, monospace" font-size="9" font-weight="500" fill="#697a3b">8.7 ha</text>
+                            <text x="55" y="275" font-size="11.5" fill="#5c4f1c">Cuartel C · Palto</text>
+                            <text x="55" y="289" font-family="JetBrains Mono, monospace" font-size="9" font-weight="500" fill="#7d6f2e">15.2 ha</text>
+                            <text x="360" y="275" font-size="11.5" fill="#574a2b">Cuartel D · Nogal</text>
+                            <text x="360" y="289" font-family="JetBrains Mono, monospace" font-size="9" font-weight="500" fill="#7a6b48">10.5 ha</text>
+                        </g>
+
+                        <!-- PINES de medición (estilo Leaflet teardrop) -->
+                        <g filter="url(#pinShadow)">
+                            <!-- Pin 1 — humedad cuartel A -->
+                            <g transform="translate(150 165)">
+                                <path d="M 0 0 C -10 0 -16 -8 -16 -16 C -16 -24 -10 -32 0 -32 C 10 -32 16 -24 16 -16 C 16 -8 10 0 0 0 Z" fill="#31a5b3" stroke="white" stroke-width="2"></path>
+                                <circle cx="0" cy="-18" r="5.5" fill="white"></circle>
+                                <text x="0" y="-15" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#1f7e8a" text-anchor="middle" font-weight="700">01</text>
+                            </g>
+                            <!-- Pin 2 — cuartel A -->
+                            <g transform="translate(245 180)">
+                                <path d="M 0 0 C -10 0 -16 -8 -16 -16 C -16 -24 -10 -32 0 -32 C 10 -32 16 -24 16 -16 C 16 -8 10 0 0 0 Z" fill="#31a5b3" stroke="white" stroke-width="2"></path>
+                                <circle cx="0" cy="-18" r="5.5" fill="white"></circle>
+                                <text x="0" y="-15" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#1f7e8a" text-anchor="middle" font-weight="700">02</text>
+                            </g>
+                            <!-- Pin 3 — cuartel B (ACTIVE) -->
+                            <g transform="translate(440 168)">
+                                <path d="M 0 0 C -12 0 -19 -10 -19 -19 C -19 -29 -12 -38 0 -38 C 12 -38 19 -29 19 -19 C 19 -10 12 0 0 0 Z" fill="#65ac4a" stroke="white" stroke-width="2.5"></path>
+                                <circle cx="0" cy="-21" r="6" fill="white"></circle>
+                                <text x="0" y="-18" font-family="JetBrains Mono, monospace" font-size="8" fill="#3a6b1e" text-anchor="middle" font-weight="700">03</text>
+                            </g>
+                            <!-- Pin 4 — cuartel C -->
+                            <g transform="translate(180 340)">
+                                <path d="M 0 0 C -10 0 -16 -8 -16 -16 C -16 -24 -10 -32 0 -32 C 10 -32 16 -24 16 -16 C 16 -8 10 0 0 0 Z" fill="#f7c92c" stroke="white" stroke-width="2"></path>
+                                <circle cx="0" cy="-18" r="5.5" fill="white"></circle>
+                                <text x="0" y="-15" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#9c7e10" text-anchor="middle" font-weight="700">04</text>
+                            </g>
+                            <!-- Pin 5 — estación meteo cuartel C -->
+                            <g transform="translate(265 385)">
+                                <path d="M 0 0 C -10 0 -16 -8 -16 -16 C -16 -24 -10 -32 0 -32 C 10 -32 16 -24 16 -16 C 16 -8 10 0 0 0 Z" fill="#34487c" stroke="white" stroke-width="2"></path>
+                                <circle cx="0" cy="-18" r="5.5" fill="white"></circle>
+                                <text x="0" y="-15" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#1f2f5a" text-anchor="middle" font-weight="700">05</text>
+                            </g>
+                            <!-- Pin 6 — cuartel D -->
+                            <g transform="translate(480 340)">
+                                <path d="M 0 0 C -10 0 -16 -8 -16 -16 C -16 -24 -10 -32 0 -32 C 10 -32 16 -24 16 -16 C 16 -8 10 0 0 0 Z" fill="#e07a3a" stroke="white" stroke-width="2"></path>
+                                <circle cx="0" cy="-18" r="5.5" fill="white"></circle>
+                                <text x="0" y="-15" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#a14a0e" text-anchor="middle" font-weight="700">06</text>
+                            </g>
+                        </g>
+
+                        <!-- Pulse ring on active pin (#03) -->
+                        <circle cx="440" cy="149" r="22" fill="none" stroke="#65ac4a" stroke-width="2" opacity="0.55">
+                            <animate attributeName="r" values="22;38;22" dur="2.2s" repeatCount="indefinite"></animate>
+                            <animate attributeName="opacity" values="0.55;0;0.55" dur="2.2s" repeatCount="indefinite"></animate>
+                        </circle>
+
+                        <!-- Popup card for active pin -->
+                        <g transform="translate(440 60)" filter="url(#popupShadow)">
+                            <path d="M -8 65 L 0 75 L 8 65 Z" fill="white"></path>
+                            <rect x="-110" y="-12" width="220" height="80" rx="10" fill="white"></rect>
+                            <text x="-94" y="10" font-family="JetBrains Mono, monospace" font-size="9" fill="#7a8195" letter-spacing="1">SENSOR S-03 · CEREZO</text>
+                            <line x1="-94" y1="18" x2="94" y2="18" stroke="#e3e6ec"></line>
+                            <text x="-94" y="42" font-family="Inter Tight, system-ui, sans-serif" font-weight="600" font-size="22" fill="#1a1f2e">42<tspan font-size="13" fill="#7a8195">% · </tspan>18<tspan font-size="13" fill="#7a8195">°C</tspan></text>
+                            <g transform="translate(-94 58)">
+                                <circle cx="3" cy="-3" r="3" fill="#65ac4a"></circle>
+                                <text x="12" y="0" font-family="Inter Tight, sans-serif" font-size="10" fill="#4a8a35" font-weight="500">Óptimo</text>
+                            </g>
+                            <text x="94" y="58" font-family="JetBrains Mono, monospace" font-size="8" fill="#7a8195" text-anchor="end">hace 22s</text>
+                        </g>
+
+                        <!-- Map controls: zoom -->
+                        <g transform="translate(540 130)">
+                            <rect width="32" height="64" rx="7" fill="white" stroke="rgba(0,0,0,0.1)" stroke-width="1" filter="url(#pinShadow)"></rect>
+                            <line x1="4" y1="32" x2="28" y2="32" stroke="#e3e6ec"></line>
+                            <text x="16" y="22" font-family="Inter Tight, sans-serif" font-size="18" fill="#1a1f2e" text-anchor="middle" font-weight="500">+</text>
+                            <text x="16" y="52" font-family="Inter Tight, sans-serif" font-size="22" fill="#1a1f2e" text-anchor="middle" font-weight="500">−</text>
+                        </g>
+
+                        <!-- Compass (top-right) -->
+                        <g transform="translate(556 36)" font-family="JetBrains Mono, monospace">
+                            <circle r="18" fill="white" stroke="rgba(0,0,0,0.12)" stroke-width="1" filter="url(#pinShadow)"></circle>
+                            <polygon points="0,-11 -4,3 0,0 4,3" fill="#dc2626"></polygon>
+                            <polygon points="0,11 -4,-3 0,0 4,-3" fill="#1a1f2e" opacity="0.65"></polygon>
+                            <text x="0" y="-22" text-anchor="middle" font-size="9" fill="#1a1f2e" font-weight="700">N</text>
+                        </g>
+
+                        <!-- Scale bar (bottom-left) -->
+                        <g transform="translate(20 430)" font-family="JetBrains Mono, monospace" font-size="9" fill="#5a4b2a">
+                            <rect width="100" height="5" fill="white" stroke="#1a1f2e" stroke-width="0.8"></rect>
+                            <rect width="50" height="5" fill="#1a1f2e"></rect>
+                            <text x="0" y="-6">0</text>
+                            <text x="48" y="-6">100m</text>
+                            <text x="96" y="-6" text-anchor="end">200m</text>
+                        </g>
+
+                        <!-- Attribution (bottom-right) -->
+                        <g transform="translate(580 450)">
+                            <rect x="-186" y="-10" width="186" height="14" fill="white" opacity="0.7" rx="2"></rect>
+                            <text x="-4" y="0" font-family="JetBrains Mono, monospace" font-size="8" fill="#5a4b2a" text-anchor="end">© Ingeap Agro · datos del predio</text>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

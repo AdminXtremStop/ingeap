@@ -1,85 +1,108 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FooterComponent } from '../footer/footer.component';
-import { HeaderComponent } from '../header/header.component';
-import { ButtonModule } from 'primeng/button';
-import { AccordionModule } from 'primeng/accordion';
+import { HeaderComponent } from '../../ingeap/header/header.component';
 import { CarouselModule } from 'primeng/carousel';
 import { HeaderServiciosComponent } from '../header-servicios/header-servicios.component';
+
+import { ViewportScroller } from '@angular/common';
 
 @Component({
   selector: 'app-menu-servicio-5',
   standalone: true,
-  imports: [HeaderComponent ,FooterComponent, ButtonModule, AccordionModule, CarouselModule, HeaderServiciosComponent],
+  imports: [
+    CommonModule,
+    HeaderComponent,
+    FooterComponent,
+    CarouselModule,
+    HeaderServiciosComponent
+  ],
   templateUrl: './menu-servicio-5.component.html',
   styleUrl: './menu-servicio-5.component.scss'
 })
-export class MenuServicio5Component {
+export class MenuServicio5Component implements OnInit {
+  imagesPluviometria: any[] = [];
+  imagesLUX: any[] = [];
+  imagesTemperatura: any[] = [];
+  imagesDrenaje: any[] = [];
+  imagesSensorTHR: any[] = [];
+  imagesMovimientoSavia: any[] = [];
+  imagesSuelo: any[] = [];
+  imagesCO2: any[] = [];
+  imagesPeso: any[] = [];
+  imagesDGA: any[] = [];
+  imagesPAR: any[] = [];
+  imagesSensorDiametro: any[] = [];
 
-    imagesPluviometria: any[] = [
-      {source: 'assets/ingeap-agro/aranet/1.png', alt: 'Imagen 1'},
-      {source: 'assets/ingeap-agro/aranet/1.1.png', alt: 'Imagen 2'}
+  constructor(private viewportScroller: ViewportScroller) {}
+
+  ngOnInit() {
+    this.viewportScroller.scrollToPosition([0, 0]);
+
+    this.imagesPluviometria = [
+      { source: 'assets/ingeap-agro/aranet/Pluviometro.png', alt: 'Sensor de Pluviometría Aranet 1' },
+      { source: 'assets/ingeap-agro/aranet/Pluviometro 2.png', alt: 'Sensor de Pluviometría Aranet 2' }
     ];
 
-    imagesLUX: any[] = [
-        {source: 'assets/ingeap-agro/aranet/6.png', alt: 'Imagen 1'},
-        {source: 'assets/ingeap-agro/aranet/6.1.webp', alt: 'Imagen 2'},
-        {source: 'assets/ingeap-agro/aranet/6.2.webp', alt: 'Imagen 3'}
+    this.imagesLUX = [
+      { source: 'assets/ingeap-agro/aranet/LUX.png', alt: 'Sensor de LUX Aranet 1' },
+      { source: 'assets/ingeap-agro/aranet/LUX 2.webp', alt: 'Sensor de LUX Aranet 2' },
+      { source: 'assets/ingeap-agro/aranet/LUX 3.webp', alt: 'Sensor de LUX Aranet 3' }
     ];
 
-    imagesTemperatura: any[] = [
-        {source: 'assets/ingeap-agro/aranet/11.png', alt: 'Imagen 1'},
-        {source: 'assets/ingeap-agro/aranet/11.1.jpg', alt: 'Imagen 2'},
-        {source: 'assets/ingeap-agro/aranet/11.2.jpg', alt: 'Imagen 3'}
+    this.imagesTemperatura = [
+      { source: 'assets/ingeap-agro/aranet/Temperatura.png', alt: 'Sensor de Temperatura Aranet 1' },
+      { source: 'assets/ingeap-agro/aranet/Temperatura 2.jpg', alt: 'Sensor de Temperatura Aranet 2' },
+      { source: 'assets/ingeap-agro/aranet/Temperatura 3.jpg', alt: 'Sensor de Temperatura Aranet 3' }
     ];
 
-    imagesDrenaje: any[] = [
-        {source: 'assets/ingeap-agro/aranet/5.png', alt: 'Imagen 1'},
-        {source: 'assets/ingeap-agro/aranet/5.1.png', alt: 'Imagen 2'}
+    this.imagesDrenaje = [
+      { source: 'assets/ingeap-agro/aranet/Drenaje.png', alt: 'Sensor de Drenaje Aranet 1' },
+      { source: 'assets/ingeap-agro/aranet/Drenaje 2.png', alt: 'Sensor de Drenaje Aranet 2' }
     ];
 
-    imagesMovimientoSavia: any[] = [
-        {source: 'assets/ingeap-agro/aranet/3.png', alt: 'Imagen 1'},
-        {source: 'assets/ingeap-agro/aranet/3.1.png', alt: 'Imagen 2'}
+    this.imagesSensorTHR = [
+      { source: 'assets/ingeap-agro/aranet/THR.png', alt: 'Sensor de Temperatura y Humedad Relativa Aranet' }
     ];
 
-    imagesSensorTHR: any[] = [
-        {source: 'assets/ingeap-agro/aranet/8.png', alt: 'Imagen 1'}
+    this.imagesMovimientoSavia = [
+      { source: 'assets/ingeap-agro/aranet/Savia.png', alt: 'Sensor de flujo de savia Aranet 1' },
+      { source: 'assets/ingeap-agro/aranet/Savia 2.png', alt: 'Sensor de flujo de savia Aranet 2' }
     ];
 
-    imagesSuelo: any[] = [
-      // {source: 'assets/ingeap-agro/aranet/9.webp', alt: 'Imagen 1'},
-      {source: 'assets/ingeap-agro/aranet/9.1.png', alt: 'Imagen 1'},
-      {source: 'assets/ingeap-agro/aranet/suelo1.webp', alt: 'Imagen 2'},
-      {source: 'assets/ingeap-agro/aranet/suelo2.jpg', alt: 'Imagen 3'}
+    this.imagesSuelo = [
+      { source: 'assets/ingeap-agro/aranet/Suelo.png', alt: 'Sensor de Suelo Aranet 1' },
+      { source: 'assets/ingeap-agro/aranet/Suelo 2.webp', alt: 'Sensor de Suelo Aranet 2' },
+      { source: 'assets/ingeap-agro/aranet/Suelo 3.jpg', alt: 'Sensor de Suelo Aranet 3' }
     ];
 
-    imagesCO2: any[] = [
-      {source: 'assets/ingeap-agro/aranet/4.png', alt: 'Imagen 1'},
-      {source: 'assets/ingeap-agro/aranet/4.1.webp', alt: 'Imagen 2'},
-      {source: 'assets/ingeap-agro/aranet/4.2.webp', alt: 'Imagen 3'}
+    this.imagesCO2 = [
+      { source: 'assets/ingeap-agro/aranet/CO2.png', alt: 'Sensor de CO2 Aranet 1' },
+      { source: 'assets/ingeap-agro/aranet/CO2 2.webp', alt: 'Sensor de CO2 Aranet 2' },
+      { source: 'assets/ingeap-agro/aranet/CO2 3.webp', alt: 'Sensor de CO2 Aranet 3' }
     ];
 
-    imagesPeso: any[] = [
-      {source: 'assets/ingeap-agro/aranet/2.png', alt: 'Imagen 1'},
-      {source: 'assets/ingeap-agro/aranet/2.1.webp', alt: 'Imagen 2'},
-      {source: 'assets/ingeap-agro/aranet/2.2.png', alt: 'Imagen 3'}
+    this.imagesPeso = [
+      { source: 'assets/ingeap-agro/aranet/Peso.png', alt: 'Sensor de Peso Aranet 1' },
+      { source: 'assets/ingeap-agro/aranet/Peso 2.webp', alt: 'Sensor de Peso Aranet 2' },
+      { source: 'assets/ingeap-agro/aranet/Peso 3.png', alt: 'Sensor de Peso Aranet 3' }
     ];
 
-    imagesDGA: any[] = [
-        {source: 'assets/ingeap-agro/aranet/12.png', alt: 'Imagen 1'},
-        {source: 'assets/ingeap-agro/aranet/diametro2.webp', alt: 'Imagen 3'},
-        {source: 'assets/ingeap-agro/aranet/diametro3.webp', alt: 'Imagen 4'},
-        // {source: 'assets/ingeap-agro/aranet/1.png', alt: 'Imagen 2'}
+    this.imagesDGA = [
+      { source: 'assets/ingeap-agro/aranet/DGA.png', alt: 'Transmisor DGA Aranet 1' },
+      { source: 'assets/ingeap-agro/aranet/DGA 2.webp', alt: 'Transmisor DGA Aranet 2' },
+      { source: 'assets/ingeap-agro/aranet/DGA 3.webp', alt: 'Transmisor DGA Aranet 3' }
     ];
 
-    imagesPAR: any[] = [
-      {source: 'assets/ingeap-agro/aranet/7.png', alt: 'Imagen 1'},
-      {source: 'assets/ingeap-agro/aranet/7.1.png', alt: 'Imagen 2'}
+    this.imagesPAR = [
+      { source: 'assets/ingeap-agro/aranet/PAR.png', alt: 'Sensor de PAR Aranet 1' },
+      { source: 'assets/ingeap-agro/aranet/PAR 2.png', alt: 'Sensor de PAR Aranet 2' }
     ];
 
-    imagesSensorDiametro: any[] = [
-      {source: 'assets/ingeap-agro/aranet/10.webp', alt: 'Imagen 1'},
-      {source: 'assets/ingeap-agro/aranet/10.1.webp', alt: 'Imagen 2'}
+    this.imagesSensorDiametro = [
+      { source: 'assets/ingeap-agro/aranet/Diámetro.webp', alt: 'Sensor de Diámetro Aranet 1' },
+      { source: 'assets/ingeap-agro/aranet/Diámetro 2.webp', alt: 'Sensor de Diámetro Aranet 2' },
+      { source: 'assets/ingeap-agro/aranet/Diámetro 3.png', alt: 'Sensor de Diámetro Aranet 3' }
     ];
-
+  }
 }

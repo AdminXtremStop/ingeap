@@ -1,0 +1,132 @@
+:host {
+  --bg-main: #fafbfc;
+  --bg-card: #ffffff;
+  --text-main: #1a1f2e;
+  --text-gray: #7a8195;
+  --turquoise: #31a5b3;
+  --turquoise-soft: rgba(49, 165, 179, 0.2);
+  --green: #65ac4a;
+  --yellow-deep: #f7c92c;
+  --yellow: #f7c92c;
+  --blue: #34487c;
+  --turquoise-deep: #1f7e8a;
+  --green-deep: #4a8a35;
+  --ink-200: #e3e6ec;
+  --ink-700: #4a5169;
+  --ink-950: #0a0e1a;
+  --white: #ffffff;
+
+  --font-sans: 'Inter Tight', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  display: block;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   HERO / INTRO SECCIÓN CON ORBES DIFUMINADOS
+   ========================================================================== */
+.intro-hero-section {
+  position: relative;
+  overflow: hidden;
+  padding: 5rem 3rem;
+  background: var(--white);
+  border-radius: 28px;
+  border: 1px solid rgba(26, 31, 46, 0.05);
+  box-shadow: 0 10px 45px rgba(26, 31, 46, 0.02);
+  margin: 2.5rem 0 4rem 0;
+
+  .hero-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(95px);
+    pointer-events: none;
+    z-index: 1;
+    will-change: transform;
+
+    &.tq { width: 380px; height: 380px; background: var(--turquoise); top: -140px; left: -120px; opacity: 0.25; }
+    &.gr { width: 300px; height: 300px; background: var(--green); top: 45%; left: -80px; opacity: 0.18; }
+    &.bl { width: 340px; height: 340px; background: var(--blue); top: 12%; right: -100px; opacity: 0.15; }
+    &.yl { width: 240px; height: 240px; background: var(--yellow); bottom: -70px; right: -50px; opacity: 0.2; }
+    &.tq2 { width: 200px; height: 200px; background: var(--turquoise-deep); bottom: 18%; left: -30px; opacity: 0.16; }
+  }
+
+  .grid {
+    position: relative;
+    z-index: 2;
+  }
+
+  @media (max-width: 768px) {
+    padding: 3rem 1.5rem;
+    margin: 1rem 0 2.5rem 0;
+  }
+}
+
+/* ==========================================================================
+   ESTILOS PREMIUM PARA TARJETAS DE BENEFICIOS
+   ========================================================================== */
+.benefit-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(26, 31, 46, 0.04);
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(26, 31, 46, 0.02);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(26, 31, 46, 0.07);
+    border-color: rgba(49, 165, 179, 0.25);
+  }
+}
+
+/* Estilos personalizados para el Accordion de PrimeNG (Preguntas Frecuentes) */
+::ng-deep {
+  .p-accordion {
+    .p-accordion-header {
+      .p-accordion-header-link {
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        border-radius: 12px;
+        color: #1a1f2e;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        margin-bottom: 0.75rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+
+        &:not(.p-disabled):hover {
+          background: rgba(49, 165, 179, 0.04);
+          color: #31a5b3; /* Turquesa corporativo */
+          border-color: rgba(49, 165, 179, 0.2);
+        }
+
+        &:focus {
+          box-shadow: 0 0 0 3px rgba(49, 165, 179, 0.15);
+        }
+      }
+
+      &:not(.p-disabled).p-highlight .p-accordion-header-link {
+        background: #ffffff;
+        color: #31a5b3;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border-color: rgba(0, 0, 0, 0.05);
+        margin-bottom: 0;
+      }
+    }
+
+    .p-accordion-content {
+      background: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      border-top: 0;
+      border-bottom-left-radius: 12px;
+      border-bottom-right-radius: 12px;
+      color: #4a5169;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+  }
+}

@@ -1,0 +1,124 @@
+<section class="hero" data-screen-label="01 Hero">
+    <!-- Orbes difuminados de fondo -->
+    <div class="hero-orb tq"></div>
+    <div class="hero-orb gr"></div>
+    <div class="hero-orb bl"></div>
+    <div class="hero-orb yl"></div>
+    <div class="hero-orb tq2"></div>
+
+    <div class="container hero-grid">
+        <div class="hero-text">
+            <div class="hero-eyebrow reveal in" style="--hd: 0ms;">
+                <span class="pill">Aranet</span>
+                <span>Partners oficiales Chile</span>
+            </div>
+            <h1 class="reveal in" style="--hd: 100ms;">Tecnología para la Agricultura.</h1>
+            <p class="hero-sub reveal in" style="--hd: 300ms; font-size: 1.25rem; color: var(--text-gray); margin-bottom: 40px; line-height: 1.6;">
+                Sensores, datos y agronomía en una sola plataforma. Decisiones precisas para cada hectárea, desde tu computador o tu celular.
+            </p>
+            <div class="hero-actions reveal in" style="--hd: 400ms; display: flex; gap: 16px;">
+                <a routerLink="/agro/contacto" class="btn btn-primary" style="color: rgb(182, 246, 27); background-color: rgb(141, 179, 49);">Hablar con un agrónomo</a>
+                <a href="#la-plataforma" class="btn btn-outline">Ver la plataforma &rarr;</a>
+            </div>
+        </div>
+
+        <div class="hero-visual">
+            <div class="scene-stage reveal-scale in" style="--hd: 700ms; position: relative; max-width: 800px; margin: 0 auto;">
+                <div class="scene-frame" style="transform: rotateX(4deg) rotateY(0deg);">
+                    <div class="scene">
+                        <img class="field" src="assets/ingeap-agro/aranet/Campo.png" alt="Modelo del campo Ingeap Agro" draggable="false" style="outline: none; border: none; box-shadow: none;">
+
+                        <svg class="overlay-svg" viewBox="0 0 1536 1024" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                            <defs>
+                                <filter id="sceneGlow" x="-50%" y="-50%" width="200%" height="200%">
+                                    <feGaussianBlur stdDeviation="2.5" result="g"></feGaussianBlur>
+                                    <feMerge><feMergeNode in="g"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
+                                </filter>
+                            </defs>
+                            <path class="conn-line" d="M 370 320 Q 600 380 900 460 Q 1200 540 1410 520" stroke="#f7c92c" opacity="0.45" filter="url(#sceneGlow)"></path>
+                            <path class="conn-line" d="M 1290 340 Q 1100 430 900 530 Q 700 600 580 660" stroke="#34487c" opacity="0.4" filter="url(#sceneGlow)" style="animation-delay: 0.5s;"></path>
+                            <path class="conn-line" d="M 260 700 Q 420 680 580 660 Q 760 640 920 660" stroke="#31a5b3" opacity="0.45" filter="url(#sceneGlow)" style="animation-delay: 1s;"></path>
+                            <path class="conn-line" d="M 1170 150 Q 1230 230 1280 310" stroke="#65ac4a" opacity="0.4" filter="url(#sceneGlow)" style="animation-delay: 1.5s;"></path>
+                            <path class="conn-line" d="M 1410 540 Q 1330 600 1200 640 Q 1050 680 920 660" stroke="#65ac4a" opacity="0.4" filter="url(#sceneGlow)" style="animation-delay: 0.7s;"></path>
+                            <circle r="4" fill="#f7c92c" filter="url(#sceneGlow)"><animateMotion dur="3.4s" repeatCount="indefinite" path="M 370 320 Q 600 380 900 460 Q 1200 540 1410 520"></animateMotion></circle>
+                            <circle r="4" fill="#34487c" filter="url(#sceneGlow)"><animateMotion dur="2.8s" repeatCount="indefinite" path="M 1290 340 Q 1100 430 900 530 Q 700 600 580 660"></animateMotion></circle>
+                            <circle r="4" fill="#31a5b3" filter="url(#sceneGlow)"><animateMotion dur="2.4s" repeatCount="indefinite" path="M 260 700 Q 420 680 580 660 Q 760 640 920 660"></animateMotion></circle>
+                            <circle r="3" fill="#65ac4a" filter="url(#sceneGlow)"><animateMotion dur="3s" repeatCount="indefinite" path="M 1410 540 Q 1330 600 1200 640 Q 1050 680 920 660"></animateMotion></circle>
+                        </svg>
+
+                        <!-- Hotspots -->
+                        <!-- 1. Riego (left: 17%, tooltip-right) -->
+                        <div class="hs" [class.on]="activeHotspot === 'riego'" style="left: 17%; top: 67%; --hs-color: var(--turquoise);" (click)="activeHotspot = 'riego'">
+                            <span class="hs-ring"></span><span class="hs-ring"></span><span class="hs-core"></span><span class="hs-label">Riego</span>
+                            <div class="scene-tt tooltip-right" *ngIf="activeHotspot === 'riego'" (click)="$event.stopPropagation()" style="--tt-color: var(--turquoise); --tt-soft: rgba(49,165,179,0.1);">
+                                <button class="close-tt" (click)="activeHotspot = null; $event.stopPropagation()">&times;</button>
+                                <div class="scene-tt-head" style="display:flex;gap:8px;margin-bottom:8px;"><div style="font-size:18px">💧</div><div><div style="font-size:10px;text-transform:uppercase;opacity:0.7">01 · Riego</div><h4 style="margin:0;font-size:16px;">Riego inteligente</h4></div></div>
+                                <p style="font-size:13px;color:var(--text-gray);margin-bottom:8px;">Pivotes, goteo y aspersores con gestión automatizada. Monitoreo de caudal, presión y humedad de suelo en tiempo real.</p>
+                            </div>
+                        </div>
+
+                        <!-- 2. Solar (left: 24%, tooltip-right) -->
+                        <div class="hs" [class.on]="activeHotspot === 'solar'" style="left: 24%; top: 28%; --hs-color: var(--yellow-deep);" (click)="activeHotspot = 'solar'">
+                            <span class="hs-ring"></span><span class="hs-ring"></span><span class="hs-core"></span><span class="hs-label">Solar</span>
+                            <div class="scene-tt tooltip-right" *ngIf="activeHotspot === 'solar'" (click)="$event.stopPropagation()" style="--tt-color: var(--yellow-deep); --tt-soft: rgba(247,201,44,0.1);">
+                                <button class="close-tt" (click)="activeHotspot = null; $event.stopPropagation()">&times;</button>
+                                <div class="scene-tt-head" style="display:flex;gap:8px;margin-bottom:8px;"><div style="font-size:18px">☀️</div><div><div style="font-size:10px;text-transform:uppercase;opacity:0.7">02 · Sistema</div><h4 style="margin:0;font-size:16px;">Sistema fotovoltaico</h4></div></div>
+                                <p style="font-size:13px;color:var(--text-gray);margin-bottom:8px;">Paneles solares diseñados a medida para bombas, riego y operaciones. Ahorro energético hasta un 50%.</p>
+                            </div>
+                        </div>
+
+                        <!-- 3. Aranet (left: 14%, tooltip-right) -->
+                        <div class="hs" [class.on]="activeHotspot === 'aranet'" style="left: 14%; top: 53%; --hs-color: var(--blue);" (click)="activeHotspot = 'aranet'">
+                            <span class="hs-ring"></span><span class="hs-ring"></span><span class="hs-core"></span><span class="hs-label">Aranet</span>
+                            <div class="scene-tt tooltip-right" *ngIf="activeHotspot === 'aranet'" (click)="$event.stopPropagation()" style="--tt-color: var(--blue); --tt-soft: rgba(52,72,124,0.1);">
+                                <button class="close-tt" (click)="activeHotspot = null; $event.stopPropagation()">&times;</button>
+                                <div class="scene-tt-head" style="display:flex;gap:8px;margin-bottom:8px;"><div style="font-size:18px">📡</div><div><div style="font-size:10px;text-transform:uppercase;opacity:0.7">03 · Sensores</div><h4 style="margin:0;font-size:16px;">Sensores Aranet</h4></div></div>
+                                <p style="font-size:13px;color:var(--text-gray);margin-bottom:8px;">Partners oficiales en Chile. Humedad de suelo, tensión, T°/HR, CO₂, radiación PAR. Cumplimiento DGA.</p>
+                            </div>
+                        </div>
+
+                        <!-- 4. Satélite (left: 86%, tooltip-left) -->
+                        <div class="hs hs-left" [class.on]="activeHotspot === 'satelite'" style="left: 86%; top: 12%; --hs-color: var(--turquoise-deep);" (click)="activeHotspot = 'satelite'">
+                            <span class="hs-ring"></span><span class="hs-ring"></span><span class="hs-core"></span><span class="hs-label">Satélite</span>
+                            <div class="scene-tt tooltip-left" *ngIf="activeHotspot === 'satelite'" (click)="$event.stopPropagation()" style="--tt-color: var(--turquoise-deep); --tt-soft: rgba(31,126,138,0.1);">
+                                <button class="close-tt" (click)="activeHotspot = null; $event.stopPropagation()">&times;</button>
+                                <div class="scene-tt-head" style="display:flex;gap:8px;margin-bottom:8px;"><div style="font-size:18px">🛰️</div><div><div style="font-size:10px;text-transform:uppercase;opacity:0.7">04 · Mapas</div><h4 style="margin:0;font-size:16px;">Imágenes satelitales</h4></div></div>
+                                <p style="font-size:13px;color:var(--text-gray);margin-bottom:8px;">Mapeo periódico del predio con imágenes satelitales: NDVI, estrés hídrico y zonas de manejo diferenciado.</p>
+                            </div>
+                        </div>
+
+                        <!-- 5. Energía (left: 63%, tooltip-left) -->
+                        <div class="hs" [class.on]="activeHotspot === 'energia'" style="left: 63%; top: 44%; --hs-color: var(--green-deep);" (click)="activeHotspot = 'energia'">
+                            <span class="hs-ring"></span><span class="hs-ring"></span><span class="hs-core"></span><span class="hs-label">Energía</span>
+                            <div class="scene-tt tooltip-left" *ngIf="activeHotspot === 'energia'" (click)="$event.stopPropagation()" style="--tt-color: var(--green-deep); --tt-soft: rgba(74,138,53,0.1);">
+                                <button class="close-tt" (click)="activeHotspot = null; $event.stopPropagation()">&times;</button>
+                                <div class="scene-tt-head" style="display:flex;gap:8px;margin-bottom:8px;"><div style="font-size:18px">⚡</div><div><div style="font-size:10px;text-transform:uppercase;opacity:0.7">05 · Medición</div><h4 style="margin:0;font-size:16px;">Medición de energía</h4></div></div>
+                                <p style="font-size:13px;color:var(--text-gray);margin-bottom:8px;">Medidor inteligente en la caseta eléctrica del predio. Consumo por bomba, factor de potencia y reportes.</p>
+                            </div>
+                        </div>
+
+                        <!-- 6. Auto (left: 93%, tooltip-left, label aligned left to prevent overflow cut) -->
+                        <div class="hs hs-left" [class.on]="activeHotspot === 'auto'" style="left: 93%; top: 50%; --hs-color: var(--green);" (click)="activeHotspot = 'auto'">
+                            <span class="hs-ring"></span><span class="hs-ring"></span><span class="hs-core"></span><span class="hs-label">Auto</span>
+                            <div class="scene-tt tooltip-left" *ngIf="activeHotspot === 'auto'" (click)="$event.stopPropagation()" style="--tt-color: var(--green); --tt-soft: rgba(101,172,74,0.1);">
+                                <button class="close-tt" (click)="activeHotspot = null; $event.stopPropagation()">&times;</button>
+                                <div class="scene-tt-head" style="display:flex;gap:8px;margin-bottom:8px;"><div style="font-size:18px">⚙️</div><div><div style="font-size:10px;text-transform:uppercase;opacity:0.7">06 · Control</div><h4 style="margin:0;font-size:16px;">Automatización</h4></div></div>
+                                <p style="font-size:13px;color:var(--text-gray);margin-bottom:8px;">Tablero eléctrico con control de heladas, cooling, bombas y válvulas. Operación remota 24/7 con alarmas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Leyenda de Sensores Inferior -->
+                <div class="scene-legend">
+                    <button type="button" class="legend-btn" [class.on]="activeHotspot === 'riego'" (click)="activeHotspot = 'riego'" style="--lg-color: #31a5b3;"><span class="num">01</span><span>Riego</span><span class="dot"></span></button>
+                    <button type="button" class="legend-btn" [class.on]="activeHotspot === 'solar'" (click)="activeHotspot = 'solar'" style="--lg-color: #d4a800;"><span class="num">02</span><span>Solar</span><span class="dot"></span></button>
+                    <button type="button" class="legend-btn" [class.on]="activeHotspot === 'aranet'" (click)="activeHotspot = 'aranet'" style="--lg-color: #34487c;"><span class="num">03</span><span>Aranet</span><span class="dot"></span></button>
+                    <button type="button" class="legend-btn" [class.on]="activeHotspot === 'satelite'" (click)="activeHotspot = 'satelite'" style="--lg-color: #1f7e8a;"><span class="num">04</span><span>Satélite</span><span class="dot"></span></button>
+                    <button type="button" class="legend-btn" [class.on]="activeHotspot === 'energia'" (click)="activeHotspot = 'energia'" style="--lg-color: #4a8a35;"><span class="num">05</span><span>Energía</span><span class="dot"></span></button>
+                    <button type="button" class="legend-btn" [class.on]="activeHotspot === 'auto'" (click)="activeHotspot = 'auto'" style="--lg-color: #65ac4a;"><span class="num">06</span><span>Auto</span><span class="dot"></span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

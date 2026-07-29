@@ -1,11 +1,16 @@
-<div id="servicios-header">  
-  <div class="image-section">
-    <div *ngFor="let image of images" 
-         class="image-container" 
-         [ngClass]="{'highlight': image.id === highlightId}"
-         [routerLink]="image.routerLink">
-      <img [src]="image.src" [alt]="image.alt">
-      <!-- <div class="info-overlay">{{ image.caption }}</div> -->
+<div class="servicios-header-wrapper">
+    <div class="container">
+        <div class="image-section">
+            <a *ngFor="let image of images; trackBy: trackById"
+                 class="image-card"
+                 [ngClass]="{'highlight': image.id === highlightId}"
+                 [routerLink]="image.routerLink"
+                 tabindex="0">
+                <div class="img-wrapper">
+                    <img [src]="image.src" [alt]="image.alt">
+                </div>
+                <div class="info-label"><span>{{ image.caption }}</span></div>
+            </a>
+        </div>
     </div>
-  </div>
 </div>

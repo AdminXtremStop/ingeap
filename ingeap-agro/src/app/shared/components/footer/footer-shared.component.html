@@ -1,0 +1,30 @@
+<footer class="footer-wrapper w-full py-4 px-4 md:px-6 lg:px-8 flex flex-column md:flex-row justify-content-between align-items-center gap-4"
+        [style.border-top]="borderTop"
+        [style.--icon-color]="iconColor"
+        [style.--hover-bg-color]="hoverBgColor">
+    
+    <!-- Info de Contacto -->
+    <div class="flex flex-column md:flex-row align-items-center justify-content-center md:justify-content-start gap-4 flex-wrap text-sm md:text-base">
+        <div class="flex align-items-center contact-item">
+            <i class="pi pi-map-marker mr-2 footer-icon"></i>
+            <span class="font-medium">{{ address }}</span>
+        </div>
+        <div class="flex align-items-center contact-item" *ngIf="email">
+            <i class="pi pi-envelope mr-2 footer-icon"></i>
+            <span class="font-medium">{{ email }}</span>
+        </div>
+        <div class="flex align-items-center contact-item" *ngIf="phone">
+            <i class="pi pi-phone mr-2 footer-icon"></i>
+            <span class="font-medium">{{ phone }}</span>
+        </div>
+    </div>
+
+    <!-- Redes Sociales -->
+    <div class="flex align-items-center justify-content-center gap-3" 
+         *ngIf="facebookUrl || instagramUrl || linkedinUrl || whatsappUrl">
+        <i *ngIf="facebookUrl" class="pi pi-facebook text-2xl social-icon" (click)="navegarA(facebookUrl)" tabindex="0"></i>
+        <i *ngIf="instagramUrl" class="pi pi-instagram text-2xl social-icon" (click)="navegarA(instagramUrl)" tabindex="0"></i>
+        <i *ngIf="linkedinUrl" class="pi pi-linkedin text-2xl social-icon" (click)="navegarA(linkedinUrl)" tabindex="0"></i>
+        <i *ngIf="whatsappUrl" class="pi pi-whatsapp text-2xl social-icon" (click)="navegarA(whatsappUrl)" tabindex="0"></i>
+    </div>
+</footer>

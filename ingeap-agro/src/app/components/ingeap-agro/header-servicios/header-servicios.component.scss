@@ -1,46 +1,77 @@
+.servicios-header-wrapper {
+  background: var(--bg-main, #fafbfc);
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+}
+
 .image-section {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    overflow-x: auto;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 12px;
+  justify-content: center; /* Centrar elementos en desktop */
+  -webkit-overflow-scrolling: touch;
+
+  @media (max-width: 980px) {
+    justify-content: flex-start; /* Preservar scroll en móviles */
+  }
+
+  /* Scrollbar estético */
+  &::-webkit-scrollbar { height: 6px; }
+  &::-webkit-scrollbar-track { background: transparent; }
+  &::-webkit-scrollbar-thumb { background: rgba(0, 0, 0, 0.1); border-radius: 10px; }
 }
 
-.image-container {
-    position: relative;
-    flex: 0 0 auto;
-    width: 10%; /* Reducido el tamaño */
-    margin: 0 5px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
 
-.image-container img {
-    width: 100%;
-    height: 100px; /* Reducido el tamaño */
-    object-fit: cover;
-    display: block;
-    transition: transform 0.3s ease, filter 0.3s ease;
-}
+.image-card {
+  position: relative;
+  flex: 0 0 auto;
+  width: 200px; /* Tamaño responsivo en el flex */
+  text-decoration: none;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
 
-.image-container.highlight {
-    border: 3px solid rgba(100, 200, 100, 0.8); /* Borde destacado */
-}
+  &:hover, &:focus {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(49, 165, 179, 0.15);
+    outline: none;
 
-.image-container:hover img,
-.image-container:hover {
-    filter: brightness(50%);
-    transform: scale(1.1); /* Zoom en hover */
-}
+    .img-wrapper img { transform: scale(1.08); }
+    .info-label { color: #31a5b3; /* Turquesa */ }
+  }
 
-.info-overlay {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(100, 200, 100, 0.8);
-    color: white;
-    font-weight: bold; /* Texto más grueso */
+  &.highlight {
+    border: 2px solid #65ac4a; /* Verde corporativo para el servicio activo */
+    box-shadow: 0 8px 20px rgba(101, 172, 74, 0.2);
+  }
+
+  .img-wrapper {
+    height: 120px;
+    overflow: hidden;
+
+    img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+  }
+
+  .info-label {
+    padding: 12px;
     text-align: center;
-    width: 100%;
-    padding: 10px 0;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #4a5169;
+    transition: color 0.3s ease;
+
+    span { display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.3; }
+  }
 }

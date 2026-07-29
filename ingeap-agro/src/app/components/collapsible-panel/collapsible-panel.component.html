@@ -1,14 +1,24 @@
-<div class="panel">
-  <div class="panel-header">
-    <img [src]="imageUrl" alt="Panel Image" class="panel-image" (click)="togglePanel()">
-    <div class="panel-title">
-      <div class="text-xl">{{ title }}</div>
+<div class="h-full bg-white border-round-2xl shadow-1 border-1 border-200 hover:shadow-4 transition-all transition-duration-300 flex flex-column overflow-hidden">
+
+  <!-- Cabecera Cliqueable -->
+  <div class="p-4 flex flex-column align-items-center cursor-pointer text-center select-none" (click)="togglePanel()">
+    <div class="flex align-items-center justify-content-center mb-4" style="width: 4.5rem; height: 4.5rem; background: rgba(49, 165, 179, 0.08); border-radius: 14px;">
+      <img *ngIf="imageUrl" [src]="imageUrl" [alt]="title" style="width: 60%; height: 60%; object-fit: contain;">
+    </div>
+    <h3 class="text-xl font-bold text-900 m-0 flex align-items-center justify-content-center gap-2 w-full">
+      {{ title }}
+      <i class="pi transition-transform transition-duration-300" [class.pi-chevron-down]="!isExpanded" [class.pi-chevron-up]="isExpanded" style="color: #31a5b3;"></i>
+    </h3>
+  </div>
+
+  <!-- Cuerpo Colapsable con transición animada -->
+  <div class="panel-content-wrapper" [class.expanded]="isExpanded">
+    <div class="panel-content-inner px-4 pb-4">
+      <p class="text-600 line-height-3 mt-0 mb-3 text-center">{{ description }}</p>
+      <ul class="text-600 line-height-3 m-0 pl-3 text-left" *ngIf="items && items.length > 0">
+        <li *ngFor="let item of items" class="mb-2">{{ item }}</li>
+      </ul>
     </div>
   </div>
-  <div class="panel-body" [ngClass]="{'collapsed': !isCollapsed}">
-    <p>{{ description }}</p>
-    <ul>
-      <li *ngFor="let item of items">{{ item }}</li>
-    </ul>
-  </div>
+
 </div>

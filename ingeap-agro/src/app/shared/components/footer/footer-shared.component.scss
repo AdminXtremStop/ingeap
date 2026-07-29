@@ -1,0 +1,34 @@
+.footer-wrapper {
+  background-color: #1a1f2e;
+  color: #ffffff;
+  width: 100%;
+  box-sizing: border-box;
+
+  .footer-icon {
+    color: var(--icon-color, #31a5b3);
+    font-size: 1.25rem;
+  }
+
+  .contact-item {
+    transition: color 0.3s ease;
+    &:hover {
+      color: var(--icon-color, #31a5b3);
+    }
+  }
+
+  .social-icon {
+    color: #ffffff;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+
+    &:hover, &:focus {
+      transform: translateY(-4px);
+      background: var(--hover-bg-color, #31a5b3);
+      color: #ffffff;
+      outline: none;
+    }
+  }
+}

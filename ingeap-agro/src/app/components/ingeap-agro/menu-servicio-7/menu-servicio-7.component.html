@@ -1,165 +1,156 @@
-<app-header></app-header>
-<app-header-servicios [highlightId] = 6></app-header-servicios>
-<div class="surface-0 flex justify-content-center">
-    <div id="home-ingeap" class="landing-wrapper overflow-hidden">
-        <div>    
-            <div class="grid">
-                <div class="col-12 my-auto flex flex-column">
-                    <div class="grid menu">
-                        <div class="col-3"></div>
-                        <div class="col-6">
-                            <div class="grid image-section pt-4">
-                                <div class="col-12 mb-2 text-6xl">Control Heladas</div>
-                                <span class="col-12 text-2xl ocultar-en-movil">
-                                    Mediante el uso de sensores de temperatura, permite el control de heladas automatizado,
-                                     mediante un sistema que detecta y responde automáticamente a condiciones de heladas 
-                                     activando medidas preventivas, como riego o ventilación, cuando se detectan las bajas 
-                                     temperaturas. Este sistema protege los cultivos de daños por frío, optimizando recursos
-                                      y reduciendo la necesidad de intervención manual.
-                                </span>
-                            </div>  
-                        </div>
-                        <div class="col-3"></div>
-                    </div>
-                </div>  
-            
-            </div>
-        </div>   
+<div class="min-h-screen flex flex-column" style="background-color: var(--bg-main, #fafbfc); color: var(--text-main, #1a1f2e);">
+    <!-- HEADER GLOBAL -->
+    <div style="position: fixed; z-index: 1000; background-color: #f5f5f5; width: 100%; border-bottom: 1px solid rgba(0,0,0,0.05);">
+        <app-header></app-header>
+    </div>
 
-        <div id="" class="px-4 text-center">
-            <div class="grid justify-content-center">
-                <div class="col-12 text-center mt-3">
-                    <h2 class="text-5xl font-normal">Beneficios</h2>
-                    <span class="ocultar-en-movil">Los beneficios del control de heladas automatizado incluyen:
-                    </span>
-                </div>
-    
-                <div class="col-12 md:col-12 lg:col-6 p-0 lg:pr-5 lg:pb-5 mt-4 lg:mt-0">
-                    <div style="height:225px; padding:2px; border-radius:10px; background: linear-gradient(90deg, rgba(253, 228, 165, 0.2),rgba(187, 199, 205, 0.2)), linear-gradient(180deg, rgba(253, 228, 165, 0.2),rgba(187, 199, 205, 0.2));">
-                        <div class="p-3 surface-card h-full" style="border-radius:8px;">
-                            <div class="flex align-items-center justify-content-center">
-                                <div class="flex align-items-center justify-content-center" style="width:5rem;height:5rem; border-radius:10px;">
-                                    <img src="assets/ingeap-agro/iconos/225.png" alt="Cumplimiento de Ley" style="width: 100%; height: 80%; object-fit: contain; border-radius:10px;">
-                                </div>
-                            </div>
-                            <div class="mb-2 text-2xl text-900">Protección de cultivos</div>
-                            <span class="text-lg">Previene daños causados por las heladas, asegurando la salud y productividad de los cultivos.
-                            </span>
+    <!-- ESPACIADOR GLOBAL Y HEADER DE SERVICIOS -->
+    <div class="w-full" style="margin-top: 5.625rem;">
+        <app-header-servicios [highlightId]="6"></app-header-servicios>
+    </div>
+
+    <div class="flex justify-content-center w-full flex-grow-1">
+        <div class="landing-wrapper w-full max-w-7xl mx-auto px-4 py-6">
+
+            <!-- INTRO Y BENEFICIOS SECCIÓN -->
+            <section class="intro-hero-section">
+                <!-- Orbes difuminados de fondo -->
+                <div class="hero-orb tq"></div>
+                <div class="hero-orb gr"></div>
+                <div class="hero-orb bl"></div>
+                <div class="hero-orb yl"></div>
+                <div class="hero-orb tq2"></div>
+
+                <div class="grid align-items-center mb-6">
+                    <div class="col-12 md:col-6 pr-0 md:pr-6 mb-5 md:mb-0" style="position: relative; z-index: 2;">
+                        <h1 class="text-5xl font-bold mb-4 text-900" style="color: var(--ink-950);">Control Heladas</h1>
+                        <p class="text-xl line-height-3 text-600 mb-0" style="color: var(--text-gray);">
+                            Mediante el uso de sensores de temperatura, permite el control de heladas automatizado,
+                            mediante un sistema que detecta y responde automáticamente a condiciones de heladas
+                            activando medidas preventivas, como riego o ventilación, cuando se detectan las bajas
+                            temperaturas. Este sistema protege los cultivos de daños por frío, optimizando recursos
+                            y reduciendo la necesidad de intervención manual.
+                        </p>
+                    </div>
+                    <div class="col-12 md:col-6" style="position: relative; z-index: 2;">
+                        <div class="border-round-2xl overflow-hidden shadow-4" style="aspect-ratio: 16/9;">
+                            <img src="assets/ingeap-agro/menu/1.jpg" class="w-full h-full" style="object-fit: cover;" alt="Control Heladas">
                         </div>
                     </div>
                 </div>
-        
-                <div class="col-12 md:col-12 lg:col-6 p-0 lg:pr-5 lg:pb-5 mt-4 lg:mt-0">
-                    <div style="height:225px; padding:2px; border-radius:10px; background: linear-gradient(90deg, rgba(145,226,237,0.2),rgba(251, 199, 145, 0.2)), linear-gradient(180deg, rgba(253, 228, 165, 0.2), rgba(172, 180, 223, 0.2));">
-                        <div class="p-3 surface-card h-full" style="border-radius:8px;">
-                            <div class="flex align-items-center justify-content-center">
-                                <div class="flex align-items-center justify-content-center" style="width:5rem;height:5rem; border-radius:10px;">
-                                    <img src="assets/ingeap-agro/iconos/226.png" alt="Cumplimiento de Ley" style="width: 100%; height: 80%; object-fit: contain; border-radius:10px;">
+
+                <!-- BENEFICIOS -->
+                <div class="py-6 mt-6" style="position: relative; z-index: 2;">
+                    <div class="text-center mb-6">
+                        <h2 class="text-4xl font-bold mb-3 text-900" style="color: var(--ink-950);">Beneficios</h2>
+                        <p class="text-xl text-600 max-w-30rem mx-auto">Los beneficios del control de heladas automatizado incluyen:</p>
+                    </div>
+
+                    <div class="grid">
+                        <!-- Card 1 -->
+                        <div class="col-12 md:col-6 lg:col-4 p-3">
+                            <div class="p-4 h-full benefit-card">
+                                <div class="flex align-items-center justify-content-center mb-4" style="width: 4.5rem; height: 4.5rem; background: rgba(49, 165, 179, 0.08); border-radius: 14px;">
+                                    <img src="assets/ingeap-agro/iconos/225.png" alt="Protección de cultivos" style="width: 60%; height: 60%; object-fit: contain;">
                                 </div>
+                                <h3 class="text-xl font-bold text-900 mb-3">Protección de cultivos</h3>
+                                <p class="text-600 line-height-3 m-0">Previene daños causados por las heladas, asegurando la salud y productividad de los cultivos.</p>
                             </div>
-                            <div class="mb-2 text-2xl text-900">Eficiencia en recursos</div>
-                            <span class="text-lg">Optimiza el uso de agua y energía al activar las medidas de protección solo cuando es necesario.
-                            </span>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="col-12 md:col-6 lg:col-4 p-3">
+                            <div class="p-4 h-full benefit-card">
+                                <div class="flex align-items-center justify-content-center mb-4" style="width: 4.5rem; height: 4.5rem; background: rgba(101, 172, 74, 0.08); border-radius: 14px;">
+                                    <img src="assets/ingeap-agro/iconos/226.png" alt="Eficiencia en recursos" style="width: 60%; height: 60%; object-fit: contain;">
+                                </div>
+                                <h3 class="text-xl font-bold text-900 mb-3">Eficiencia en recursos</h3>
+                                <p class="text-600 line-height-3 m-0">Optimiza el uso de agua y energía al activar las medidas de protección solo cuando es necesario.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="col-12 md:col-6 lg:col-4 p-3">
+                            <div class="p-4 h-full benefit-card">
+                                <div class="flex align-items-center justify-content-center mb-4" style="width: 4.5rem; height: 4.5rem; background: rgba(247, 201, 44, 0.08); border-radius: 14px;">
+                                    <img src="assets/ingeap-agro/iconos/227.png" alt="Reducción de la intervención manual" style="width: 60%; height: 60%; object-fit: contain;">
+                                </div>
+                                <h3 class="text-xl font-bold text-900 mb-3">Reducción de la intervención manual</h3>
+                                <p class="text-600 line-height-3 m-0">Minimiza la necesidad de monitoreo y acción manual, ahorrando tiempo y mano de obra.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="col-12 md:col-6 lg:col-4 p-3">
+                            <div class="p-4 h-full benefit-card">
+                                <div class="flex align-items-center justify-content-center mb-4" style="width: 4.5rem; height: 4.5rem; background: rgba(49, 165, 179, 0.08); border-radius: 14px;">
+                                    <img src="assets/ingeap-agro/iconos/221.png" alt="Mayor rentabilidad" style="width: 60%; height: 60%; object-fit: contain;">
+                                </div>
+                                <h3 class="text-xl font-bold text-900 mb-3">Mayor rentabilidad</h3>
+                                <p class="text-600 line-height-3 m-0">Al proteger las cosechas, se evita la pérdida de ingresos y se mejora la sostenibilidad del negocio agrícola.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 5 -->
+                        <div class="col-12 md:col-6 lg:col-4 p-3">
+                            <div class="p-4 h-full benefit-card">
+                                <div class="flex align-items-center justify-content-center mb-4" style="width: 4.5rem; height: 4.5rem; background: rgba(101, 172, 74, 0.08); border-radius: 14px;">
+                                    <img src="assets/ingeap-agro/iconos/31.png" alt="Aplicaciones alternativas" style="width: 60%; height: 60%; object-fit: contain;">
+                                </div>
+                                <h3 class="text-xl font-bold text-900 mb-3">Aplicaciones alternativas</h3>
+                                <p class="text-600 line-height-3 m-0">Control de humedad, aplicación de productos foliares.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 6 -->
+                        <div class="col-12 md:col-6 lg:col-4 p-3">
+                            <div class="p-4 h-full benefit-card">
+                                <div class="flex align-items-center justify-content-center mb-4" style="width: 4.5rem; height: 4.5rem; background: rgba(247, 201, 44, 0.08); border-radius: 14px;">
+                                    <img src="assets/ingeap-agro/iconos/32.png" alt="Enfriamiento evaporativo" style="width: 60%; height: 60%; object-fit: contain;">
+                                </div>
+                                <h3 class="text-xl font-bold text-900 mb-3">Enfriamiento evaporativo</h3>
+                                <p class="text-600 line-height-3 m-0">Toma el control de tu clima incluso en situaciones de alta temperatura.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-        
-                <div class="col-12 md:col-12 lg:col-6 p-0 lg:pr-5 lg:pb-5 mt-4 lg:mt-0">
-                    <div style="height:225px; padding:2px; border-radius:10px; background: linear-gradient(90deg, rgba(145, 226, 237, 0.2), rgba(172, 180, 223, 0.2)), linear-gradient(180deg, rgba(172, 180, 223, 0.2), rgba(246, 158, 188, 0.2));">
-                        <div class="p-3 surface-card h-full" style="border-radius:8px;">
-                            <div class="flex align-items-center justify-content-center">
-                                <div class="flex align-items-center justify-content-center" style="width:5rem;height:5rem; border-radius:10px;">
-                                    <img src="assets/ingeap-agro/iconos/227.png" alt="Cumplimiento de Ley" style="width: 100%; height: 80%; object-fit: contain; border-radius:10px;">
-                                </div>
-                            </div>
-                            <div class="mb-2 text-2xl text-900">Reducción de la intervención manual</div>
-                            <span class="text-lg">Minimiza la necesidad de monitoreo y acción manual, ahorrando tiempo y mano de obra.</span>
-                        </div>
+            </section>
+
+
+            <!-- FAQ -->
+            <div class="py-6">
+                <div class="text-center mb-5">
+                    <h2 class="text-4xl font-bold mb-2 text-900">FAQ's</h2>
+                </div>
+
+                <div class="grid justify-content-center">
+                    <div class="col-12 lg:col-10">
+                        <p-accordion [multiple]="true">
+                            <p-accordionTab header="¿Cómo funciona un sistema de control automático de heladas?">
+                                <p class="line-height-3 m-0 text-700">
+                                    Un sistema de control automático de heladas utiliza sensores para monitorear las condiciones de temperatura y humedad en el campo. Cuando los sensores detectan temperaturas cercanas al punto de congelación, el sistema activa automáticamente medidas preventivas como el riego o la ventilación para evitar que se formen heladas y proteger así los cultivos.
+                                </p>
+                            </p-accordionTab>
+                            <p-accordionTab header="¿Cuáles son las principales ventajas de implementar un control automático de heladas en la agricultura?">
+                                <p class="line-height-3 m-0 text-700">
+                                    Las principales ventajas incluyen la protección eficiente de los cultivos contra daños por heladas, la reducción de la necesidad de intervención manual, y la optimización del uso de recursos como el agua y la energía. Esto ayuda a mantener la calidad y cantidad de la cosecha, aumentando la rentabilidad y sostenibilidad de la explotación agrícola.
+                                </p>
+                            </p-accordionTab>
+                            <p-accordionTab header="¿Cómo impacta el control automático de heladas en la gestión de riesgos y costos en la agricultura?">
+                                <p class="line-height-3 m-0 text-700">
+                                    El control automático de heladas reduce significativamente el riesgo de pérdidas por daños en cultivos debido a heladas, lo que minimiza las pérdidas económicas. Además, al automatizar el proceso, se disminuye la necesidad de mano de obra y se optimizan los costos operativos, ya que las medidas preventivas se aplican solo cuando son necesarias, en lugar de estar en funcionamiento todo el tiempo.
+                                </p>
+                            </p-accordionTab>
+                        </p-accordion>
                     </div>
                 </div>
-        
-                <div class="col-12 md:col-12 lg:col-6 p-0 lg:pr-5 lg:pb-5 mt-4 lg:mt-0">
-                    <div style="height:225px; padding:2px; border-radius:10px; background: linear-gradient(90deg, rgba(187, 199, 205, 0.2),rgba(251, 199, 145, 0.2)), linear-gradient(180deg, rgba(253, 228, 165, 0.2),rgba(145, 210, 204, 0.2));">
-                        <div class="p-3 surface-card h-full" style="border-radius:8px;">
-                            <div class="flex align-items-center justify-content-center">
-                                <div class="flex align-items-center justify-content-center" style="width:5rem;height:5rem; border-radius:10px;">
-                                    <img src="assets/ingeap-agro/iconos/221.png" alt="Cumplimiento de Ley" style="width: 100%; height: 80%; object-fit: contain; border-radius:10px;">
-                                </div>
-                            </div>
-                            <div class="mb-2 text-2xl text-900">Mayor rentabilidad</div>
-                            <span class="text-lg">Al proteger las cosechas, se evita la pérdida de ingresos y se mejora la sostenibilidad del negocio agrícola.</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-12 md:col-12 lg:col-6 p-0 lg:pr-5 lg:pb-5 mt-4 lg:mt-0">
-                    <div style="height:225px; padding:2px; border-radius:10px; background: linear-gradient(90deg, rgba(145, 226, 237, 0.2), rgba(172, 180, 223, 0.2)), linear-gradient(180deg, rgba(172, 180, 223, 0.2), rgba(246, 158, 188, 0.2));">
-                        <div class="p-3 surface-card h-full" style="border-radius:8px;">
-                            <div class="flex align-items-center justify-content-center">
-                                <div class="flex align-items-center justify-content-center" style="width:5rem;height:5rem; border-radius:10px;">
-                                    <img src="assets/ingeap-agro/iconos/31.png" alt="Cumplimiento de Ley" style="width: 100%; height: 100%; object-fit: contain; border-radius:10px;">
-                                </div>
-                            </div>
-                            <div class="mb-2 text-2xl text-900">Aplicaciones alternativas</div>
-                            <span class="text-lg">Control de humedad, aplicación de productos foliares.</span>
-                        </div>
-                    </div>
-                </div>
-        
-                <div class="col-12 md:col-12 lg:col-6 p-0 lg:pr-5 lg:pb-5 mt-4 lg:mt-0">
-                    <div style="height:225px; padding:2px; border-radius:10px; background: linear-gradient(90deg, rgba(187, 199, 205, 0.2),rgba(251, 199, 145, 0.2)), linear-gradient(180deg, rgba(253, 228, 165, 0.2),rgba(145, 210, 204, 0.2));">
-                        <div class="p-3 surface-card h-full" style="border-radius:8px;">
-                            <div class="flex align-items-center justify-content-center">
-                                <div class="flex align-items-center justify-content-center" style="width:5rem;height:5rem; border-radius:10px;">
-                                    <img src="assets/ingeap-agro/iconos/32.png" alt="Cumplimiento de Ley" style="width: 100%; height: 100%; object-fit: contain; border-radius:10px;">
-                                </div>
-                            </div>
-                            <div class="mb-2 text-2xl text-900">Enfriamiento evaporativo</div>
-                            <span class="text-lg">Toma el control de tu clima incluso en situaciones de alta temperatura.</span>
-                        </div>
-                    </div>
-                </div>  
             </div>
+
         </div>
-        
-        <div id="" class="px-4 text-center">
-            <div class="grid justify-content-center">
-                <div class="col-12 text-center mt-3 mb-4">
-                    <h2 class="text-5xl font-normal mb-2">FAQ's</h2>
-                </div>
-        
-                <div class="col-12 md:col-12 lg:col-3 p-0 lg:pr-5 lg:pb-5 mt-4 lg:mt-0">
-                    <p-accordion [activeIndex]="0">
-                        <p-accordionTab header="¿Cómo funciona un sistema de control automático de heladas?">
-                            <p>
-                                Un sistema de control automático de heladas utiliza sensores para monitorear las condiciones de temperatura y humedad en el campo. Cuando los sensores detectan temperaturas cercanas al punto de congelación, el sistema activa automáticamente medidas preventivas como el riego o la ventilación para evitar que se formen heladas y proteger así los cultivos.
-                            </p>
-                        </p-accordionTab>
-                    </p-accordion>
-                </div>
-        
-                <!-- Mantener el resto de los bloques como están -->
-                <div class="col-12 md:col-12 lg:col-3 p-0 lg:pr-5 lg:pb-5 mt-4 lg:mt-0">
-                    <p-accordion [activeIndex]="1">
-                        <p-accordionTab header="¿Cuáles son las principales ventajas de implementar un control automático de heladas en la agricultura?">
-                            <p>
-                                Las principales ventajas incluyen la protección eficiente de los cultivos contra daños por heladas, la reducción de la necesidad de intervención manual, y la optimización del uso de recursos como el agua y la energía. Esto ayuda a mantener la calidad y cantidad de la cosecha, aumentando la rentabilidad y sostenibilidad de la explotación agrícola.
-                            </p>
-                        </p-accordionTab>
-                    </p-accordion>
-                </div>
-                <div class="col-12 md:col-12 lg:col-3 p-0 lg:pr-5 lg:pb-5 mt-4 lg:mt-0">
-                    <p-accordion [activeIndex]="2">
-                        <p-accordionTab header="¿Cómo impacta el control automático de heladas en la gestión de riesgos y costos en la agricultura?">
-                            <p>
-                                El control automático de heladas reduce significativamente el riesgo de pérdidas por daños en cultivos debido a heladas, lo que minimiza las pérdidas económicas. Además, al automatizar el proceso, se disminuye la necesidad de mano de obra y se optimizan los costos operativos, ya que las medidas preventivas se aplican solo cuando son necesarias, en lugar de estar en funcionamiento todo el tiempo.
-                            </p>
-                        </p-accordionTab>
-                    </p-accordion>
-                </div>
-            </div>
-        </div>
-        
+    </div>
+
+    <!-- FOOTER GLOBAL DE LA APP -->
+    <div class="mt-auto">
+        <app-footer></app-footer>
     </div>
 </div>
-<app-footer></app-footer>
