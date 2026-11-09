@@ -18,7 +18,7 @@
             </p>
             <div class="hero-actions reveal in" style="--hd: 400ms; display: flex; gap: 16px;">
                 <a routerLink="/agro/contacto" class="btn btn-primary" style="color: rgb(182, 246, 27); background-color: rgb(141, 179, 49);">Hablar con un agrónomo</a>
-                <a href="#la-plataforma" class="btn btn-outline">Ver la plataforma &rarr;</a>
+                <a href="https://ingeapagro.cl/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Ver la plataforma &rarr;</a>
             </div>
         </div>
 
@@ -26,7 +26,7 @@
             <div class="scene-stage reveal-scale in" style="--hd: 700ms; position: relative; max-width: 800px; margin: 0 auto;">
                 <div class="scene-frame" style="transform: rotateX(4deg) rotateY(0deg);">
                     <div class="scene">
-                        <img class="field" src="assets/ingeap-agro/aranet/Campo.png" alt="Modelo del campo Ingeap Agro" draggable="false" style="outline: none; border: none; box-shadow: none;">
+                        <img class="field" src="assets/ingeap-agro/aranet/Campo.webp" alt="Modelo del campo Ingeap Agro" draggable="false" style="outline: none; border: none; box-shadow: none;">
 
                         <svg class="overlay-svg" viewBox="0 0 1536 1024" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
                             <defs>
@@ -117,6 +117,17 @@
                     <button type="button" class="legend-btn" [class.on]="activeHotspot === 'satelite'" (click)="activeHotspot = 'satelite'" style="--lg-color: #1f7e8a;"><span class="num">04</span><span>Satélite</span><span class="dot"></span></button>
                     <button type="button" class="legend-btn" [class.on]="activeHotspot === 'energia'" (click)="activeHotspot = 'energia'" style="--lg-color: #4a8a35;"><span class="num">05</span><span>Energía</span><span class="dot"></span></button>
                     <button type="button" class="legend-btn" [class.on]="activeHotspot === 'auto'" (click)="activeHotspot = 'auto'" style="--lg-color: #65ac4a;"><span class="num">06</span><span>Auto</span><span class="dot"></span></button>
+                </div>
+                <!-- Información adaptada a pantallas pequeñas. Los sensores y botones de arriba siguen siendo interactivos. -->
+                <p class="scene-mobile-hint" *ngIf="!activeHotspot">
+                    Toca un sensor en la imagen o selecciona una opción para conocer sus funciones.
+                </p>
+                <div class="mobile-hotspot-details" *ngIf="activeHotspotDetail as detail" aria-live="polite">
+                    <button type="button" class="mobile-details-close" aria-label="Cerrar información del sensor"
+                        (click)="activeHotspot = null">&times;</button>
+                    <div class="mobile-details-eyebrow">{{ detail.icon }} {{ detail.category }}</div>
+                    <h3>{{ detail.title }}</h3>
+                    <p>{{ detail.description }}</p>
                 </div>
             </div>
         </div>

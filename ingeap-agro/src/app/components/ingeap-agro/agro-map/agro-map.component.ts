@@ -9,5 +9,8 @@ import { CommonModule } from '@angular/common';
   styleUrl: './agro-map.component.scss'
 })
 export class AgroMapComponent {
-  mapView: string = 'leaflet';
+  mapView: 'cuarteles' | 'leaflet' = 'leaflet';
+
+  // En móvil, permite ampliar el SVG sin ensanchar toda la página.
+  mapExpanded = false;
 }

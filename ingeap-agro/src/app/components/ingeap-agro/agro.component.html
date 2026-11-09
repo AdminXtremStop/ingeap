@@ -10,19 +10,21 @@
             <!-- Secciones modulares extraídas -->
             <app-agro-hero></app-agro-hero>
 
-            <!-- SECCIÓN: PREMIOS Y RECONOCIMIENTOS -->
+            <!-- SECCIÓN: PREMIOS Y RECONOCIMIENTOS (CARRUSEL INFINITO) -->
             <section class="premios-section">
                 <div class="container">
                     <h2 class="premios-title">Premios y Reconocimientos</h2>
-                    <div class="premios-grid">
-                        <div class="premio-item">
-                            <img src="assets/ingeap-agro/servicios/corfo.webp" alt="Corfo">
-                        </div>
-                        <div class="premio-item">
-                            <img src="assets/ingeap-agro/servicios/ganador.png" alt="Ganador">
-                        </div>
-                        <div class="premio-item">
-                            <img src="assets/ingeap-agro/servicios/2dolugar.png" alt="2do Lugar">
+
+                    <div class="premios-carousel" aria-label="Premios y reconocimientos de INGEAP Agro">
+                        <div class="premios-track">
+                            <!-- Se repite el grupo para lograr una animación continua y sin saltos. -->
+                            <div class="premios-group"
+                                 *ngFor="let grupo of gruposPremios"
+                                 [attr.aria-hidden]="grupo === 0 ? null : 'true'">
+                                <div class="premio-item" *ngFor="let premio of premios">
+                                    <img [src]="premio.src" [alt]="premio.alt" draggable="false">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -31,7 +33,7 @@
 
 
 
-            <section id="servicios">
+            <section id="historia">
                 <app-agro-features></app-agro-features>
             </section>
 
@@ -48,8 +50,6 @@
             <section id="comunidad">
                 <app-redes-sociales></app-redes-sociales>
             </section>
-
-            <app-agro-cta></app-agro-cta>
 
         </div>
     </div>

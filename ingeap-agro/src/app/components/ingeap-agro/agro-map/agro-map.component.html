@@ -1,19 +1,19 @@
-<section class="map-section" id="mapa" data-screen-label="06 Mapa" style="padding: 72px 0; background: transparent; color: inherit;">
-    <div class="container" style="max-width: 1160px; padding: 0 5%; margin: 0 auto;">
+<section class="map-section" id="mapa" data-screen-label="06 Mapa">
+    <div class="container">
 
         <!-- HEADER DIVIDIDO EN DOS COLUMNAS -->
-        <div class="section-header map-grid" style="align-items: center !important; margin-bottom: 64px;">
+        <div class="section-header map-grid">
             <div class="head-left">
-                <span class="eyebrow reveal in" style="display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono, monospace); font-size: 0.85rem; text-transform: uppercase; color: var(--turquoise, #31a5b3); letter-spacing: 0.5px;"><span class="num" style="opacity: 0.4;">05</span>Mapa del predio</span>
-                <h2 class="reveal in" style="font-size: 2.5rem; font-weight: 600; line-height: 1.15; margin-bottom: 0 !important;">Tu predio, <em>en<br>un solo plano.</em></h2>
+                <span class="eyebrow reveal in" style="display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono, monospace); font-size: 0.85rem; text-transform: uppercase; color: var(--turquoise, #31a5b3); letter-spacing: 0.5px;"><span class="num" style="opacity: 0.4;">03</span>Mapa del predio</span>
+                <h2 class="reveal in">Tu predio, <em>en<br>un solo plano.</em></h2>
             </div>
             <div class="head-right">
-                <p class="lead reveal in" style="margin-bottom: 0 !important;">Visualiza cada sensor, cada válvula y cada cuartel en un mapa interactivo. Pasa el mouse sobre un punto y ves su lectura actual; haz click y abres su histórico.</p>
+                <p class="lead reveal in">Visualiza cada sensor, cada válvula y cada cuartel en un mapa interactivo. Pasa el mouse sobre un punto y ves su lectura actual; haz click y abres su histórico.</p>
             </div>
         </div>
 
         <div class="map-grid">
-            <div class="map-text" style="align-self: center !important;">
+            <div class="map-text">
                 <div class="map-features">
                     <div class="map-feat reveal in"><span class="dot tq"></span>Sensor de humedad — lectura cada 60 s</div>
                     <div class="map-feat reveal in" style="transition-delay: 60ms;"><span class="dot gr"></span>Estación fitopatológica — predicción 7 días</div>
@@ -22,15 +22,32 @@
             </div>
 
             <div class="map-vis-wrap reveal-scale in">
-                <div class="map-tabs" style="margin-bottom: 16px;">
-                    <button class="map-tab" [class.active]="mapView !== 'leaflet'" (click)="mapView = 'cuarteles'">Cuarteles</button>
-                    <button class="map-tab" [class.active]="mapView === 'leaflet'" (click)="mapView = 'leaflet'">Mapa</button>
+                <!-- Los controles de vista funcionan en PC y móvil. -->
+                <div class="map-toolbar">
+                    <div class="map-tabs" role="group" aria-label="Vista del predio">
+                        <button type="button" class="map-tab"
+                            [class.active]="mapView !== 'leaflet'"
+                            [attr.aria-pressed]="mapView !== 'leaflet'"
+                            (click)="mapView = 'cuarteles'">Cuarteles</button>
+                        <button type="button" class="map-tab"
+                            [class.active]="mapView === 'leaflet'"
+                            [attr.aria-pressed]="mapView === 'leaflet'"
+                            (click)="mapView = 'leaflet'">Mapa</button>
+                    </div>
+
+                    <!-- Solo aparece en teléfonos: permite leer las etiquetas pequeñas del SVG. -->
+                    <button type="button" class="map-expand-btn"
+                        [attr.aria-pressed]="mapExpanded"
+                        (click)="mapExpanded = !mapExpanded">
+                        {{ mapExpanded ? 'Ver completo' : 'Ampliar mapa' }}
+                    </button>
                 </div>
 
-                <div class="map-vis" id="mapVis">
+                <div class="map-vis" id="mapVis" [class.is-expanded]="mapExpanded">
                     <!-- VISTA: SVG Cuarteles -->
-                    <div *ngIf="mapView !== 'leaflet'" style="aspect-ratio: 4/3; min-height: 460px; background: #1a1f2e; border-radius: 12px; overflow: hidden; position: relative; border: 1px solid rgba(26, 31, 46, 0.05);">
-                    <svg class="map-svg view-cuarteles" viewBox="0 0 600 460" style="width: 100%; height: 100%;">
+                    <div *ngIf="mapView !== 'leaflet'" class="map-canvas map-canvas--cuarteles" [class.is-expanded]="mapExpanded">
+                    <svg class="map-svg view-cuarteles" viewBox="0 0 600 460"
+                         role="img" aria-label="Plano ilustrativo de cuarteles, sensores y válvulas">
                         <defs>
                             <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
                                 <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"></path>
@@ -102,8 +119,9 @@
                 </div>
 
                 <!-- VISTA: Componente Leaflet (Mapa Interactivo) -->
-                <div *ngIf="mapView === 'leaflet'" class="w-full border-round-xl overflow-hidden border-1 surface-border" style="aspect-ratio: 4/3; min-height: 460px; background: #f9f9f9;">
-                    <svg class="map-svg view-leaflet" viewBox="0 0 600 460" style="width: 100%; height: 100%;">
+                <div *ngIf="mapView === 'leaflet'" class="map-canvas map-canvas--leaflet" [class.is-expanded]="mapExpanded">
+                    <svg class="map-svg view-leaflet" viewBox="0 0 600 460"
+                         role="img" aria-label="Mapa ilustrativo con cuatro cuarteles y seis puntos de medición">
                         <defs>
                             <!-- Subtle topo lines -->
                             <pattern id="topo" width="120" height="120" patternUnits="userSpaceOnUse">
@@ -268,6 +286,10 @@
                     </svg>
                 </div>
             </div>
+            <p *ngIf="mapExpanded" class="map-zoom-hint">
+                Desliza el mapa hacia los lados para explorar los detalles.
+            </p>
         </div>
     </div>
 </div>
+</section>

@@ -6,6 +6,15 @@ import { CommonModule } from '@angular/common';
 import { filter } from 'rxjs/operators';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
+
+type Division = 'salas_electricas' | 'home' | 'agro';
+
+interface MenuItem {
+  label: string;
+  fragment?: string;
+  route?: string;
+}
+
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -16,11 +25,37 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 export class HeaderComponent implements OnInit {
 
   mobileMenuActive: boolean = false;
-  logoSrc: string = 'assets/ingeap/logo1.png';
+  logoSrc: string = 'assets/ingeap/logo1.webp';
   logoAlt: string = 'Ingeap Servicios';
   activeColor: string = '#31a5b3';
 
   private destroyRef = inject(DestroyRef);
+
+  
+  divisionActiva: Division = 'home';
+
+  readonly menus: Record<Division, MenuItem[]> = {
+    salas_electricas: [
+      { label: 'Historia', fragment: 'historia' },
+      { label: 'Servicios', fragment: 'salas' },
+      { label: 'Beneficios', fragment: 'beneficios' },
+      { label: 'Visualización', fragment: 'modelacion' }
+    ],
+
+    home: [
+      { label: 'Historia', fragment: 'historia' },
+      { label: 'Propósito', fragment: 'proposito' },
+      { label: 'Crecimiento', fragment: 'expansion' },
+      { label: 'Servicios', fragment: 'negocios' }
+    ],
+
+    agro: [
+      { label: 'Historia', fragment: 'historia' },
+      { label: 'Plataforma', fragment: 'la-plataforma' },
+      { label: 'Servicios', fragment: 'areas-servicios' },
+      { label: 'Producto', route: '/agro/gestion-riego' }
+    ]
+  };
 
   constructor(public router: Router) { }
 
@@ -35,21 +70,32 @@ export class HeaderComponent implements OnInit {
     });
   }
 
+  get menuActual(): MenuItem[] {
+    return this.menus[this.divisionActiva];
+  }
+
+  
   private updateHeaderState(url: string): void {
-    if (url.includes('salas_electricas')) {
-      this.logoSrc = 'assets/salas_electricas/logo1.png';
+    if (url.startsWith('/salas_electricas')) {
+      this.divisionActiva = 'salas_electricas';
+      this.logoSrc = 'assets/salas_electricas/logo1.webp';
       this.logoAlt = 'Salas Eléctricas';
       this.activeColor = '#f26522';
-    } else if (url.includes('agro')) {
-      this.logoSrc = 'assets/ingeap/logo2.png';
+
+    } else if (url.startsWith('/agro')) {
+      this.divisionActiva = 'agro';
+      this.logoSrc = 'assets/ingeap/logo2.webp';
       this.logoAlt = 'Ingeap Agro';
       this.activeColor = '#8db331';
+
     } else {
-      this.logoSrc = 'assets/ingeap/logo1.png';
+      this.divisionActiva = 'home';
+      this.logoSrc = 'assets/ingeap/logo1.webp';
       this.logoAlt = 'Ingeap Servicios';
       this.activeColor = '#31a5b3';
     }
   }
+
 
   getActiveTabColor(division: string): string {
     if (division === 'salas_electricas') return '#f26522';
@@ -65,28 +111,38 @@ export class HeaderComponent implements OnInit {
     return this.router.url.includes(route);
   }
 
+ 
   navigateToFragment(fragment: string): void {
     this.mobileMenuActive = false;
 
-    let basePath = '/home';
-    if (this.router.url.includes('salas_electricas')) {
-      basePath = '/salas_electricas';
-    } else if (this.router.url.includes('agro')) {
-      basePath = '/agro';
-    }
+    const rutas: Record<Division, string> = {
+      salas_electricas: '/salas_electricas',
+      home: '/home',
+      agro: '/agro'
+    };
 
-    let targetFragment = fragment;
-    if (basePath === '/agro') {
-      if (fragment === 'historia') targetFragment = 'servicios';
-      else if (fragment === 'negocios') targetFragment = 'areas-servicios';
-      else if (fragment === 'clientes') targetFragment = 'comunidad';
-    } else if (basePath === '/salas_electricas') {
-      if (fragment === 'negocios') targetFragment = 'salas';
-      else if (fragment === 'clientes') targetFragment = 'modelacion';
-    }
-
-    this.router.navigate([basePath], { fragment: targetFragment });
+    this.router.navigate(
+      [rutas[this.divisionActiva]],
+      { fragment }
+    );
   }
+
+  
+  navigateToMenuItem(item: MenuItem): void {
+    this.mobileMenuActive = false;
+
+    // Navegación hacia otra página
+    if (item.route) {
+      this.router.navigateByUrl(item.route);
+      return;
+    }
+
+    // Navegación hacia una sección
+    if (item.fragment) {
+      this.navigateToFragment(item.fragment);
+    }
+  }
+
 
   navegarIngeapAgro(): void {
     this.mobileMenuActive = false;

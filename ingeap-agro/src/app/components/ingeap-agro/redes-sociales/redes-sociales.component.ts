@@ -46,49 +46,25 @@ export class RedesSocialesComponent implements OnInit {
     {
       permalink: 'https://www.instagram.com/ingeap.agro/',
       media_type: 'IMAGE',
-      media_url: 'assets/ingeap-agro/carrusel/1.jpg',
-      caption: 'Instalación de sensores de humedad de suelo Aranet en huerto de paltos. Monitoreo constante a diferentes profundidades para optimizar el riego.'
+      media_url: 'assets/ingeap-agro/carrusel/ganador.webp',
+      caption: '🥈 2° Lugar - Desafío Local.\n🚀 Start-Up del Chile - reconocimiento entregado por primera vez a la start-up con mayor impacto, innovación y escalabilidad.'
     },
     {
       permalink: 'https://www.instagram.com/ingeap.agro/',
       media_type: 'IMAGE',
-      media_url: 'assets/ingeap-agro/carrusel/2.jpg',
-      caption: 'Gateway LoRaWAN instalado en torre a 12 metros de altura, asegurando cobertura inalámbrica robusta para más de 500 hectáreas en Quillota.'
-    },
-    {
-      permalink: 'https://www.instagram.com/ingeap.agro/',
-      media_type: 'IMAGE',
-      media_url: 'assets/ingeap-agro/carrusel/3.jpg',
-      caption: 'Estación meteorológica integrada con sensores de temperatura, humedad relativa y velocidad de viento para la alerta temprana de heladas.'
-    },
-    {
-      permalink: 'https://www.instagram.com/ingeap-agro/carrusel/5.png',
-      media_type: 'IMAGE',
-      media_url: 'assets/ingeap-agro/carrusel/5.png',
-      caption: 'Panel de control del sistema de teleteledetección de riego en tiempo real. Configuración y supervisión remota autónoma.'
-    },
-    {
-      permalink: 'https://www.instagram.com/ingeap.agro/',
-      media_type: 'IMAGE',
-      media_url: 'assets/ingeap-agro/carrusel/11.jpg',
-      caption: 'Calibración e integración de caudalímetros ultrasónicos para el cumplimiento de normativas DGA. Transmisión continua y reportes automatizados.'
-    },
-    {
-      permalink: 'https://www.instagram.com/ingeap.agro/',
-      media_type: 'IMAGE',
-      media_url: 'assets/ingeap-agro/carrusel/12.JPG',
+      media_url: 'assets/ingeap-agro/carrusel/12.webp',
       caption: 'Monitoreo de pozo profundo y calidad de agua en predio agrícola. Sensor de nivel hidrostático conectado de forma inalámbrica.'
     },
     {
       permalink: 'https://www.instagram.com/ingeap.agro/',
       media_type: 'IMAGE',
-      media_url: 'assets/ingeap-agro/carrusel/13.jpg',
+      media_url: 'assets/ingeap-agro/carrusel/13.webp',
       caption: 'Inspección técnica de sistemas de riego automatizados en viñedos. Asegurando la máxima eficiencia hídrica por sector.'
     },
     {
       permalink: 'https://www.instagram.com/ingeap.agro/',
       media_type: 'IMAGE',
-      media_url: 'assets/ingeap-agro/carrusel/14.jpg',
+      media_url: 'assets/ingeap-agro/carrusel/14.webp',
       caption: 'Capacitación a operarios y agrónomos en el uso de la plataforma móvil de Ingeap Agro. Decisiones precisas directamente en la palma de tu mano.'
     }
   ];

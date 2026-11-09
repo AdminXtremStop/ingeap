@@ -33,6 +33,7 @@ export class ContactoSharedComponent {
   @Input() accentColorHover: string = '#278f9b';
   @Input() buttonLabel: string = 'ENVIAR';
   @Input() successConfirmColor: string = '#31a5b3';
+  @Input() division: string | null = null;
   
   // Credenciales EmailJS
   @Input() emailjsServiceId: string = environment.emailjs.defaultServiceId;
@@ -79,17 +80,21 @@ export class ContactoSharedComponent {
 
     this.isSending = true;
 
+    const templateParams = {
+      name: this.formData.name.trim(),
+      email: this.formData.email.trim(),
+      message: this.formData.message.trim(),
+      reply_to: this.formData.email.trim(),
+      // Solo se envia cuando division está definida
+      ...(this.division ? { division: this.division } : {})
+    };
+
     try {
       const result: EmailJSResponseStatus = await emailjs.send(
-        this.emailjsServiceId, 
-        this.emailjsTemplateId, 
-        {
-          name: this.formData.name,
-          email: this.formData.email,
-          message: this.formData.message,
-          reply_to: this.formData.email
-        }, 
-        this.emailjsPublicKey
+        this.emailjsServiceId,
+        this.emailjsTemplateId,
+        templateParams,
+        this.emailjsPublicKey,
       );
 
       Swal.fire({
