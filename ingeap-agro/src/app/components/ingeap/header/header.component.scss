@@ -49,3 +49,56 @@
         transform: scaleY(1);
     }
 }
+
+
+/* Selector de divisiones - Menú móvil */
+.mobile-divisions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 8px;
+  border-radius: 16px;
+  background: rgba(26, 31, 46, 0.04);
+}
+
+.mobile-divisions-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #7a8195;
+  padding: 8px 10px 4px;
+}
+
+.mobile-division-btn {
+  display: block;
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  background: transparent;
+  color: #485063;
+  text-align: left;
+  padding: 12px 14px;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.65);
+  }
+
+  &.active {
+    background: #ffffff;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  }
+}
+
+/* Evitar que el menú se corte en celulares pequeños */
+.mobile-menu-dropdown {
+  max-height: calc(100dvh - 110px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}

@@ -16,22 +16,22 @@ export class SalasElectricasComponent implements OnInit {
         {
             name: 'SALAS ELÉCTRICAS MODULARES',
 
-            image: 'assets/salas_electricas/carrusel/1.jpg'
+            image: 'assets/salas_electricas/carrusel/1.webp'
         },
         {
             name: 'AHORRO EN EL PROYECTO',
 
-            image: 'assets/salas_electricas/carrusel/4.jpg'
+            image: 'assets/salas_electricas/carrusel/4.webp'
         },
         {
             name: 'PERSONALIZACIÓN Y FLEXIBILIDAD',
 
-            image: 'assets/salas_electricas/carrusel/2.jpg'
+            image: 'assets/salas_electricas/carrusel/2.webp'
         },
         {
             name: 'GRAN VARIEDAD DE APLICACIONES',
 
-            image: 'assets/salas_electricas/carrusel/3.jpg'
+            image: 'assets/salas_electricas/carrusel/3.webp'
         },
     ];
 
@@ -59,11 +59,11 @@ export class SalasElectricasComponent implements OnInit {
         this.viewportScroller.scrollToPosition([0, 0]);
 
         this.images = [
-            'assets/salas_electricas/modelamiento/1.jpg',
-            'assets/salas_electricas/modelamiento/2.jpg',
-            'assets/salas_electricas/modelamiento/3.jpg',
-            'assets/salas_electricas/modelamiento/4.png',
-            'assets/salas_electricas/modelamiento/5.png',
+            'assets/salas_electricas/modelamiento/1.webp',
+            'assets/salas_electricas/modelamiento/2.webp',
+            'assets/salas_electricas/modelamiento/3.webp',
+            'assets/salas_electricas/modelamiento/4.webp',
+            'assets/salas_electricas/modelamiento/5.webp',
         ];
     }
 

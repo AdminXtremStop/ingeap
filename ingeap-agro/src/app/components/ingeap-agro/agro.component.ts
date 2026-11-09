@@ -33,4 +33,14 @@ import { RedesSocialesComponent } from './redes-sociales/redes-sociales.componen
   styleUrls: ['./agro.component.scss']
 })
 export class AgroComponent {
+  // Imágenes originales, incluyendo el cuarto reconocimiento que agregaste.
+  readonly premios = [
+    { src: 'assets/ingeap-agro/servicios/corfo.webp', alt: 'Corfo' },
+    { src: 'assets/ingeap-agro/servicios/ganador.webp', alt: 'Ganador' },
+    { src: 'assets/ingeap-agro/servicios/2dolugar.webp', alt: 'Segundo lugar' },
+    { src: 'assets/ingeap-agro/aranet/logo.webp', alt: 'Logo Aranet' }
+  ];
+
+  // Cuatro grupos iguales para replicar el carrusel infinito de Nuestros Clientes.
+  readonly gruposPremios = [0, 1, 2, 3];
 }

@@ -1,33 +1,316 @@
-/* Grid principal */
-.map-grid { display: grid !important; grid-template-columns: 1fr 1.5fr !important; gap: 80px !important; align-items: start !important; }
-
-/* Textos adaptados para fondo claro */
-.section-header h2 { color: #0a0e1a !important; margin-top: 16px !important; margin-bottom: 24px !important; max-width: 100% !important; }
-.section-header p.lead { color: #4a5169 !important; font-size: 16.5px !important; line-height: 1.6 !important; margin-bottom: 32px !important; max-width: 100% !important; }
-
-h1 em, h2 em {
-  font-style: normal !important;
-  color: var(--turquoise, #31a5b3) !important;
-  font-weight: inherit !important;
+/* ============================================================
+   MAPA DEL PREDIO | Ingeap Agro
+   PC: dos columnas. Tablet/móvil: una columna.
+   El SVG escala completo y no provoca desbordamiento horizontal.
+   ============================================================ */
+:host {
+  display: block;
+  width: 100%;
+  min-width: 0;
 }
 
-/* Pestañas (Tabs) */
-.map-tabs { display: inline-flex !important; gap: 4px !important; padding: 4px !important; background: #f5f6f8 !important; border: 1px solid #e3e6ec !important; border-radius: 999px !important; }
-.map-tab { padding: 8px 18px !important; border-radius: 999px !important; font-family: inherit !important; font-size: 13px !important; font-weight: 500 !important; color: #4a5169 !important; cursor: pointer !important; border: 1px solid transparent !important; background: transparent !important; transition: all 0.2s ease !important; }
-.map-tab:hover { color: #0a0e1a !important; }
-.map-tab.active { background: #ffffff !important; color: #0a0e1a !important; box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important; border-color: #e3e6ec !important; }
+:host *,
+:host *::before,
+:host *::after {
+  box-sizing: border-box;
+}
 
-/* Características (Features) adaptadas a fondo claro */
-.map-features { display: flex !important; flex-direction: column !important; gap: 12px !important; }
-.map-feat { display: flex !important; align-items: center !important; gap: 14px !important; padding: 14px 18px !important; background: #ffffff !important; border: 1px solid #e3e6ec !important; border-radius: 16px !important; font-size: 14px !important; font-weight: 500 !important; color: #1a1f2e !important; box-shadow: 0 1px 2px rgba(26, 31, 46, 0.03) !important; }
+.map-section {
+  width: 100%;
+  padding: 72px 0;
+  background: transparent;
+  color: inherit;
+  scroll-margin-top: 110px; /* El header global es fijo. */
+}
 
-/* Puntos de colores con brillo */
-.map-feat .dot { width: 10px !important; height: 10px !important; border-radius: 50% !important; flex-shrink: 0 !important; }
-.map-feat .dot.tq { background-color: #31a5b3 !important; box-shadow: 0 0 10px #31a5b3 !important; }
-.map-feat .dot.yl { background-color: #f7c92c !important; box-shadow: 0 0 10px #f7c92c !important; }
-.map-feat .dot.gr { background-color: #65ac4a !important; box-shadow: 0 0 10px #65ac4a !important; }
+.map-section .container {
+  width: 100%;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 4vw, 48px);
+}
 
-/* Responsive */
+/* minmax(0, ...) impide que la ilustración aumente el ancho del grid. */
+.map-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
+  gap: clamp(24px, 4.5vw, 64px);
+  align-items: start;
+}
+
+.section-header.map-grid {
+  align-items: center;
+  margin-bottom: 56px;
+}
+
+.head-left,
+.head-right,
+.map-text,
+.map-vis-wrap,
+.map-vis {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.section-header h2 {
+  margin: 16px 0 0;
+  max-width: 100%;
+  font-size: clamp(1.85rem, 3.2vw, 2.5rem);
+  font-weight: 600;
+  line-height: 1.15;
+  color: #0a0e1a;
+  overflow-wrap: break-word;
+}
+
+.section-header h2 em {
+  color: var(--turquoise, #31a5b3);
+  font-weight: inherit;
+  font-style: normal;
+}
+
+.section-header .lead {
+  margin: 0;
+  max-width: 100%;
+  color: #4a5169;
+  font-size: 16.5px;
+  line-height: 1.6;
+  overflow-wrap: break-word;
+}
+
+/* Características del sistema */
+.map-text {
+  align-self: center;
+}
+
+.map-features {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.map-feat {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+  padding: 14px 18px;
+  border: 1px solid #e3e6ec;
+  border-radius: 16px;
+  background: #fff;
+  color: #1a1f2e;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  box-shadow: 0 1px 2px rgba(26, 31, 46, 0.03);
+  overflow-wrap: anywhere;
+}
+
+.map-feat .dot {
+  display: block;
+  flex: 0 0 10px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.map-feat .dot.tq { background: #31a5b3; box-shadow: 0 0 10px #31a5b3; }
+.map-feat .dot.gr { background: #65ac4a; box-shadow: 0 0 10px #65ac4a; }
+.map-feat .dot.yl { background: #f7c92c; box-shadow: 0 0 10px #f7c92c; }
+
+/* Panel derecho: botones + ilustración SVG */
+.map-vis-wrap {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid rgba(26, 31, 46, 0.07);
+  border-radius: 18px;
+  background: #fff;
+}
+
+.map-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.map-tabs {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  max-width: 100%;
+  padding: 4px;
+  border: 1px solid #e3e6ec;
+  border-radius: 999px;
+  background: #f5f6f8;
+}
+
+.map-tab {
+  padding: 8px 18px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: transparent;
+  color: #4a5169;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.25;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.map-tab:hover { color: #0a0e1a; }
+.map-tab.active {
+  border-color: #e3e6ec;
+  background: #fff;
+  color: #0a0e1a;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+.map-tab:focus-visible,
+.map-expand-btn:focus-visible {
+  outline: 2px solid var(--turquoise, #31a5b3);
+  outline-offset: 3px;
+}
+
+/* El control de ampliación solo se necesita en móvil. */
+.map-expand-btn { display: none; }
+.map-zoom-hint { display: none; }
+
+.map-vis {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+/* Sin min-height: 460px: el alto depende del ancho disponible.
+   El viewBox de ambos SVG es 600x460, así que respetamos esa proporción. */
+.map-canvas {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  aspect-ratio: 600 / 460;
+  min-height: 0;
+  overflow: hidden;
+  border: 1px solid rgba(26, 31, 46, 0.06);
+  border-radius: 12px;
+}
+
+.map-canvas--cuarteles { background: #1a1f2e; }
+.map-canvas--leaflet { background: #f9f9f9; }
+
+.map-svg {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Tablet: texto, características y mapa pasan a una sola columna. */
 @media (max-width: 980px) {
-  .map-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+  .map-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .section-header.map-grid {
+    gap: 16px;
+    margin-bottom: 36px;
+  }
+
+  .map-text { align-self: stretch; }
+}
+
+/* Teléfonos: mapa completo por defecto y ampliación opcional con scroll
+   solamente dentro del mapa, nunca en la página. */
+@media (max-width: 640px) {
+  .map-section {
+    padding: 50px 0 64px;
+    scroll-margin-top: 100px;
+  }
+
+  .map-section .container { padding-inline: 16px; }
+
+  .map-grid { gap: 24px; }
+  .section-header.map-grid { margin-bottom: 28px; }
+
+  .section-header h2 {
+    margin-top: 12px;
+    font-size: clamp(1.75rem, 7.6vw, 2.15rem);
+    line-height: 1.18;
+  }
+
+  .section-header .lead {
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  .map-feat {
+    gap: 12px;
+    padding: 12px 14px;
+    border-radius: 14px;
+    font-size: 13px;
+  }
+
+  .map-vis-wrap {
+    padding: 10px;
+    border-radius: 16px;
+  }
+
+  .map-toolbar {
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .map-tab { padding: 9px 14px; font-size: 12.5px; }
+
+  .map-expand-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 11px;
+    border: 1px solid #dce5e7;
+    border-radius: 999px;
+    background: #fff;
+    color: #1a1f2e;
+    font: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.35;
+    cursor: pointer;
+  }
+
+  .map-vis.is-expanded {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    scrollbar-width: thin;
+  }
+
+  .map-canvas.is-expanded {
+    width: 600px;
+    min-width: 600px;
+    max-width: none;
+    height: 460px;
+    aspect-ratio: auto;
+  }
+
+  .map-zoom-hint {
+    display: block;
+    margin: 10px 2px 0;
+    color: #697287;
+    font-size: 12px;
+    line-height: 1.45;
+  }
+}
+
+/* Teléfonos pequeños: los botones se apilan solo si no caben. */
+@media (max-width: 360px) {
+  .map-toolbar { align-items: flex-start; }
+  .map-tab { padding-inline: 12px; }
 }

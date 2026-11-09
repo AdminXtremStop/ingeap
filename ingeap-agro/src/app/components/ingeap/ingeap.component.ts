@@ -10,19 +10,18 @@ import { ViewportScroller } from '@angular/common';
 export class IngeapComponent implements OnInit {
 
   carouselImages = [
-    { src: 'assets/ingeap/carrusel/1.jpeg', alt: 'Soluciones Eléctricas Industriales' },
-    { src: 'assets/ingeap/carrusel/2.JPG', alt: 'Montaje y Construcción Eléctrica' },
-    { src: 'assets/ingeap/carrusel/3.jpeg', alt: 'Ingeniería y Proyectos de Control' },
-    { src: 'assets/ingeap/carrusel/4.jpeg', alt: 'Salas Eléctricas en Faena' },
-    { src: 'assets/ingeap/carrusel/5.jpeg', alt: 'Tecnología para Agricultura Inteligente' }
+    { src: 'assets/ingeap/carrusel/1.webp', alt: 'Soluciones Eléctricas Industriales' },
+    { src: 'assets/ingeap/carrusel/2.webp', alt: 'Montaje y Construcción Eléctrica' },
+    { src: 'assets/ingeap/carrusel/3.webp', alt: 'Ingeniería y Proyectos de Control' },
+    { src: 'assets/ingeap/carrusel/4.webp', alt: 'Salas Eléctricas en Faena' },
+    { src: 'assets/ingeap/carrusel/5.webp', alt: 'Tecnología para Agricultura Inteligente' }
   ];
 
   teamImages = [
-    { src: 'assets/ingeap/ganador.png', alt: 'Trayectoria Ingeap' },
-    { src: 'assets/ingeap/menu-ingeap/55.JPG', alt: 'Equipo Ingeap Trabajo 1' },
-    { src: 'assets/ingeap/menu-ingeap/54.jpeg', alt: 'Equipo Ingeap Trabajo 2' },
-    { src: 'assets/ingeap/menu-ingeap/52.JPG', alt: 'Equipo Ingeap Trabajo 3' },
-    { src: 'assets/ingeap/menu-ingeap/56.jpeg', alt: 'Equipo Ingeap Trabajo 4' }
+    { src: 'assets/ingeap/menu-ingeap/55.webp', alt: 'Equipo Ingeap Trabajo 1' },
+    { src: 'assets/ingeap/menu-ingeap/54.webp', alt: 'Equipo Ingeap Trabajo 2' },
+    { src: 'assets/ingeap/menu-ingeap/52.webp', alt: 'Equipo Ingeap Trabajo 3' },
+    { src: 'assets/ingeap/menu-ingeap/56.webp', alt: 'Equipo Ingeap Trabajo 4' }
   ];
 
   constructor(public router: Router, private viewportScroller: ViewportScroller) { }
